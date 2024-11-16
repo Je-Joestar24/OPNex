@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OPNex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Navigation bar -->
+      <nav id="navigation">
+        <div class="nav-container">
+          <img class="logo" src="image/logo.png" alt="one piece" />
+          <ul>
+            <li class="nav-item">
+              <a href="#home">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a href="#characters">CHARACTERS</a>
+            </li>
+            <li class="nav-item">
+              <a href="#devil-fruits">DEVIL FRUITS</a>
+            </li>
+            <li class="nav-item">
+              <a href="#arcs">ARCS</a>
+            </li>
+          </ul>
+          <!-- Search Bar -->
+          <form id="searchbar" action="#">
+            <input id="search" type="text" />
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </form>
+        </div>
+      </nav>
+
+      <!-- Main Container -->
+      <main id="main" class="wrapper">
+        <section id="home" class="page">
+          <!-- all content will be displayed here -->
+          <div class="card">
+            <header class="card-header">
+              <img src="image/home/straw-hats.jpg" alt="Luffy" />
+            </header>
+            <div class="card-content">
+              <h1>Story</h1>
+              <article>
+                <p>
+                  Long ago, the infamous Gol D. Roger was the strongest and most
+                  powerful pirate on the sea. It was said that he revealed the
+                  secret of his treasure, known as One Piece, and at the end of
+                  the Grand Line—a treacherous and truly unpredictable sea. This
+                  legendary treasure has drawn countless adventurers, each
+                  hoping to claim it for themselves and etch their names into
+                  the annals of history. Among them is Monkey D. Luffy, a
+                  spirited pirate with an unyielding dream of becoming the
+                  Pirate King. However, Luffy is no ordinary boy; when he was
+                  younger, he ate one of the Devil Fruits and gained his
+                  powerful ability to stretch like rubber. With his unique
+                  powers and unwavering determination, Luffy sets out to gather
+                  a loyal crew and face the most dangerous seas, all in pursuit
+                  of his dream to fulfill his destiny and make his name known to
+                  the world!
+                </p>
+              </article>
+              <footer>
+                <ol>
+                  <li><span>Studio</span><a href="#toei">Toei Animation</a></li>
+                  <li><span>Author</span><a href="#oda">Eiichiro Oda</a></li>
+                  <li><span>Year</span><a href="#year">1999-Now</a></li>
+                </ol>
+              </footer>
+            </div>
+          </div>
+          <!-- Characters overview -->
+          <div class="card characters">
+            <h1>Characters</h1>
+            <div class="card-content">
+              <article>
+                <p>
+                  One Piece is filled with a diverse cast of characters, each
+                  with their own unique abilities and dreams. From the fearless
+                  captain Monkey D. Luffy, who aspires to become the Pirate
+                  King, to his loyal crew, the Straw Hat Pirates, who each bring
+                  their own strengths to the team. Notable characters include
+                  Roronoa Zoro, a master swordsman with a dream of becoming the
+                  world's greatest; Nami, a skilled navigator with a passion for
+                  cartography; and Sanji, a talented cook with a chivalrous
+                  heart. Together, they face formidable foes and embark on
+                  thrilling adventures across the Grand Line, forging bonds of
+                  friendship and loyalty along the way.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <!-- Devil Fruits overview -->
+          <div class="card devil-fruits">
+            <h1>Devil Fruits</h1>
+            <p>Discover the mysterious powers of Devil Fruits that grant extraordinary abilities to their users.</p>
+            <div class="devil-fruit-images">
+                <img src="image/devil-fruit-1.jpg" alt="Devil Fruit 1" />
+                <img src="image/devil-fruit-2.jpg" alt="Devil Fruit 2" />
+                <img src="image/devil-fruit-3.jpg" alt="Devil Fruit 3" />
+            </div>
+            <div class="devil-fruit-content">
+                <div class="devil-fruit-card">
+                    <h2>Paramecia</h2>
+                    <p>Paramecia fruits grant users abilities that can affect their body, manipulate the environment, or produce substances.</p>
+                </div>
+                <div class="devil-fruit-card">
+                    <h2>Zoan</h2>
+                    <p>Zoan fruits allow users to transform into animals or hybrid forms, enhancing their physical abilities.</p>
+                </div>
+                <div class="devil-fruit-card">
+                    <h2>Logia</h2>
+                    <p>Logia fruits enable users to create, control, and transform into elements, making them intangible.</p>
+                </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Page footer contains copyright -->
+      <footer>
+        <p>&copy; One Piece Adventure</p>
+      </footer>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>

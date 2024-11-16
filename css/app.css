@@ -1,0 +1,287 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --nav-bg: rgb(194, 0, 0);
+  --nav-col: rgba(255, 252, 232, 0.925);
+  --nav-item-bg-active: rgb(255, 136, 0);
+  --text-white: #fffce8;
+}
+
+/* Basic Reset */
+* {
+  margin: 0px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+body {
+  background: url("../image/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Make the background fixed */
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+}
+
+/* Navitation */
+
+#navigation {
+  display: flex;
+  align-items: center;
+  background-color: var(--nav-bg);
+  position: fixed;
+  width: 100%;
+}
+
+/* Navigation Logo */
+#navigation .logo {
+  margin: auto 0px;
+  height: 2.78em;
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* Navigation Container */
+#navigation .nav-container {
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  width: 1400px;
+}
+
+/* Navigation List */
+.nav-container ul {
+  display: flex;
+  margin: 0.5em;
+  align-items: center;
+  list-style-type: none;
+  font-optical-sizing: auto;
+}
+
+/* Navigation Items */
+.nav-container .nav-item {
+  color: var(--nav-bg);
+  height: fit-content;
+  padding: 0.9em 1.8em;
+  border-radius: 0.4em;
+  color: var(--nav-col);
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+/* Navigation Items Active */
+.nav-container .nav-item:active {
+  background-color: var(--nav-item-bg-active);
+  color: var(--nav-bg);
+}
+
+/* search bar */
+
+#searchbar {
+  display: flex;
+  position: relative;
+  align-items: center;
+  background-color: rgba(255, 252, 232, 0.5);
+  margin: 1.5em 0px;
+  border-radius: 1em;
+  padding: 0px 1em;
+  border: var(--text-white) solid 0.13em;
+  gap: 0.5em;
+}
+
+/* Search Input */
+#search {
+  font-size: 1em;
+  height: 2em;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+#search:focus {
+  border: none;
+  outline: none;
+}
+
+#searchbar .icon {
+  height: 1.5em;
+  color: white;
+}
+
+/* container default */
+
+.wrapper {
+  display: flex;
+}
+
+.page {
+  width: 100%;
+  margin: auto;
+}
+/* Home page */
+
+#home {
+  font-size: 1em;
+}
+
+/* Card for home page */
+#home .card {
+  margin: 10em auto;
+  padding: 3.5em 0px;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  gap: 1em;
+  color: var(--text-white);
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  box-shadow: 0 0 0.5em var(--nav-bg), 0 0 0.5em var(--nav-bg); /* Red glow effect at the top and bottom */
+}
+
+/* Card Header */
+#home .card-header {
+  margin-left: auto;
+  height: 20em;
+  width: 20em;
+  padding: 1em;
+  object-fit: contain;
+}
+
+#home img {
+  border-radius: 1em;
+  object-fit: cover;
+}
+
+/* Card Content */
+#home .card-content {
+  margin-right: auto;
+  padding: 1em;
+  width: 60em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Card Content List for details*/
+#home .card-content ol {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  width: 65%;
+}
+
+/* Contins the label and the information */
+#home .card-content li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  text-align: center;
+}
+
+#home .card-content span {
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+#home .card-content a {
+  padding: 0.5em 1.5em;
+  border-radius: 0.4em;
+  background-color: var(--nav-bg);
+}
+
+/* Characters page */
+#home .characters {
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 0) 200%
+  );
+  margin-bottom: 0px;
+  padding: 2em;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: none;
+}
+
+#home .characters .card-content {
+  margin: auto;
+}
+
+/* Devil Fruits page */
+#home .devil-fruits {
+    background-color: #fff; /* White background for contrast */
+    color: #000; /* Black text */
+    padding: 2em;
+    text-align: center;
+    flex-direction: column;
+}
+
+.devil-fruit-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    margin-top: 1em;
+    width: 70%;
+    margin: auto;
+}
+
+.devil-fruit-card {
+    background-color: #c00; /* Red background for cards */
+    color: #fff; /* White text */
+    padding: 1.5em;
+    border-radius: 0.5em;
+    transition: transform 0.3s;
+}
+
+.devil-fruit-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.devil-fruit-card h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.devil-fruit-card p {
+    margin-top: 0.5em;
+}
+
+/* Devil Fruits images styles */
+.devil-fruit-images {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.devil-fruit-images img {
+    width: 150px; /* Set a fixed width for images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 0.5em; /* Rounded corners */
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+/* copyright */
+
+#app > footer {
+  font-size: 1.2em;
+  padding: 1em;
+  text-align: center;
+  background-color: var(--nav-bg);
+  color: var(--nav-col);
+}
