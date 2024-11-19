@@ -1,0 +1,84 @@
+
+/* Benefits Section or the section 3 */
+/* *******************************************************Main section 3 container******************************************************* */
+#section-3 {
+    padding: 4em 0;
+    background-color: var(--text-white);
+  }
+  
+  /* Content wrapper for benefits section */
+  #section-3 .benefits-content {
+    width: var(--cont-width);
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Main heading for benefits section */
+  #section-3 h2 {
+    font-size: 2.5em;
+    color: var(--nav-bg);
+    margin-bottom: 1.5em;
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Grid container for benefit cards */
+  #section-3 .benefits-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    padding: 1em;
+  }
+  
+  /* reusable benefit card styling */
+  #section-3 .benefit-card {
+    background: white;
+    border-radius: 1em;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect for benefit cards */
+  #section-3 .benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Image container within benefit cards */
+  #section-3 .benefit-image {
+    height: 25em;
+    display: flex;
+  }
+  
+  /* Image styling within benefit cards */
+  #section-3 .benefit-image img {
+    margin: auto;
+    width: 80%;
+    height: 80%;
+    transform: scale(1);
+    box-shadow: none;
+  }
+  
+  /* Heading style for each benefit card */
+  #section-3 .benefit-card h3 {
+    color: var(--nav-bg);
+    font-size: 1.5em;
+    padding: 1em 0.5em;
+    margin: 0;
+  }
+  
+  /* Paragraph text styling in benefit cards */
+  #section-3 .benefit-card p {
+    color: #666;
+    padding: 0 1.5em 2em;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  /* Hover animation for images within benefit cards */
+  #section-3 .benefit-card:hover .benefit-image img {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+  

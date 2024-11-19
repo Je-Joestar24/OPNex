@@ -19,7 +19,7 @@ class Home {
         container.innerHTML = '';
 
         // Load hero section
-        await fetch('./js/components/home/section1.json')
+        await fetch('./json/home/section1.json')
             .then(res => res.json())
             .then(data => {
                 this.sections.hero = data;
@@ -27,7 +27,7 @@ class Home {
             });
 
         // Load about section  
-        await fetch('./js/components/home/section2.json')
+        await fetch('./json/home/section2.json')
             .then(res => res.json())
             .then(data => {
                 this.sections.about = data;
@@ -35,7 +35,7 @@ class Home {
             });
 
         // Load benefits section
-        await fetch('./js/components/home/section3.json')
+        await fetch('./json/home/section3.json')
             .then(res => res.json())
             .then(data => {
                 this.sections.benefits = data;
@@ -43,7 +43,7 @@ class Home {
             });
 
         // Load CTA section
-        await fetch('./js/components/home/section4.json')
+        await fetch('./json/home/section4.json')
             .then(res => res.json())
             .then(data => {
                 this.sections.cta = data;
@@ -162,4 +162,4 @@ class Home {
     }
 }
 
-export default Home;
+export { Home as default };

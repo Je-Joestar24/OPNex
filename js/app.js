@@ -1,5 +1,6 @@
-// Add type="module" to your script tag in HTML, or use this alternative approach:
+
 window.onload = async () => {
+    /* loading the home page components */
   const { default: Home } = await import('./components/home.js');
   const home = new Home('home');
 };

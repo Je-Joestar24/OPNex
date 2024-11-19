@@ -1,0 +1,110 @@
+
+
+/* *******************************************************Hero Section******************************************************* */
+#section-1 {
+    font-size: 2em;
+    outline: auto;
+    width: 100%;
+    padding-top: 4.5em;
+    background: linear-gradient(
+      to bottom right,
+      var(--nav-bg),
+      var(--nav-bg),
+      var(--nav-bg),
+      rgba(255, 0, 0, 0.7)
+    );
+    color: var(--text-white);
+    padding-bottom: 2em;
+  }
+  
+  #section-1 .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+  }
+  
+  /* contains the title and the paragraph */
+  #section-1 .hero-content div:first-of-type {
+    margin: auto;
+    margin-left: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    font-size: 1.5em;
+  }
+  
+  /* title */
+  #section-1 strong {
+    display: block;
+    font-size: 1.8em;
+  }
+  
+  /* paragraph of hero section */
+  #section-1 p {
+    font-size: 0.8em;
+  }
+  
+  /* hero image container */
+  
+  #home .hero-content .hero-logo {
+    position: relative;
+    outline: 1px solid var(--nav-item-bg-active);
+    border-radius: 1em;
+    display: flex;
+    transition: background-color 0.3s ease-out, transform 0.3s ease-out,
+      box-shadow 0.3s ease-out;
+  }
+  
+  /* hero logo hover effects */
+  #section-1 .hero-logo:hover {
+    background-color: var(--nav-item-bg-active);
+    color: var(--nav-bg);
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 0 20px var(--white-glow), 0 0 30px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  
+  /* hero logo svg the circles */
+  
+  /* hero image */
+  #home .hero-content img {
+    margin: auto;
+    border-radius: 1em;
+    width: 60%;
+    height: 80%;
+    object-fit: cover;
+    object-position: bottom;
+  }
+  
+  /* hero button  the get started button*/
+  #section-1 button {
+    font-size: 0.7em;
+    padding: 0.3em 1.5em;
+    width: fit-content;
+    border: var(--cta-border); /* Added border */
+    border-radius: 0.4em;
+    background-color: transparent;
+    color: var(--text-white);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  /* hero button hover */
+  #section-1 button:hover {
+    background-color: var(--nav-item-bg-active);
+    color: var(--nav-bg);
+    transform: scale(1.05);
+  }
+  
+  /* hero button active */
+  #section-1 button:active {
+    background-color: var(--button-active-bg); /* Use the color from root */
+    transform: scale(0.95);
+  }
+  
+  /* mini footer */
+  #home .mini-footer {
+    height: 12em;
+    box-shadow: 0 4px 20px var(--gray-glow);
+    background-color: var(--text-white);
+    margin-bottom: 5em;
+  }
