@@ -7,6 +7,12 @@ body::-webkit-scrollbar {
   --nav-col: rgba(255, 252, 232, 0.925);
   --nav-item-bg-active: rgb(255, 136, 0);
   --text-white: #fffce8;
+  --body-bg: #ffffff91;
+  --button-active-bg: rgba(255, 255, 255, 0.2);
+  --gray-glow: rgba(73, 73, 73, 0.8);
+  --white-glow: rgba(255, 255, 255, 0.8);
+  --cont-width: 1400px;
+  --cta-border: 2px solid var(--nav-item-bg-active);
 }
 
 /* Basic Reset */
@@ -20,13 +26,14 @@ img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: transform 0.3s, box-shadow 0.3s;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--white-glow);
+  cursor: pointer;
 }
 
 body {
-  background: url("../image/bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Make the background fixed */
+  background-color: var(--body-bg);
   font-family: "Montserrat", sans-serif;
 }
 
@@ -43,24 +50,29 @@ a {
   align-items: center;
   background-color: var(--nav-bg);
   position: fixed;
+  z-index: 1;
   width: 100%;
+  color: var(--text-white);
 }
 
 /* Navigation Logo */
 #navigation .logo {
+  font-size: 1.5em;
+  font-weight: 700;
   margin: auto 0px;
-  height: 2.78em;
-  width: auto;
-  object-fit: contain;
-  cursor: pointer;
+}
+
+#navigation .nav-container,
+#section-1 .hero-content,
+#section-2 .about-content {
+  width: var(--cont-width);
+  margin: 0px auto;
 }
 
 /* Navigation Container */
 #navigation .nav-container {
-  margin: 0px auto;
   display: flex;
   justify-content: space-between;
-  width: 1400px;
 }
 
 /* Navigation List */
@@ -73,7 +85,7 @@ a {
 }
 
 /* Navigation Items */
-.nav-container .nav-item {
+#navigation .nav-item {
   color: var(--nav-bg);
   height: fit-content;
   padding: 0.9em 1.8em;
@@ -84,42 +96,14 @@ a {
 }
 
 /* Navigation Items Active */
-.nav-container .nav-item:active {
+#navigation .nav-item:hover {
+  outline: 1px solid var(--nav-item-bg-active);
+  box-shadow: 0 0 10px var(--nav-item-bg-active), 0 0 20px var(--nav-item-bg-active);
+}
+
+#navigation .nav-item:active {
   background-color: var(--nav-item-bg-active);
   color: var(--nav-bg);
-}
-
-/* search bar */
-
-#searchbar {
-  display: flex;
-  position: relative;
-  align-items: center;
-  background-color: rgba(255, 252, 232, 0.5);
-  margin: 1.5em 0px;
-  border-radius: 1em;
-  padding: 0px 1em;
-  border: var(--text-white) solid 0.13em;
-  gap: 0.5em;
-}
-
-/* Search Input */
-#search {
-  font-size: 1em;
-  height: 2em;
-  border: none;
-  background-color: transparent;
-  color: white;
-}
-
-#search:focus {
-  border: none;
-  outline: none;
-}
-
-#searchbar .icon {
-  height: 1.5em;
-  color: white;
 }
 
 /* container default */
@@ -152,128 +136,430 @@ a {
   box-shadow: 0 0 0.5em var(--nav-bg), 0 0 0.5em var(--nav-bg); /* Red glow effect at the top and bottom */
 }
 
-/* Card Header */
-#home .card-header {
-  margin-left: auto;
-  height: 20em;
-  width: 20em;
-  padding: 1em;
-  object-fit: contain;
-}
-
-#home img {
-  border-radius: 1em;
-  object-fit: cover;
-}
-
-/* Card Content */
-#home .card-content {
-  margin-right: auto;
-  padding: 1em;
-  width: 60em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* Card Content List for details*/
-#home .card-content ol {
-  list-style-type: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2em;
-  width: 65%;
-}
-
-/* Contins the label and the information */
-#home .card-content li {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-  text-align: center;
-}
-
-#home .card-content span {
-  font-weight: 700;
-  font-size: 1.2em;
-}
-
-#home .card-content a {
-  padding: 0.5em 1.5em;
-  border-radius: 0.4em;
-  background-color: var(--nav-bg);
-}
-
-/* Characters page */
-#home .characters {
-  background: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 1) 10%,
-    rgba(0, 0, 0, 0) 200%
+/* Hero Section */
+#section-1 {
+  font-size: 2em;
+  outline: auto;
+  width: 100%;
+  padding-top: 4.5em;
+  background: linear-gradient(
+    to bottom right,
+    var(--nav-bg),
+    var(--nav-bg),
+    var(--nav-bg),
+    rgba(255, 0, 0, 0.7)
   );
-  margin-bottom: 0px;
-  padding: 2em;
-  flex-direction: column;
-  text-align: center;
-  box-shadow: none;
+  color: var(--text-white);
+  padding-bottom: 2em;
 }
 
-#home .characters .card-content {
+#section-1 .hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin: auto;
 }
 
-/* Devil Fruits page */
-#home .devil-fruits {
-    background-color: #fff; /* White background for contrast */
-    color: #000; /* Black text */
-    padding: 2em;
-    text-align: center;
-    flex-direction: column;
+/* contains the title and the paragraph */
+#section-1 .hero-content div:first-of-type {
+  margin: auto;
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  font-size: 1.5em;
 }
 
-.devil-fruit-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1em;
-    margin-top: 1em;
-    width: 70%;
-    margin: auto;
+/* title */
+#section-1 strong {
+  display: block;
+  font-size: 1.8em;
 }
 
-.devil-fruit-card {
-    background-color: #c00; /* Red background for cards */
-    color: #fff; /* White text */
-    padding: 1.5em;
-    border-radius: 0.5em;
-    transition: transform 0.3s;
+/* paragraph of hero section */
+#section-1 p {
+  font-size: 0.8em;
 }
 
-.devil-fruit-card:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+/* hero image container */
+
+#home .hero-content .hero-logo {
+  position: relative;
+  outline: 1px solid var(--nav-item-bg-active);
+  border-radius: 1em;
+  display: flex;
+  transition: background-color 0.3s ease-out, transform 0.3s ease-out,
+    box-shadow 0.3s ease-out;
 }
 
-.devil-fruit-card h2 {
-    margin: 0;
-    font-size: 1.5em;
+/* hero logo hover effects */
+#section-1 .hero-logo:hover {
+  background-color: var(--nav-item-bg-active);
+  color: var(--nav-bg);
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 0 20px var(--white-glow), 0 0 30px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-.devil-fruit-card p {
-    margin-top: 0.5em;
+/* hero logo svg the circles */
+
+/* hero image */
+#home .hero-content img {
+  margin: auto;
+  border-radius: 1em;
+  width: 60%;
+  height: 80%;
+  object-fit: cover;
+  object-position: bottom;
 }
 
-/* Devil Fruits images styles */
-.devil-fruit-images {
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-    margin-bottom: 1em;
+/* hero button  the get started button*/
+#section-1 button {
+  font-size: 0.7em;
+  padding: 0.3em 1.5em;
+  width: fit-content;
+  border: var(--cta-border); /* Added border */
+  border-radius: 0.4em;
+  background-color: transparent;
+  color: var(--text-white);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+/* hero button hover */
+#section-1 button:hover {
+  background-color: var(--nav-item-bg-active);
+  color: var(--nav-bg);
+  transform: scale(1.05);
 }
 
-.devil-fruit-images img {
-    width: 150px; /* Set a fixed width for images */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 0.5em; /* Rounded corners */
-    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+/* hero button active */
+#section-1 button:active {
+  background-color: var(--button-active-bg); /* Use the color from root */
+  transform: scale(0.95);
+}
+
+/* mini footer */
+#home .mini-footer {
+  height: 12em;
+  box-shadow: 0 4px 20px var(--gray-glow);
+  background-color: var(--text-white);
+  margin-bottom: 5em;
+}
+
+/* page 2 or the about section */
+
+#section-2 .about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3em;
+  gap: 1em;
+}
+
+/* all about content divs */
+#section-2 .about-content > div {
+  display: flex;
+  padding: 3em;
+  border-radius: 1em;
+  outline: 1px solid var(--nav-bg);
+}
+
+/* contains the about image */
+#section-2 .about-content .about-image {
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#section-2 .about-image:hover {
+  background-color: var(--nav-bg);
+  color: var(--nav-bg);
+  transform: scale(1.1) rotate(-2deg); /* Combined scale and rotate */
+  box-shadow: 0 0 20px var(--gray-glow), 0 0 30px rgba(0, 0, 0, 0.3);
+}
+/* last div of about coent contains the descriptions */
+#section-2 .about-content > div:last-of-type {
+  flex-direction: column;
+  outline: none;
+}
+/* The about content headers */
+#section-2 .about-content > div:last-of-type h2 {
+  margin: 0.5em 0px;
+  animation: sideToSide 5s ease-in-out infinite;
+}
+/* descriptions */
+#section-2 .about-content > div:last-of-type ol {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+/* descriptions */
+#section-2 .about-content > div:last-of-type li {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+}
+/* side to side movement reusabel animations */
+@keyframes sideToSide {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* the check icons */
+#section-2 .about-content > div:last-of-type svg {
+  height: 24px;
+  width: 24px;
+  color: green;
+  margin: auto;
+  margin-left: 0px;
+}
+
+/* The about image */
+#section-2 .about-content img {
+  margin: auto;
+  object-fit: cover;
+  border-radius: 1em;
+}
+
+#section-3{
+}
+
+/* reserved animations key frames */
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* reserved animations */
+
+.animate-fade-in-down {
+  animation: fadeInDown 1s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out 0.6s backwards;
+}
+
+/* Optional: Add a subtle background pattern */
+.title-part::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Benefits Section or the section 3 */
+/* Main section 3 container */
+#section-3 {
+  padding: 4em 0;
+  background-color: var(--text-white);
+}
+
+/* Content wrapper for benefits section */
+#section-3 .benefits-content {
+  width: var(--cont-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Main heading for benefits section */
+#section-3 h2 {
+  font-size: 2.5em;
+  color: var(--nav-bg);
+  margin-bottom: 1.5em;
+  position: relative;
+  display: inline-block;
+}
+
+/* Grid container for benefit cards */
+#section-3 .benefits-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  padding: 1em;
+}
+
+/* reusable benefit card styling */
+#section-3 .benefit-card {
+  background: white;
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for benefit cards */
+#section-3 .benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Image container within benefit cards */
+#section-3 .benefit-image {
+  height: 25em;
+  display: flex;
+}
+
+/* Image styling within benefit cards */
+#section-3 .benefit-image img {
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  transform: scale(1);
+  box-shadow: none;
+}
+
+/* Heading style for each benefit card */
+#section-3 .benefit-card h3 {
+  color: var(--nav-bg);
+  font-size: 1.5em;
+  padding: 1em 0.5em;
+  margin: 0;
+}
+
+/* Paragraph text styling in benefit cards */
+#section-3 .benefit-card p {
+  color: #666;
+  padding: 0 1.5em 2em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Hover animation for images within benefit cards */
+#section-3 .benefit-card:hover .benefit-image img {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* section 4 */
+#section-4 {
+  background-color: var(--text-white);
+  padding: 6em 0;
+  margin-bottom: 2em;
+}
+/* Call-to-action content container */
+#section-4 .cta-content {
+  width: var(--cont-width);
+  margin: 0 auto;
+  text-align: center;
+  padding: 4em 2em;
+  background: linear-gradient(
+    to bottom right,
+    var(--nav-bg),
+    rgba(194, 0, 0, 0.9)
+  );
+  border-radius: 1em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  color: var(--text-white);
+}
+
+/* Main heading style */
+#section-4 h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+/* Description text style */
+#section-4 p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto 2em;
+  line-height: 1.6;
+}
+
+/* Call-to-action button styling */
+#section-4 .cta-button {
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0 auto;
+  padding: 1em 2em;
+  font-size: 1.2em;
+  font-weight: 600;
+  background-color: transparent;
+  border: var(--cta-border);
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#section-4 .cta-button:hover {
+  background-color: var(--nav-item-bg-active);
+  color: var(--nav-bg);
+}
+/* Button icon style */
+#section-4 .cta-button svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Button hover effects */
+#section-4 .cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Button icon hover animation */
+#section-4 .cta-button:hover svg {
+  transform: translateX(5px);
+}
+
+/* Button active state */
+#section-4 .cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* copyright */

@@ -1,0 +1,18 @@
+{
+    "id": "section-2",
+    "title": "About OPNEX",
+    "description": [
+        "OPNEX is your ultimate guide to the world of One Piece, providing comprehensive information about characters and Devil Fruits.",
+        "Our solution works by aggregating data from various sources, allowing users to explore detailed descriptions, abilities, and backgrounds of their favorite characters.",
+        "With an intuitive interface and seamless navigation, OPNEX ensures that fans can easily find the information they seek, enhancing their experience in the One Piece universe."
+    ],
+    "howItWorks": {
+        "title": "How It Works",
+        "steps": [
+            "The platform utilizes a structured database that organizes character profiles and Devil Fruit abilities.",
+            "Users can search through categories, view detailed articles, and even discover connections between characters and their respective powers.",
+            "OPNEX aims to be a one-stop resource for both new and seasoned fans, making the vast world of One Piece accessible and enjoyable for everyone."
+        ]
+    },
+    "image": "image/home/section2/world.jpg"
+}

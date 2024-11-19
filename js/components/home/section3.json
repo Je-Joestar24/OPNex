@@ -1,0 +1,21 @@
+{
+    "id": "section-3",
+    "title": "Why Choose OPNEX?",
+    "cards": [
+        {
+            "title": "Comprehensive Database",
+            "description": "Access detailed information about characters, Devil Fruits, and story arcs all in one place. Our extensive database ensures you never miss any important details.",
+            "image": "image/home/section3/1.png"
+        },
+        {
+            "title": "Regular Updates",
+            "description": "Stay up-to-date with the latest One Piece developments. Our content is regularly updated to include new characters, abilities, and story developments.",
+            "image": "image/home/section3/2.png"
+        },
+        {
+            "title": "User-Friendly Interface",
+            "description": "Navigate effortlessly through our intuitive interface. Find exactly what you're looking for with our easy-to-use search and filter systems.",
+            "image": "image/home/section3/3.png"
+        }
+    ]
+}
