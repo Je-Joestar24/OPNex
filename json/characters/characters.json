@@ -1,0 +1,210 @@
+[
+  {
+    "id": "luffy",
+    "name": "Monkey D. Luffy",
+    "epithet": "Straw Hat",
+    "image": "image/characters/luffy.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "zoro",
+    "name": "Roronoa Zoro",
+    "epithet": "Pirate Hunter",
+    "image": "image/characters/zoro.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "nami",
+    "name": "Nami",
+    "epithet": "Cat Burglar",
+    "image": "image/characters/nami.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "usopp",
+    "name": "Usopp",
+    "epithet": "Sogeking",
+    "image": "image/characters/usopp.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "sanji",
+    "name": "Vinsmoke Sanji",
+    "epithet": "Black Leg",
+    "image": "image/characters/sanji.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "chopper",
+    "name": "Tony Tony Chopper",
+    "epithet": "Cotton Candy Lover",
+    "image": "image/characters/chopper.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "robin",
+    "name": "Nico Robin",
+    "epithet": "Devil Child",
+    "image": "image/characters/robin.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "franky",
+    "name": "Franky",
+    "epithet": "Cyborg",
+    "image": "image/characters/franky.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "brook",
+    "name": "Brook",
+    "epithet": "Soul King",
+    "image": "image/characters/brook.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "jinbe",
+    "name": "Jinbe",
+    "epithet": "Knight of the Sea",
+    "image": "image/characters/jinbe.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "akainu",
+    "name": "Sakazuki",
+    "epithet": "Red Dog",
+    "image": "image/characters/akainu.jpg",
+    "affiliation": "marine",
+    "status": "alive"
+  },
+  {
+    "id": "kizaru",
+    "name": "Borsalino",
+    "epithet": "Yellow Monkey",
+    "image": "image/characters/kizaru.jpg",
+    "affiliation": "marine",
+    "status": "alive"
+  },
+  {
+    "id": "aokiji",
+    "name": "Kuzan",
+    "epithet": "Blue Pheasant",
+    "image": "image/characters/aokiji.jpg",
+    "affiliation": "marine",
+    "status": "alive"
+  },
+  {
+    "id": "lucci",
+    "name": "Rob Lucci",
+    "epithet": "The Strongest CP9",
+    "image": "image/characters/lucci.jpg",
+    "affiliation": "marine",
+    "status": "alive"
+  },
+  {
+    "id": "law",
+    "name": "Trafalgar D. Water Law",
+    "epithet": "Surgeon of Death",
+    "image": "image/characters/law.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "whitebeard",
+    "name": "Edward Newgate",
+    "epithet": "Whitebeard",
+    "image": "image/characters/whitebeard.jpg",
+    "affiliation": "pirate",
+    "status": "deceased"
+  },
+  {
+    "id": "marco",
+    "name": "Marco",
+    "epithet": "Phoenix",
+    "image": "image/characters/marco.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "doflamingo",
+    "name": "Donquixote Doflamingo",
+    "epithet": "Heavenly Demon",
+    "image": "image/characters/doflamingo.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "kaido",
+    "name": "Kaido",
+    "epithet": "King of the Beasts",
+    "image": "image/characters/kaido.jpg",
+    "affiliation": "pirate",
+    "status": "deceased"
+  },
+  {
+    "id": "bigmom",
+    "name": "Charlotte Linlin",
+    "epithet": "Big Mom",
+    "image": "image/characters/bigmom.jpg",
+    "affiliation": "pirate",
+    "status": "deceased"
+  },
+  {
+    "id": "shanks",
+    "name": "Shanks",
+    "epithet": "Red-Haired",
+    "image": "image/characters/shanks.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "mihawk",
+    "name": "Dracule Mihawk",
+    "epithet": "Hawk Eyes",
+    "image": "image/characters/mihawk.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "hancock",
+    "name": "Boa Hancock",
+    "epithet": "Pirate Empress",
+    "image": "image/characters/hancock.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "ace",
+    "name": "Portgas D. Ace",
+    "epithet": "Fire Fist",
+    "image": "image/characters/ace.jpg",
+    "affiliation": "pirate",
+    "status": "deceased"
+  },
+  {
+    "id": "crocodile",
+    "name": "Sir Crocodile",
+    "epithet": "Desert King",
+    "image": "image/characters/crocodile.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  },
+  {
+    "id": "buggy",
+    "name": "Buggy",
+    "epithet": "The Clown",
+    "image": "image/characters/buggy.jpg",
+    "affiliation": "pirate",
+    "status": "alive"
+  }
+]

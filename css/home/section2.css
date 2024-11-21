@@ -1,150 +1,149 @@
 /* *******************************************************page 2 or the about section******************************************************* */
 
 #section-2 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 3em;
-    gap: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3em;
+  gap: 1em;
+}
+
+/* all about content divs */
+#section-2 .about-content > div {
+  display: flex;
+  padding: 3em;
+  border-radius: 1em;
+  outline: 1px solid var(--nav-bg);
+}
+
+/* contains the about image */
+#section-2 .about-content .about-image {
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
   }
-  
-  /* all about content divs */
-  #section-2 .about-content > div {
-    display: flex;
-    padding: 3em;
-    border-radius: 1em;
-    outline: 1px solid var(--nav-bg);
+  50% {
+    transform: scale(1.1);
   }
-  
-  /* contains the about image */
-  #section-2 .about-content .about-image {
-    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  100% {
+    transform: scale(1);
   }
-  
-  @keyframes grow {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
+}
+
+#section-2 .about-image:hover {
+  background-color: var(--nav-bg);
+  color: var(--nav-bg);
+  transform: scale(1.1) rotate(-2deg); /* Combined scale and rotate */
+  box-shadow: 0 0 20px var(--gray-glow), 0 0 30px rgba(0, 0, 0, 0.3);
+}
+/* last div of about coent contains the descriptions */
+#section-2 .about-content > div:last-of-type {
+  flex-direction: column;
+  outline: none;
+}
+/* The about content headers */
+#section-2 .about-content > div:last-of-type h2 {
+  margin: 0.5em 0px;
+  animation: sideToSide 5s ease-in-out infinite;
+}
+/* descriptions */
+#section-2 .about-content > div:last-of-type ol {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+/* descriptions */
+#section-2 .about-content > div:last-of-type li {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+}
+/* side to side movement reusabel animations */
+@keyframes sideToSide {
+  0% {
+    transform: translateX(0);
   }
-  
-  #section-2 .about-image:hover {
-    background-color: var(--nav-bg);
-    color: var(--nav-bg);
-    transform: scale(1.1) rotate(-2deg); /* Combined scale and rotate */
-    box-shadow: 0 0 20px var(--gray-glow), 0 0 30px rgba(0, 0, 0, 0.3);
+  50% {
+    transform: translateX(10px);
   }
-  /* last div of about coent contains the descriptions */
-  #section-2 .about-content > div:last-of-type {
-    flex-direction: column;
-    outline: none;
+  100% {
+    transform: translateX(0);
   }
-  /* The about content headers */
-  #section-2 .about-content > div:last-of-type h2 {
-    margin: 0.5em 0px;
-    animation: sideToSide 5s ease-in-out infinite;
+}
+
+/* the check icons */
+#section-2 .about-content > div:last-of-type svg {
+  height: 24px;
+  width: 24px;
+  color: green;
+  margin: auto;
+  margin-left: 0px;
+}
+
+/* The about image */
+#section-2 .about-content img {
+  margin: auto;
+  object-fit: cover;
+  border-radius: 1em;
+}
+
+/* reserved animations key frames */
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  /* descriptions */
-  #section-2 .about-content > div:last-of-type ol {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* descriptions */
-  #section-2 .about-content > div:last-of-type li {
-    display: grid;
-    grid-template-columns: 0.1fr 1fr;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  /* side to side movement reusabel animations */
-  @keyframes sideToSide {
-    0% {
-      transform: translateX(0);
-    }
-    50% {
-      transform: translateX(10px);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* the check icons */
-  #section-2 .about-content > div:last-of-type svg {
-    height: 24px;
-    width: 24px;
-    color: green;
-    margin: auto;
-    margin-left: 0px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  /* The about image */
-  #section-2 .about-content img {
-    margin: auto;
-    object-fit: cover;
-    border-radius: 1em;
+  to {
+    opacity: 1;
   }
-  
-  /* reserved animations key frames */
-  
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  /* reserved animations */
-  
-  .animate-fade-in-down {
-    animation: fadeInDown 1s ease-out;
-  }
-  
-  .animate-fade-in-up {
-    animation: fadeInUp 1s ease-out 0.3s backwards;
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 1s ease-out 0.6s backwards;
-  }
-  
-  /* Optional: Add a subtle background pattern */
-  .title-part::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  }
-  
+}
+
+/* reserved animations */
+
+.animate-fade-in-down {
+  animation: fadeInDown 1s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out 0.6s backwards;
+}
+
+/* Optional: Add a subtle background pattern */
+.title-part::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}

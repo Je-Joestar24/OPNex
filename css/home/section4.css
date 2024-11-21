@@ -1,83 +1,80 @@
 /* *******************************************section 4******************************************* */
 #section-4 {
-    background-color: var(--text-white);
-    padding: 6em 0;
-    margin-bottom: 2em;
-  }
-  /* Call-to-action content container */
-  #section-4 .cta-content {
-    width: var(--cont-width);
-    margin: 0 auto;
-    text-align: center;
-    padding: 4em 2em;
-    background: linear-gradient(
-      to bottom right,
-      var(--nav-bg),
-      rgba(194, 0, 0, 0.9)
-    );
-    border-radius: 1em;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    color: var(--text-white);
-  }
-  
-  /* Main heading style */
-  #section-4 h2 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-    font-weight: 700;
-  }
-  
-  /* Description text style */
-  #section-4 p {
-    font-size: 1.2em;
-    max-width: 800px;
-    margin: 0 auto 2em;
-    line-height: 1.6;
-  }
-  
-  /* Call-to-action button styling */
-  #section-4 .cta-button {
-    color: var(--text-white);
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    margin: 0 auto;
-    padding: 1em 2em;
-    font-size: 1.2em;
-    font-weight: 600;
-    background-color: transparent;
-    border: var(--cta-border);
-    border-radius: 0.5em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  #section-4 .cta-button:hover {
-    background-color: var(--nav-item-bg-active);
-    color: var(--nav-bg);
-  }
-  /* Button icon style */
-  #section-4 .cta-button svg {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s ease;
-  }
-  
-  /* Button hover effects */
-  #section-4 .cta-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Button icon hover animation */
-  #section-4 .cta-button:hover svg {
-    transform: translateX(5px);
-  }
-  
-  /* Button active state */
-  #section-4 .cta-button:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  
-  
+  background-color: var(--text-white);
+  padding: 6em 0;
+  margin-bottom: 2em;
+}
+/* Call-to-action content container */
+#section-4 .cta-content {
+  width: var(--cont-width);
+  margin: 0 auto;
+  text-align: center;
+  padding: 4em 2em;
+  background: linear-gradient(
+    to bottom right,
+    var(--nav-bg),
+    rgba(194, 0, 0, 0.9)
+  );
+  border-radius: 1em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  color: var(--text-white);
+}
+
+/* Main heading style */
+#section-4 h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+/* Description text style */
+#section-4 p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto 2em;
+  line-height: 1.6;
+}
+
+/* Call-to-action button styling */
+#section-4 .cta-button {
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0 auto;
+  padding: 1em 2em;
+  font-size: 1.2em;
+  font-weight: 600;
+  background-color: transparent;
+  border: var(--cta-border);
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#section-4 .cta-button:hover {
+  background-color: var(--nav-item-bg-active);
+  color: var(--nav-bg);
+}
+/* Button icon style */
+#section-4 .cta-button svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Button hover effects */
+#section-4 .cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Button icon hover animation */
+#section-4 .cta-button:hover svg {
+  transform: translateX(5px);
+}
+
+/* Button active state */
+#section-4 .cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

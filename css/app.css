@@ -1,9 +1,15 @@
-@import "./home/login_modal.css";
-@import "./home/navigations.css";
+/* General styles */
+@import "./general/credmodal.css";
+@import "./general/navigations.css";
+
+/* Home page */
 @import "./home/section1.css";
 @import "./home/section2.css";
 @import "./home/section3.css";
 @import "./home/section4.css";
+
+/* Characters page */
+@import "./characters/characters.css";
 
 body::-webkit-scrollbar {
   display: none;
@@ -54,6 +60,7 @@ a {
 
 .wrapper {
   display: flex;
+  flex-direction: column;
 }
 
 .page {
@@ -66,6 +73,69 @@ a {
   font-size: 1em;
 }
 
+
+/* Loading Animation */
+#home .loading {
+  padding: 20em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  background-color: var(--text-white);
+}
+/* Container for the loading animation squares */
+#home .loading-squares {
+  display: flex;
+  gap: 0.5em;
+}
+
+/* Loading text styling */
+#home .loading p {
+  color: #000000;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+/* Individual square styling for loading animation */
+#home .square {
+  width: 1.5em;
+  height: 1.5em;
+  background-color: var(--nav-bg);
+  border-radius: 0.2em;
+  animation: jumpingSquare 1s infinite;
+}
+
+/* Animation delay for second square */
+#home .square:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+/* Animation delay for third square */
+#home .square:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+/* Animation delay for fourth square */
+#home .square:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/* Keyframe animation for jumping squares effect */
+@keyframes jumpingSquare {
+  /* Start and end states */
+  0%, 100% {
+    transform: translateY(0);
+    background-color: var(--nav-bg);
+  }
+  /* Middle state - peak of jump */
+  50% {
+    transform: translateY(-2em);
+    background-color: var(--nav-item-bg-active);
+  }
+}
+
+/* character page */
 
 
 /* copyright */

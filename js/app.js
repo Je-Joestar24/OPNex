@@ -1,6 +1,7 @@
-
 window.onload = async () => {
-    /* loading the home page components */
-  const { default: Home } = await import('./components/home.js');
-  const home = new Home('home');
+  /* loading the home page and modal components */
+  const {default: Navigation} = await import('./components/navitation.js');
+  // ALL page initialization are inside the Navigation since Navigation controlls the page, and also to hanle the async operations properly
+  const navigation = new Navigation();
+
 };

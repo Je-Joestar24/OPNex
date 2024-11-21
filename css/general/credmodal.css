@@ -1,0 +1,301 @@
+/* ***************************************** SIGNUP MODAL ***************************************** */
+
+/* Main modal container - fixed position covering entire viewport, initially display none */
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  display: none;
+}
+
+/* Semi-transparent overlay behind modal */
+#modal .modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+/* Modal box container */
+#modal .modal-container {
+  position: relative;
+  width: 70em;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Modal display image */
+#modal .modal-container .left {
+  background: url("../../image/general/modalDisplay.png") no-repeat center;
+  background-color: var(--text-white);
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 1em 0 0 1em;
+}
+/* steering wheel */
+#modal .left img {
+  width: 20em;
+  height: 20em;
+  object-fit: cover;
+  animation: rotateWheel 5s linear infinite;
+  box-shadow: none;
+}
+
+/* steering wheel animation */
+@keyframes rotateWheel {
+  0% {
+    transform: rotate(-20deg);
+  }
+  25% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+/* Modal content container contains header and form */
+#modal .modal-container .right {
+  background-color: var(--text-white);
+  overflow: hidden;
+  border-radius: 0 1em 1em 0;
+}
+
+/* Modal header section */
+#modal .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em;
+  border-radius: 0 0 0 3em;
+  background-color: var(--nav-bg);
+  color: var(--text-white);
+}
+
+/* Header content wrapper */
+#modal .header-content {
+  flex: 1;
+}
+
+/* Header title */
+#modal .modal-header h2 {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Header subtitle */
+#modal .modal-header p {
+  margin: 0.5em 0 0;
+  opacity: 0.9;
+  font-size: 1em;
+}
+
+/* Close button styling */
+#modal .close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em;
+  color: var(--text-white);
+}
+
+/* Close button icon */
+#modal .close-button svg {
+  width: 1.5em;
+  height: 1.5em;
+  transition: transform 0.3s ease;
+}
+
+/* Close button hover effect */
+#modal .close-button:hover svg {
+  transform: rotate(90deg);
+}
+
+/* Main content area */
+#modal .modal-content {
+  padding: 2em;
+}
+
+/* Form layout */
+#signupForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+/* Form group wrapper */
+#signupForm .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+/* Form labels */
+#signupForm label {
+  color: var(--nav-bg);
+  font-weight: 500;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+/* Label icons */
+#signupForm label svg {
+  width: 1.2em;
+  height: 1.2em;
+  color: var(--nav-bg);
+}
+
+/* Form inputs */
+#signupForm input {
+  padding: 0.8em;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+/* Input focus state */
+#signupForm input:focus {
+  outline: none;
+  border-color: var(--nav-bg);
+  box-shadow: 0 0 0 2px rgba(194, 0, 0, 0.1);
+}
+
+/* Submit button */
+#signupForm .submit-button {
+  background-color: var(--nav-bg);
+  color: var(--text-white);
+  border: none;
+  padding: 1em;
+  border-radius: 0.5em;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  transition: all 0.3s ease;
+}
+
+/* Submit button icon */
+#signupForm .submit-button svg {
+  width: 1.2em;
+  height: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+/* Submit button hover state */
+#signupForm .submit-button:hover {
+  background-color: var(--nav-item-bg-active);
+  color: var(--nav-bg);
+  transform: translateY(-2px);
+}
+
+/* Submit button icon hover animation */
+#signupForm .submit-button:hover svg {
+  transform: translateX(5px);
+}
+
+/* Login link section */
+#modal .login-link {
+  text-align: center;
+  margin-top: 1.5em;
+  color: #666;
+}
+
+/* Login link styling */
+#modal .login-link a {
+  color: var(--nav-bg);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* Login link hover state */
+#modal .login-link a:hover {
+  color: var(--nav-item-bg-active);
+}
+
+/* Modal open/close animations */
+@keyframes modalOpenFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes modalCloseToLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes modalOpenFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes modalCloseToRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* Animation classes */
+.modal-open-left {
+  animation: modalOpenFromLeft 0.5s ease forwards;
+}
+
+.modal-close-left {
+  animation: modalCloseToLeft 0.5s ease forwards;
+}
+
+.modal-open-right {
+  animation: modalOpenFromRight 0.5s ease forwards;
+}
+
+.modal-close-right {
+  animation: modalCloseToRight 0.5s ease forwards;
+}
