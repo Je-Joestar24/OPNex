@@ -1,0 +1,17 @@
+{
+    "id": "suna-suna",
+    "name": "Suna Suna no Mi",
+    "alias": "Sand Sand Fruit",
+    "image": "image/devil-fruits/suna-suna.jpg",
+    "type": "logia",
+    "status": "active",
+    "user": "Crocodile",
+    "description": "A Logia-type Devil Fruit that allows the user to create, control, and transform into sand. The user can dry out anything they touch and create sandstorms.",
+    "abilities": [
+        "Sand manipulation",
+        "Dehydration touch",
+        "Sandstorm creation",
+        "Ground secco",
+        "Desert spada"
+    ]
+} 

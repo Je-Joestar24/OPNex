@@ -1,0 +1,17 @@
+{
+    "id": "kage-kage",
+    "name": "Kage Kage no Mi",
+    "alias": "Shadow Shadow Fruit",
+    "image": "image/devil-fruits/kage-kage.jpg",
+    "type": "paramecia",
+    "status": "active",
+    "user": "Gecko Moria",
+    "description": "A Paramecia-type Devil Fruit that gives the user the ability to manifest and control shadows, including the power to steal and implant them.",
+    "abilities": [
+        "Shadow manipulation",
+        "Shadow stealing",
+        "Shadow implantation",
+        "Doppelman creation",
+        "Shadow Asgard"
+    ]
+} 

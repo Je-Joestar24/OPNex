@@ -1,0 +1,22 @@
+{
+    "id": "gomu-gomu",
+    "name": "Gomu Gomu no Mi",
+    "alias": "Rubber Rubber Fruit",
+    "image": "image/devil-fruits/gomu-gomu.jpg",
+    "type": "paramecia",
+    "status": "active",
+    "user": "Monkey D. Luffy",
+    "description": "A Paramecia-type Devil Fruit that turns the user's body into rubber, allowing them to stretch and contort their body in various ways.",
+    "abilities": [
+        "Elasticity",
+        "Immunity to electricity",
+        "Gear Second",
+        "Gear Third",
+        "Gear Fourth",
+        "Gear Fifth"
+    ],
+    "awakening": {
+        "name": "Gear Fifth",
+        "description": "Allows the user to transform their surroundings and themselves into rubber, granting near-limitless transformation abilities."
+    }
+} 

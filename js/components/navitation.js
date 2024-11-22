@@ -10,17 +10,22 @@
  */
 class Navigation {
     // Store navigation link elements
-
+    // Store navigation link elements and display areas
     navLinks = {
         home: null,
-        characters: null
+        characters: null,
+        'devil-fruits': null,
+        arcs: null
     };
 
     displayArea = {
         home: null,
-        characters: null
+        characters: null,
+        'devil-fruits': null,
+        arcs: null
     }
 
+    // Navigation items configuration
     navItems = [
         { id: 'home-link', text: 'HOME', href: '#home' },
         { id: 'characters-link', text: 'CHARACTERS', href: '#characters' },
@@ -29,16 +34,19 @@ class Navigation {
         { id: 'login-modal', text: 'LOGIN', href: '#login', class: 'login-modal' },
         { id: 'signup-modal', text: 'SIGNUP', href: '#signup', class: 'signup-modal' }
     ];
+
     constructor() {
         this.navigation = document.getElementById('navigation');
         this.navigation.innerHTML = this.buildNavigation();
-        this.navLinks.home = document.getElementById('home-link');
-        this.navLinks.characters = document.getElementById('characters-link');
+        
+        // Initialize all nav links
+        Object.keys(this.navLinks).forEach(key => {
+            this.navLinks[key] = document.getElementById(`${key}-link`);
+        });
 
         // Initialize active nav state and show active page
         this.init();
     }
-
 
     /**
      * Bind click handlers to navigation links
@@ -47,32 +55,37 @@ class Navigation {
      * - Adds active class to clicked link
      * - Hides all page sections
      * - Shows the clicked section
-     * 
      */
     bindNavLinks() {
-
-        // Hide all page sections, inner function
+        // Hide all page sections
         const hideAll = () => {
-            Object.values(this.displayArea).forEach(area => area.hide());
+            Object.values(this.displayArea).forEach(area => {
+                if (area && typeof area.hide === 'function') {
+                    area.hide();
+                }
+            });
         }
 
-        // Remove active class from all nav links, inner function
+        // Remove active class from all nav links
         const removeActive = () => {
             this.navigation.querySelectorAll(".nav-item a").forEach(link => {
                 link.classList.remove('active');
             });
         };
 
-        for (const link of Object.values(this.navLinks)) {
-            link.addEventListener('click', async () => {
-                removeActive();
-                link.classList.add(link.classList.contains('active') ? '' : 'active');
-                hideAll();
-                const pageId = link.id.split('-')[0];
-                this.setActivePage(pageId);
-                localStorage.setItem('activePage', pageId);
-            });
-        }
+        // Bind click handlers to each nav link
+        Object.values(this.navLinks).forEach(link => {
+            if (link) {
+                link.addEventListener('click', async () => {
+                    removeActive();
+                    link.classList.add('active');
+                    hideAll();
+                    const pageId = link.id.replace('-link', '');
+                    this.setActivePage(pageId);
+                    localStorage.setItem('activePage', pageId);
+                });
+            }
+        });
     }
 
     /**
@@ -120,19 +133,22 @@ class Navigation {
         const [
             { default: Home },
             { default: Characters },
-            { default: CredentialModal }
+            { default: CredentialModal },
+            { default: DevilFruits }
         ] = await Promise.all([
             import('./home/home.js'),
             import('./characters/characters.js'),
-            import('./credmodal.js')
+            import('./credmodal.js'),
+            import('./devil-fruits/devilfruits.js')
         ]);
 
         // Initialize page components
         this.displayArea.home = new Home('home');
         this.displayArea.characters = new Characters('characters');
-
+        this.displayArea['devil-fruits'] = new DevilFruits('devil-fruits');
         // Load initial content for pages, passing a callback function to load the modal after the home section is loaded
         await this.displayArea.characters.loadSections();
+        await this.displayArea['devil-fruits'].loadSections();
         await this.displayArea.home.loadSections(
             async () => { new CredentialModal('credential') }
         );

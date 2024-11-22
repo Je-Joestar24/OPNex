@@ -1,0 +1,16 @@
+{
+    "id": "hito-hito",
+    "name": "Hito Hito no Mi",
+    "alias": "Human Human Fruit",
+    "image": "image/devil-fruits/hito-hito.jpg",
+    "type": "zoan",
+    "status": "active",
+    "user": "Tony Tony Chopper",
+    "description": "A Zoan-type Devil Fruit that grants the user the ability to transform into a human hybrid and a full human at will.",
+    "abilities": [
+        "Human transformation",
+        "Enhanced intelligence",
+        "Multiple transformation points",
+        "Monster Point"
+    ]
+} 

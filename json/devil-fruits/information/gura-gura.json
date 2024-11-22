@@ -1,0 +1,16 @@
+{
+    "id": "gura-gura",
+    "name": "Gura Gura no Mi",
+    "alias": "Tremor Tremor Fruit",
+    "image": "image/devil-fruits/gura-gura.jpg",
+    "type": "paramecia",
+    "status": "active",
+    "user": "Marshall D. Teach",
+    "description": "A Paramecia-type Devil Fruit that allows the user to create powerful shockwaves and vibrations, earning it the reputation as the fruit capable of destroying the world.",
+    "abilities": [
+        "Shockwave generation",
+        "Earthquake creation",
+        "Air vibration control",
+        "Tsunami generation"
+    ]
+} 

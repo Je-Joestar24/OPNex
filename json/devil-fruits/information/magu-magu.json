@@ -1,0 +1,17 @@
+{
+    "id": "magu-magu",
+    "name": "Magu Magu no Mi",
+    "alias": "Magma Magma Fruit",
+    "image": "image/devil-fruits/magu-magu.jpg",
+    "type": "logia",
+    "status": "active",
+    "user": "Sakazuki",
+    "description": "A Logia-type Devil Fruit that allows the user to create, control, and transform into magma. The intense heat can burn even fire itself.",
+    "abilities": [
+        "Magma manipulation",
+        "Extreme heat generation",
+        "Volcanic eruption",
+        "Great Eruption",
+        "Meteor Volcano"
+    ]
+} 

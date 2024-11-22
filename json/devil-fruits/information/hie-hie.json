@@ -1,0 +1,17 @@
+{
+    "id": "hie-hie",
+    "name": "Hie Hie no Mi",
+    "alias": "Ice Ice Fruit",
+    "image": "image/devil-fruits/hie-hie.jpg",
+    "type": "logia",
+    "status": "active",
+    "user": "Kuzan",
+    "description": "A Logia-type Devil Fruit that allows the user to create, control, and transform into ice at will. The user can freeze entire oceans and create weapons from ice.",
+    "abilities": [
+        "Ice manipulation",
+        "Ice weapon creation",
+        "Freezing touch",
+        "Ice age technique",
+        "Ice bird technique"
+    ]
+} 

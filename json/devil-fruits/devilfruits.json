@@ -1,0 +1,101 @@
+[
+  {
+    "id": "gomu-gomu",
+    "name": "Gomu Gomu no Mi", 
+    "alias": "Rubber Rubber Fruit",
+    "image": "image/devil-fruits/gomu-gomu.jpg",
+    "type": "paramecia",
+    "status": "active",
+    "user": "Monkey D. Luffy"
+  },
+  {
+    "id": "mera-mera",
+    "name": "Mera Mera no Mi",
+    "alias": "Flame Flame Fruit", 
+    "image": "image/devil-fruits/mera-mera.jpg",
+    "type": "logia",
+    "status": "active",
+    "user": "Sabo"
+  },
+  {
+    "id": "hito-hito",
+    "name": "Hito Hito no Mi",
+    "alias": "Human Human Fruit",
+    "image": "image/devil-fruits/hito-hito.jpg", 
+    "type": "zoan",
+    "status": "active",
+    "user": "Tony Tony Chopper"
+  },
+  {
+    "id": "gura-gura",
+    "name": "Gura Gura no Mi",
+    "alias": "Tremor Tremor Fruit",
+    "image": "image/devil-fruits/gura-gura.jpg",
+    "type": "paramecia", 
+    "status": "active",
+    "user": "Marshall D. Teach"
+  },
+  {
+    "id": "yami-yami",
+    "name": "Yami Yami no Mi",
+    "alias": "Dark Dark Fruit",
+    "image": "image/devil-fruits/yami-yami.jpg",
+    "type": "logia",
+    "status": "active",
+    "user": "Marshall D. Teach"
+  },
+  {
+    "id": "magu-magu",
+    "name": "Magu Magu no Mi",
+    "alias": "Magma Magma Fruit",
+    "image": "image/devil-fruits/magu-magu.jpg",
+    "type": "logia",
+    "status": "active",
+    "user": "Sakazuki"
+  },
+  {
+    "id": "hie-hie",
+    "name": "Hie Hie no Mi",
+    "alias": "Ice Ice Fruit",
+    "image": "image/devil-fruits/hie-hie.jpg",
+    "type": "logia",
+    "status": "active",
+    "user": "Kuzan"
+  },
+  {
+    "id": "op-op",
+    "name": "Ope Ope no Mi",
+    "alias": "Operation Operation Fruit",
+    "image": "image/devil-fruits/op-op.jpg",
+    "type": "paramecia",
+    "status": "active",
+    "user": "Trafalgar D. Water Law"
+  },
+  {
+    "id": "suna-suna",
+    "name": "Suna Suna no Mi",
+    "alias": "Sand Sand Fruit",
+    "image": "image/devil-fruits/suna-suna.jpg",
+    "type": "logia",
+    "status": "active",
+    "user": "Crocodile"
+  },
+  {
+    "id": "kage-kage",
+    "name": "Kage Kage no Mi",
+    "alias": "Shadow Shadow Fruit",
+    "image": "image/devil-fruits/kage-kage.jpg",
+    "type": "paramecia",
+    "status": "active",
+    "user": "Gecko Moria"
+  },
+  {
+    "id": "uo-uo",
+    "name": "Uo Uo no Mi, Model: Seiryu",
+    "alias": "Fish Fish Fruit, Model: Azure Dragon",
+    "image": "image/devil-fruits/uo-uo.jpg",
+    "type": "zoan",
+    "status": "inactive",
+    "user": "Kaido"
+  }
+]

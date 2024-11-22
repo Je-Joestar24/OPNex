@@ -1,0 +1,16 @@
+{
+    "id": "yami-yami",
+    "name": "Yami Yami no Mi",
+    "alias": "Dark Dark Fruit",
+    "image": "image/devil-fruits/yami-yami.jpg",
+    "type": "logia",
+    "status": "active",
+    "user": "Marshall D. Teach",
+    "description": "A unique Logia-type Devil Fruit that allows the user to create and control darkness, with the ability to nullify other Devil Fruit powers.",
+    "abilities": [
+        "Darkness manipulation",
+        "Devil Fruit nullification",
+        "Gravity manipulation",
+        "Black Hole creation"
+    ]
+} 

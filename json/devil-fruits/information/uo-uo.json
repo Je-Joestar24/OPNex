@@ -1,0 +1,17 @@
+{
+    "id": "uo-uo",
+    "name": "Uo Uo no Mi, Model: Seiryu",
+    "alias": "Fish Fish Fruit, Model: Azure Dragon",
+    "image": "image/devil-fruits/uo-uo.jpg",
+    "type": "zoan",
+    "status": "inactive",
+    "user": "Kaido",
+    "description": "A Mythical Zoan-type Devil Fruit that allows the user to transform into a massive azure dragon at will. One of the rarest and most powerful Devil Fruits.",
+    "abilities": [
+        "Dragon transformation",
+        "Flight capability",
+        "Weather manipulation",
+        "Flame clouds creation",
+        "Dragon scales"
+    ]
+} 

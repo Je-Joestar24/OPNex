@@ -1,0 +1,16 @@
+{
+    "id": "mera-mera",
+    "name": "Mera Mera no Mi",
+    "alias": "Flame Flame Fruit",
+    "image": "image/devil-fruits/mera-mera.jpg",
+    "type": "logia",
+    "status": "active",
+    "user": "Sabo",
+    "description": "A Logia-type Devil Fruit that allows the user to create, control, and transform into fire at will.",
+    "abilities": [
+        "Fire manipulation",
+        "Intangibility",
+        "Heat generation",
+        "Fire-based attacks"
+    ]
+} 

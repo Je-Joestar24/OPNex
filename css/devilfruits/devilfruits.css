@@ -147,28 +147,41 @@
 /* Devil Fruits Grid */
 #devil-fruits .fruits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2em;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5em;
 }
 
 /* Devil Fruit Card */
 #devil-fruits .fruit-card {
   background: white;
-  border-radius: 1em;
+  border-radius: 0.8em;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 #devil-fruits .fruit-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 #devil-fruits .fruit-image {
-  height: 350px;
+  height: 200px;
   overflow: hidden;
+  position: relative;
+}
+
+#devil-fruits .fruit-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
 }
 
 #devil-fruits .fruit-image img {
@@ -179,37 +192,45 @@
 }
 
 #devil-fruits .fruit-card:hover .fruit-image img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 #devil-fruits .fruit-info {
-  padding: 1.5em;
+  padding: 1.2em;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #devil-fruits .fruit-info h3 {
   color: var(--nav-bg);
-  font-size: 1.3em;
-  margin-bottom: 0.3em;
+  font-size: 1.1em;
+  margin-bottom: 0.2em;
+  line-height: 1.3;
 }
 
 #devil-fruits .fruit-info .fruit-alias {
   color: #666;
   font-style: italic;
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
+  font-size: 0.9em;
 }
 
 #devil-fruits .fruit-tags {
   display: flex;
-  gap: 0.5em;
+  gap: 0.4em;
+  flex-wrap: wrap;
 }
 
 /* Tag Styles */
 #devil-fruits .tag {
-  padding: 0.3em 0.8em;
-  border-radius: 2em;
-  font-size: 0.9em;
+  padding: 0.25em 0.6em;
+  border-radius: 1em;
+  font-size: 0.8em;
   font-weight: 500;
   color: white;
+  text-transform: capitalize;
 }
 
 #devil-fruits .tag.paramecia {

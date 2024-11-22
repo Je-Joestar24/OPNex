@@ -14,6 +14,7 @@
 
 /* Devil fruits page */
 @import "./devilfruits/devilfruits.css";
+@import "./devilfruits/devilfruitModal.css";
 
 body::-webkit-scrollbar {
   display: none;
@@ -78,6 +79,10 @@ a {
 }
 
 #characters{
+  display: none;
+}
+
+#devil-fruits{
   display: none;
 }
 

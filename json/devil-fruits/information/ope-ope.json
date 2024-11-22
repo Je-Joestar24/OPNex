@@ -1,0 +1,17 @@
+{
+    "id": "op-op",
+    "name": "Ope Ope no Mi",
+    "alias": "Operation Operation Fruit",
+    "image": "image/devil-fruits/op-op.jpg",
+    "type": "paramecia",
+    "status": "active",
+    "user": "Trafalgar D. Water Law",
+    "description": "A Paramecia-type Devil Fruit that allows the user to create a spherical space where they can manipulate anything within it, like a surgeon's operating room.",
+    "abilities": [
+        "Room creation",
+        "Spatial manipulation",
+        "Body modification",
+        "Personality switching",
+        "Eternal youth operation"
+    ]
+} 
