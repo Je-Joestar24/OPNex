@@ -1,0 +1,15 @@
+{
+    "id": "usopp",
+    "name": "Usopp",
+    "epithet": "God Usopp",
+    "image": "image/characters/usopp.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Usopp is the sniper of the Straw Hat Pirates. Despite his cowardly nature, he's a creative inventor and a skilled marksman. Known for his tall tales and lies, he dreams of becoming a brave warrior of the sea. His alter ego 'Sogeking' emerged during the Enies Lobby arc.",
+    "strength": 2,
+    "hakiLevel": 2,
+    "devilFruit": {
+        "name": null,
+        "mastery": 0
+    }
+} 

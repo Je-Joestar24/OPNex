@@ -17,54 +17,41 @@
     <div id="app">
       <!-- Navigation bar -->
       <nav id="navigation">
-        <div class="nav-container">
-          <a class="logo" href="index.html">OPNEX</a>
-          <ul>
-            <li class="nav-item">
-              <a id="home-link" href="#home">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a id="characters-link" href="#characters">CHARACTERS</a>
-            </li>
-            <li class="nav-item">
-              <a id="devil-fruits-link" href="#devil-fruits">DEVIL FRUITS</a>
-            </li>
-            <li class="nav-item">
-              <a id="arcs-link" href="#arcs">ARCS</a>
-            </li>
-            <li class="nav-item button-link">
-              <a class="login-modal" href="#login">LOGIN</a>
-            </li>
-            <li class="nav-item button-link">
-              <a class="signup-modal" href="#signup">SIGNUP</a>
-            </li>
-          </ul>
-        </div>
+        <!-- Navigation components will be loaded here -->
       </nav>
+
       <!-- Main Container - Wraps all main content -->
       <main id="main" class="wrapper">
         <!-- Home Section - Contains hero, about, story and character sections -->
         <section id="home" class="page">
           <!-- Home components will be loaded here -->
-           <div class="loading">
-             <div class="loading-squares">
-               <div class="square"></div>
-               <div class="square"></div>
-               <div class="square"></div>
-               <div class="square"></div>
-             </div>
-             <p>Loading content...</p>
-           </div>
+<!--           <div class="loading">
+            <div class="loading-squares">
+              <div class="square"></div>
+              <div class="square"></div>
+              <div class="square"></div>
+              <div class="square"></div>
+            </div>
+            <p>Loading content...</p>
+          </div> -->
         </section>
 
         <!-- Characters Section - Contains search and filter section and characters grid -->
         <section id="characters" class="page">
-          <div class="char-container">
-            <!-- Search and Filter Section -->
+          <!-- Characters components will be loaded here -->
+        </section>
+
+
+        <!-- Devil Fruits Section - Contains search and filter section and devil fruits grid -->
+        <section id="devil-fruits" class="page">
+          <div class="fruits-container">
+            <!-- Search and Filter Section - Contains search bar and filtering options -->
             <div class="search-filter">
-              <!-- Search Bar -->
+              <!-- Search Bar - Input field and search button for filtering devil fruits -->
               <div class="search-bar">
-                <input id="search-characters" type="text" placeholder="Search characters...">
+                <!-- Search input with placeholder text -->
+                <input type="text" id="search-fruits" placeholder="Search devil fruits...">
+                <!-- Search button with magnifying glass SVG icon -->
                 <button class="search-btn">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
@@ -72,63 +59,68 @@
                 </button>
               </div>
 
-              <!-- Sort and Filter Options -->
+              <!-- Sort and Filter Options - Contains dropdown and checkbox filters -->
               <div class="sort-filters">
-                <!-- Sort Dropdown -->
+                <!-- Sort Dropdown - Allows sorting by name in ascending/descending order -->
                 <div class="sort-group">
                   <label>Sort by:</label>
                   <select class="sort-select">
                     <option value="name-asc">Name (A-Z)</option>
                     <option value="name-desc">Name (Z-A)</option>
-                    <option value="status">Status</option>
-                    <option value="affiliation">Affiliation</option>
                   </select>
                 </div>
-                
-                <!-- Filter Checkboxes -->
+
+                <!-- Filter Checkboxes - Contains type and status filters -->
                 <div class="filters">
-                  <!-- Affiliation Filters -->
+                  <!-- Type Filters - Filter devil fruits by their type (Paramecia/Logia/Zoan) -->
                   <div class="filter-group">
-                    <label>Affiliation:</label>
+                    <label>Type:</label>
                     <label class="checkbox">
-                      <input type="checkbox" name="affiliation" value="marine">
-                      Marine
+                      <input type="checkbox" name="type" value="paramecia">
+                      Paramecia
                     </label>
                     <label class="checkbox">
-                      <input type="checkbox" name="affiliation" value="pirate">
-                      Pirate
+                      <input type="checkbox" name="type" value="logia">
+                      Logia
+                    </label>
+                    <label class="checkbox">
+                      <input type="checkbox" name="type" value="zoan">
+                      Zoan
                     </label>
                   </div>
-                  
-                  <!-- Status Filters -->
+
+                  <!-- Status Filters - Filter devil fruits by their current status -->
                   <div class="filter-group">
                     <label>Status:</label>
                     <label class="checkbox">
-                      <input type="checkbox" name="status" value="alive">
-                      Alive
+                      <input type="checkbox" name="status" value="active">
+                      Active
                     </label>
                     <label class="checkbox">
-                      <input type="checkbox" name="status" value="deceased">
-                      Deceased
+                      <input type="checkbox" name="status" value="inactive">
+                      Inactive
                     </label>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Characters Grid -->
-            <div class="char-grid">
-              <!-- Character Card Example -->
-              <div class="char-card" id="luffy">
-                <div class="char-image">
-                  <img src="image/characters/luffy.jpg" alt="Monkey D. Luffy">
+            <!-- Devil Fruits Grid - Container for displaying devil fruit cards -->
+            <div class="fruits-grid">
+              <!-- Devil Fruit Card Example - Template for how each fruit card should look -->
+              <div class="fruit-card" id="gomu-gomu">
+                <!-- Fruit Image Container -->
+                <div class="fruit-image">
+                  <img src="image/devil-fruits/gomu-gomu.jpg" alt="Gomu Gomu no Mi">
                 </div>
-                <div class="char-info">
-                  <h3>Monkey D. Luffy</h3>
-                  <p class="epithet">"Straw Hat"</p>
-                  <div class="char-tags">
-                    <span class="tag pirate">Pirate</span>
-                    <span class="tag alive">Alive</span>
+                <!-- Fruit Information Container -->
+                <div class="fruit-info">
+                  <h3>Gomu Gomu no Mi</h3>
+                  <p class="fruit-alias">"Rubber Rubber Fruit"</p>
+                  <!-- Tags showing fruit type and status -->
+                  <div class="fruit-tags">
+                    <span class="tag paramecia">Paramecia</span>
+                    <span class="tag active">Active</span>
                   </div>
                 </div>
               </div>
@@ -137,14 +129,25 @@
         </section>
       </main>
 
-
-      <!-- modal for character and credentials -->
-      <div id="modal">
+      <!-- modal for credentials, such as login and register -->
+      <div id="credential-modal" class="modal">
         <!-- the Background -->
         <div class="modal-overlay"></div>
 
         <!-- the modal container itself -->
+        <!-- credential modal container -->
         <div class="modal-container"></div>
+      </div>
+
+      <!-- character modal -->
+      <div id="character-modal" class="modal">
+        <!-- the Background -->
+        <div class="modal-overlay"></div>
+
+        <!-- the modal container itself -->
+        <!-- character modal container -->
+        <div class="modal-container">
+        </div>
       </div>
       <!-- Page footer contains copyright -->
       <footer>

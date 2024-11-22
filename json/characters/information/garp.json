@@ -1,0 +1,15 @@
+{
+    "id": "garp",
+    "name": "Monkey D. Garp",
+    "epithet": "The Fist",
+    "image": "image/characters/garp.jpg",
+    "affiliation": "marine",
+    "status": "alive",
+    "background": "Monkey D. Garp is a Marine hero, known as 'Garp the Fist', and is Luffy's grandfather. Despite being offered the position of Admiral multiple times, he remained a Vice Admiral by choice.",
+    "strength": 5,
+    "hakiLevel": 5,
+    "devilFruit": {
+        "name": null,
+        "mastery": 0
+    }
+} 

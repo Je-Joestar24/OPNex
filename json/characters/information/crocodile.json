@@ -1,0 +1,15 @@
+{
+    "id": "crocodile",
+    "name": "Crocodile",
+    "epithet": "Sir Crocodile",
+    "image": "image/characters/crocodile.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Former Warlord of the Sea and the former president of Baroque Works. Possesses the Sand-Sand Fruit, allowing him to create, control, and transform into sand. After his defeat by Luffy and escape from Impel Down, he returned to the New World as a powerful pirate.",
+    "strength": 4,
+    "hakiLevel": 3,
+    "devilFruit": {
+        "name": "Suna Suna no Mi",
+        "mastery": 5
+    }
+} 

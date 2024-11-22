@@ -1,0 +1,15 @@
+{
+    "id": "hancock",
+    "name": "Boa Hancock",
+    "epithet": "Pirate Empress",
+    "image": "image/characters/hancock.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Captain of the Kuja Pirates and former Warlord of the Sea. Known as the most beautiful woman in the world, she rules over Amazon Lily and possesses the Love-Love Fruit. Despite her cold attitude towards most, she harbors deep feelings for Luffy.",
+    "strength": 4,
+    "hakiLevel": 3,
+    "devilFruit": {
+        "name": "Mero Mero no Mi",
+        "mastery": 5
+    }
+} 

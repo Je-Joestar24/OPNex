@@ -1,0 +1,15 @@
+{
+    "id": "buggy",
+    "name": "Buggy",
+    "epithet": "The Clown",
+    "image": "image/characters/buggy.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Buggy is the captain of the Buggy Pirates and a former apprentice of the Roger Pirates. Despite his often comical nature, he has risen to the position of one of the Seven Warlords of the Sea through a series of fortunate circumstances.",
+    "strength": 2,
+    "hakiLevel": 0,
+    "devilFruit": {
+        "name": "Bara Bara no Mi",
+        "mastery": 4
+    }
+} 

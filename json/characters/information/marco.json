@@ -1,0 +1,15 @@
+{
+    "id": "marco",
+    "name": "Marco",
+    "epithet": "Phoenix",
+    "image": "image/characters/marco.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Former 1st Division Commander of the Whitebeard Pirates. Possesses the mythical Zoan-type Phoenix fruit, giving him the power of regeneration and flight. Currently serves as a doctor protecting Whitebeard's homeland.",
+    "strength": 4,
+    "hakiLevel": 4,
+    "devilFruit": {
+        "name": "Tori Tori no Mi, Model: Phoenix",
+        "mastery": 5
+    }
+} 

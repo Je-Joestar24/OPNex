@@ -1,4 +1,15 @@
 {
-
-    
+    "id": "luffy",
+    "name": "Monkey D. Luffy",
+    "epithet": "Straw Hat",
+    "image": "image/characters/luffy.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Monkey D. Luffy is the captain of the Straw Hat Pirates and the main protagonist of One Piece. Born in Foosha Village, he accidentally ate the Gomu Gomu no Mi at a young age, giving him the power to stretch his body like rubber. Inspired by Red-Haired Shanks, he set out to sea to become the King of the Pirates.",
+    "strength": 5,
+    "hakiLevel": 4,
+    "devilFruit": {
+        "name": "Gomu Gomu no Mi",
+        "mastery": 5
+    }
 }

@@ -1,0 +1,15 @@
+{
+    "id": "chopper",
+    "name": "Tony Tony Chopper",
+    "epithet": "Cotton Candy Lover",
+    "image": "image/characters/chopper.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Tony Tony Chopper is the doctor of the Straw Hat Pirates. Originally a reindeer who ate the Human-Human Fruit, he gained human intelligence and the ability to transform. Trained in medicine by Dr. Hiluluk and Dr. Kureha, he dreams of being able to cure any disease.",
+    "strength": 2,
+    "hakiLevel": 0,
+    "devilFruit": {
+        "name": "Hito Hito no Mi",
+        "mastery": 4
+    }
+} 

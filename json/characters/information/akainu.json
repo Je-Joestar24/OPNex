@@ -1,0 +1,15 @@
+{
+    "id": "akainu",
+    "name": "Sakazuki",
+    "epithet": "Akainu",
+    "image": "image/characters/akainu.jpg",
+    "affiliation": "marine",
+    "status": "alive",
+    "background": "Sakazuki, better known as Akainu, is the current Fleet Admiral of the Marines. He possesses the power of the Magu Magu no Mi, a Logia-type Devil Fruit that allows him to become, create, and control magma.",
+    "strength": 5,
+    "hakiLevel": 5,
+    "devilFruit": {
+        "name": "Magu Magu no Mi",
+        "mastery": 5
+    }
+} 

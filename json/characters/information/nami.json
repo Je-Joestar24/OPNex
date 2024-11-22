@@ -1,0 +1,15 @@
+{
+    "id": "nami",
+    "name": "Nami",
+    "epithet": "Cat Burglar",
+    "image": "image/characters/nami.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Nami is the navigator of the Straw Hat Pirates. A skilled cartographer and thief, she has the ultimate goal of drawing a map of the entire world. She joined the crew after they helped free her village from Arlong's control.",
+    "strength": 2,
+    "hakiLevel": 0,
+    "devilFruit": {
+        "name": null,
+        "mastery": 0
+    }
+} 

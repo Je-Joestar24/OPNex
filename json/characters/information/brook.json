@@ -1,0 +1,15 @@
+{
+    "id": "brook",
+    "name": "Brook",
+    "epithet": "Soul King",
+    "image": "image/characters/brook.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Brook is the musician of the Straw Hat Pirates. A skeleton who came back to life through the power of the Yomi Yomi no Mi. He was formerly the leader of the Rumbar Pirates before joining Luffy's crew. Despite his skeletal appearance, he maintains a gentlemanly demeanor.",
+    "strength": 3,
+    "hakiLevel": 1,
+    "devilFruit": {
+        "name": "Yomi Yomi no Mi",
+        "mastery": 4
+    }
+} 

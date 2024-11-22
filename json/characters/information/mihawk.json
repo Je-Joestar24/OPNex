@@ -1,0 +1,15 @@
+{
+    "id": "mihawk",
+    "name": "Dracule Mihawk",
+    "epithet": "Hawk Eyes",
+    "image": "image/characters/mihawk.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Dracule Mihawk is known as the world's greatest swordsman. Former member of the Seven Warlords of the Sea, he serves as both a rival and mentor to Roronoa Zoro. His swordsmanship is unmatched throughout the world.",
+    "strength": 5,
+    "hakiLevel": 5,
+    "devilFruit": {
+        "name": null,
+        "mastery": 0
+    }
+} 

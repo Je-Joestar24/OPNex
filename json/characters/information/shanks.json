@@ -1,0 +1,15 @@
+{
+    "id": "shanks",
+    "name": "Shanks",
+    "epithet": "Red-Haired",
+    "image": "image/characters/shanks.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "One of the Four Emperors and captain of the Red Hair Pirates. Former member of the Roger Pirates and the man who inspired Luffy to become a pirate. Despite missing an arm, he's considered one of the most powerful pirates in the world.",
+    "strength": 5,
+    "hakiLevel": 5,
+    "devilFruit": {
+        "name": null,
+        "mastery": 0
+    }
+} 

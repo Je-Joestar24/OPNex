@@ -1,0 +1,15 @@
+{
+    "id": "zoro",
+    "name": "Roronoa Zoro",
+    "epithet": "Pirate Hunter",
+    "image": "image/characters/zoro.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Roronoa Zoro is the combatant of the Straw Hat Pirates and a master swordsman. Known for his three-sword style technique, he aims to become the world's greatest swordsman. Former bounty hunter turned pirate, he was the first member to join Luffy's crew.",
+    "strength": 4,
+    "hakiLevel": 4,
+    "devilFruit": {
+        "name": null,
+        "mastery": 0
+    }
+} 

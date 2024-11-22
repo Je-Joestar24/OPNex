@@ -1,0 +1,15 @@
+{
+    "id": "kaido",
+    "name": "Kaido",
+    "epithet": "King of the Beasts",
+    "image": "image/characters/kaido.jpg",
+    "affiliation": "pirate",
+    "status": "deceased",
+    "background": "Former Emperor of the Sea and captain of the Beast Pirates. Known as the 'Strongest Creature in the World', he possessed the Fish-Fish Fruit, Model: Azure Dragon, giving him immense power. Ruled over Wano Country until his defeat by Luffy.",
+    "strength": 5,
+    "hakiLevel": 5,
+    "devilFruit": {
+        "name": "Uo Uo no Mi, Model: Seiryu",
+        "mastery": 5
+    }
+} 

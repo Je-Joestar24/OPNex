@@ -1,29 +1,51 @@
-/* The whole home components */
+/**
+ * Home Class
+ * This class handles the home page and its sections
+ * 
+ * Key Features:
+ * - Loading sections from JSON files
+ * - Generating HTML for each section
+ * - Handling modal loading for character details
+ * - Managing visibility of home container
+ * 
+ * The home page is divided into 4 main sections:
+ * 1. Hero - Main landing section with call-to-action
+ * 2. About - Information about the application/service
+ * 3. Benefits - Key features and benefits
+ * 4. CTA - Final call-to-action section
+ */
+
 class Home {
+  /**
+   * Creates a new Home instance
+   * @param {string} id - The ID of the home container element
+   */
   constructor(id) {
     // This id refers to the home container, which is the div with the id of home
     this.id = id;
 
-    // This are the sections of homepage that will be loaded
+    // Initialize empty section objects that will be populated with JSON data
     this.sections = {
-      hero: {},
-      about: {},
-      benefits: {},
-      cta: {}
+      hero: {},      // Landing section data
+      about: {},     // About section data  
+      benefits: {},  // Benefits section data
+      cta: {}        // Call-to-action section data
     }
   }
   
-
-  /* combined async await and promises to handle the loading of sections */
-  // setting loadModal as a default function to allow for optional callback functionality to avoid errors
+  /**
+   * Loads all sections asynchronously from JSON files
+   * Uses combined async/await and promises pattern
+   * @param {Function} loadModal - Optional callback for modal loading
+   */
   async loadSections(loadModal = async () => {}) {
-    // This is the container of the home page
-    // Removing all the content inside the container to insure that the sections are loaded properly, without any duplicates 
+    // Get container reference and clear existing content
     this.container = document.getElementById(this.id);
     this.container.innerHTML = '';
 
     const container = this.container;
-    // Load hero section
+
+    // Load hero section from section1.json
     await fetch('./json/home/section1.json')
       .then(res => res.json())
       .then(data => {
@@ -31,7 +53,7 @@ class Home {
         container.innerHTML += this.getHeroSection();
       });
 
-    // Load about section  
+    // Load about section from section2.json
     await fetch('./json/home/section2.json')
       .then(res => res.json())
       .then(data => {
@@ -39,7 +61,7 @@ class Home {
         container.innerHTML += this.getAboutSection();
       });
 
-    // Load benefits section
+    // Load benefits section from section3.json
     await fetch('./json/home/section3.json')
       .then(res => res.json())
       .then(data => {
@@ -47,7 +69,7 @@ class Home {
         container.innerHTML += this.getBenefitsSection();
       });
 
-    // Load CTA section
+    // Load CTA section from section4.json
     await fetch('./json/home/section4.json')
       .then(res => res.json())
       .then(data => {
@@ -55,10 +77,14 @@ class Home {
         container.innerHTML += this.getCtaSection();
       });
 
-    // Wait for all pages to be loaded before loading the modal
+    // Execute modal loading callback after all sections are loaded
     await loadModal();
   }
-  /* Hero Section */
+
+  /**
+   * Generates HTML for the hero section
+   * @returns {string} Hero section HTML
+   */
   getHeroSection() {
     const { id, title, description, buttonText, image } = this.sections.hero;
     return `
@@ -86,7 +112,11 @@ class Home {
           <div class="mini-footer"></div>
     `;
   }
-  /* About Section */
+
+  /**
+   * Generates HTML for the about section
+   * @returns {string} About section HTML
+   */
   getAboutSection() {
     const { id, title, description, howItWorks, image } = this.sections.about;
     return `
@@ -125,7 +155,10 @@ class Home {
     `;
   }
 
-  /* Benefits Section */
+  /**
+   * Generates HTML for the benefits section
+   * @returns {string} Benefits section HTML
+   */
   getBenefitsSection() {
     const { id, title, cards } = this.sections.benefits;
     return `
@@ -150,7 +183,10 @@ class Home {
     `;
   }
 
-  /* CTA Section */
+  /**
+   * Generates HTML for the CTA section
+   * @returns {string} CTA section HTML
+   */
   getCtaSection() {
     const { id, title, description, buttonText } = this.sections.cta;
     return `
@@ -169,13 +205,20 @@ class Home {
     `;
   }
 
-  /* Destroy function to remove all content from container */
+  /**
+   * Hides the home container
+   * Sets display to 'none' if container exists
+   */
   hide() {
     if (this.container) {
       this.container.style.display = 'none';
     }
   }
 
+  /**
+   * Shows the home container
+   * Sets display to 'block' if container exists
+   */
   show() {
     if (this.container) {
       this.container.style.display = 'block';

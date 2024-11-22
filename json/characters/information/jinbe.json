@@ -1,0 +1,15 @@
+{
+    "id": "jinbe",
+    "name": "Jinbe",
+    "epithet": "Knight of the Sea",
+    "image": "image/characters/jinbe.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Jinbe is the helmsman of the Straw Hat Pirates and a former Warlord of the Sea. A whale shark fish-man and master of Fish-Man Karate, he was once captain of the Sun Pirates. His exceptional knowledge of the sea makes him an invaluable crew member.",
+    "strength": 4,
+    "hakiLevel": 4,
+    "devilFruit": {
+        "name": null,
+        "mastery": 0
+    }
+} 

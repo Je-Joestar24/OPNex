@@ -37,6 +37,7 @@
   align-items: center;
   list-style-type: none;
   font-optical-sizing: auto;
+  gap: .5em
 }
 
 /* Navigation Items */
@@ -47,7 +48,7 @@
   border-radius: 0.4em;
   color: var(--nav-col);
   font-weight: 600;
-  font-size: 1.05em;
+  font-size: 1.0em;
 }
 
 /* Navigation Items Active */
@@ -58,6 +59,10 @@
 }
 /* Active state for navigation items */
 #navigation .nav-item:active {
+  background-color: var(--nav-item-bg-active);
+  color: var(--nav-bg);
+}
+#navigation .nav-item:has(.active) {
   background-color: var(--nav-item-bg-active);
   color: var(--nav-bg);
 }

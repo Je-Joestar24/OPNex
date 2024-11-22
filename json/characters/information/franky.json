@@ -1,0 +1,15 @@
+{
+    "id": "franky",
+    "name": "Franky",
+    "epithet": "Cyborg",
+    "image": "image/characters/franky.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Franky is the shipwright of the Straw Hat Pirates and a cyborg who modified his own body. Originally named Cutty Flam, he built the Thousand Sunny and dreams of creating and riding a ship capable of circumnavigating the world.",
+    "strength": 3,
+    "hakiLevel": 0,
+    "devilFruit": {
+        "name": null,
+        "mastery": 0
+    }
+} 

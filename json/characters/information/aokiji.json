@@ -1,0 +1,15 @@
+{
+    "id": "kuzan",
+    "name": "Kuzan",
+    "epithet": "Aokiji",
+    "image": "image/characters/aokiji.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Former Marine Admiral who left the Marines after losing to Akainu in their duel for Fleet Admiral position. Possesses the power of the Ice-Ice Fruit, allowing him to create, control, and transform into ice. Known for his laid-back personality and strong sense of justice.",
+    "strength": 5,
+    "hakiLevel": 5,
+    "devilFruit": {
+        "name": "Hie Hie no Mi",
+        "mastery": 5
+    }
+} 

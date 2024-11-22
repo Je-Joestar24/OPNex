@@ -1,0 +1,15 @@
+{
+    "id": "roblucci",
+    "name": "Rob Lucci",
+    "epithet": "The Strongest CP9 Agent",
+    "image": "image/characters/lucci.jpg",
+    "affiliation": "marine",
+    "status": "alive",
+    "background": "The strongest member in the history of CP9 and current member of CP0. A master of the Six Powers martial arts and possessor of the Cat-Cat Fruit, Model: Leopard. Known for his ruthless dedication to absolute justice.",
+    "strength": 4,
+    "hakiLevel": 3,
+    "devilFruit": {
+        "name": "Neko Neko no Mi, Model: Leopard",
+        "mastery": 5
+    }
+} 

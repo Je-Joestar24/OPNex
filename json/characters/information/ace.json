@@ -1,0 +1,15 @@
+{
+    "id": "ace",
+    "name": "Portgas D. Ace",
+    "epithet": "Fire Fist",
+    "image": "image/characters/ace.jpg",
+    "affiliation": "pirate",
+    "status": "deceased",
+    "background": "Portgas D. Ace was the sworn brother of Luffy and the second division commander of the Whitebeard Pirates. He possessed the power of the Mera Mera no Mi, giving him the ability to control fire.",
+    "strength": 4,
+    "hakiLevel": 3,
+    "devilFruit": {
+        "name": "Mera Mera no Mi",
+        "mastery": 5
+    }
+} 

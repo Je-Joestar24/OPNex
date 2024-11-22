@@ -10,6 +10,10 @@
 
 /* Characters page */
 @import "./characters/characters.css";
+@import "./characters/charModal.css";
+
+/* Devil fruits page */
+@import "./devilfruits/devilfruits.css";
 
 body::-webkit-scrollbar {
   display: none;
@@ -67,11 +71,23 @@ a {
   width: 100%;
   margin: auto;
 }
+
+/* hide all pages by default */
+#home{
+  display: none;
+}
+
+#characters{
+  display: none;
+}
+
+
 /* *******************************************************Home page******************************************************* */
 
 #home {
   font-size: 1em;
 }
+
 
 
 /* Loading Animation */
@@ -134,8 +150,32 @@ a {
     background-color: var(--nav-item-bg-active);
   }
 }
+/* Main modal container - fixed position covering entire viewport, initially display none */
 
-/* character page */
+/* modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  display: none;
+  flex-direction: column;
+}
+
+/* Semi-transparent overlay behind modal */
+.modal .modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
 
 
 /* copyright */

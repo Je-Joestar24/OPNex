@@ -1,0 +1,15 @@
+{
+    "id": "law",
+    "name": "Trafalgar D. Water Law",
+    "epithet": "Surgeon of Death",
+    "image": "image/characters/law.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Captain of the Heart Pirates and former Warlord of the Sea. A skilled doctor and tactical genius who possesses the Op-Op Fruit, allowing him to create 'operating rooms' where he has complete control. Formed an alliance with the Straw Hats to take down Kaido.",
+    "strength": 4,
+    "hakiLevel": 4,
+    "devilFruit": {
+        "name": "Ope Ope no Mi",
+        "mastery": 5
+    }
+} 

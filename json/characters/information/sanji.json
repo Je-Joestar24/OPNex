@@ -1,0 +1,15 @@
+{
+    "id": "sanji",
+    "name": "Vinsmoke Sanji",
+    "epithet": "Black Leg",
+    "image": "image/characters/sanji.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Sanji is the cook of the Straw Hat Pirates and a master of Black Leg Style combat. Born into the Vinsmoke family but rejected their ways, he learned cooking and fighting at the Baratie restaurant. His dream is to find the All Blue, a legendary sea where all waters meet.",
+    "strength": 4,
+    "hakiLevel": 4,
+    "devilFruit": {
+        "name": null,
+        "mastery": 0
+    }
+} 

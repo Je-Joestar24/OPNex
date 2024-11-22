@@ -1,0 +1,15 @@
+{
+    "id": "kizaru",
+    "name": "Borsalino",
+    "epithet": "Kizaru",
+    "image": "image/characters/kizaru.jpg",
+    "affiliation": "marine",
+    "status": "alive",
+    "background": "Marine Admiral who possesses the power of the Glint-Glint Fruit, allowing him to become, create and control light. Known for his extremely laid-back attitude and casual speech, even in the most serious situations. Despite his seemingly carefree nature, he is an extremely powerful fighter.",
+    "strength": 5,
+    "hakiLevel": 5,
+    "devilFruit": {
+        "name": "Pika Pika no Mi",
+        "mastery": 5
+    }
+} 

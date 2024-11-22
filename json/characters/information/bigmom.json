@@ -1,0 +1,15 @@
+{
+    "id": "bigmom",
+    "name": "Charlotte Linlin",
+    "epithet": "Big Mom",
+    "image": "image/characters/bigmom.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Charlotte Linlin, better known as Big Mom, is one of the Four Emperors and the captain of the Big Mom Pirates. She rules over Totto Land with an iron fist and possesses the power of the Soul-Soul Fruit.",
+    "strength": 5,
+    "hakiLevel": 5,
+    "devilFruit": {
+        "name": "Soru Soru no Mi",
+        "mastery": 5
+    }
+} 

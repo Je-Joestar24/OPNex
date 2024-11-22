@@ -1,0 +1,15 @@
+{
+    "id": "whitebeard",
+    "name": "Edward Newgate",
+    "epithet": "Whitebeard",
+    "image": "image/characters/whitebeard.jpg",
+    "affiliation": "pirate",
+    "status": "deceased",
+    "background": "Edward Newgate, better known as Whitebeard, was one of the Four Emperors and captain of the Whitebeard Pirates. Known as the 'Strongest Man in the World', he possessed the power to create earthquakes and was considered a rival to Gol D. Roger.",
+    "strength": 5,
+    "hakiLevel": 5,
+    "devilFruit": {
+        "name": "Gura Gura no Mi",
+        "mastery": 5
+    }
+} 

@@ -1,0 +1,15 @@
+{
+    "id": "robin",
+    "name": "Nico Robin",
+    "epithet": "Devil Child",
+    "image": "image/characters/robin.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Nico Robin is the archaeologist of the Straw Hat Pirates and the sole survivor of Ohara. She ate the Flower-Flower Fruit as a child, giving her the ability to sprout copies of her body parts. Her dream is to discover the true history of the world by finding the Rio Poneglyph.",
+    "strength": 3,
+    "hakiLevel": 0,
+    "devilFruit": {
+        "name": "Hana Hana no Mi",
+        "mastery": 5
+    }
+} 

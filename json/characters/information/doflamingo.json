@@ -1,0 +1,15 @@
+{
+    "id": "doflamingo",
+    "name": "Donquixote Doflamingo",
+    "epithet": "Heavenly Demon",
+    "image": "image/characters/doflamingo.jpg",
+    "affiliation": "pirate",
+    "status": "alive",
+    "background": "Former king of Dressrosa and one of the Seven Warlords of the Sea. A master manipulator who ruled his kingdom through fear and deception. His Devil Fruit allows him to create and manipulate strings.",
+    "strength": 4,
+    "hakiLevel": 4,
+    "devilFruit": {
+        "name": "Ito Ito no Mi",
+        "mastery": 5
+    }
+} 

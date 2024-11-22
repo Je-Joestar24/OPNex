@@ -1,31 +1,9 @@
 /* ***************************************** SIGNUP MODAL ***************************************** */
 
-/* Main modal container - fixed position covering entire viewport, initially display none */
-#modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  display: none;
-}
 
-/* Semi-transparent overlay behind modal */
-#modal .modal-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 3;
-}
 
 /* Modal box container */
-#modal .modal-container {
+#credential-modal .modal-container {
   position: relative;
   width: 70em;
   z-index: 4;
@@ -34,7 +12,7 @@
 }
 
 /* Modal display image */
-#modal .modal-container .left {
+#credential-modal .modal-container .left {
   background: url("../../image/general/modalDisplay.png") no-repeat center;
   background-color: var(--text-white);
   background-size: 100% 100%;
@@ -45,7 +23,7 @@
   border-radius: 1em 0 0 1em;
 }
 /* steering wheel */
-#modal .left img {
+#credential-modal .left img {
   width: 20em;
   height: 20em;
   object-fit: cover;
@@ -73,14 +51,14 @@
 }
 
 /* Modal content container contains header and form */
-#modal .modal-container .right {
+#credential-modal .modal-container .right {
   background-color: var(--text-white);
   overflow: hidden;
   border-radius: 0 1em 1em 0;
 }
 
 /* Modal header section */
-#modal .modal-header {
+#credential-modal .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,26 +69,26 @@
 }
 
 /* Header content wrapper */
-#modal .header-content {
+#credential-modal .header-content {
   flex: 1;
 }
 
 /* Header title */
-#modal .modal-header h2 {
+#credential-modal .modal-header h2 {
   font-size: 1.8em;
   font-weight: 600;
   margin: 0;
 }
 
 /* Header subtitle */
-#modal .modal-header p {
+#credential-modal .modal-header p {
   margin: 0.5em 0 0;
   opacity: 0.9;
   font-size: 1em;
 }
 
 /* Close button styling */
-#modal .close-button {
+#credential-modal .close-button {
   background: none;
   border: none;
   cursor: pointer;
@@ -119,19 +97,19 @@
 }
 
 /* Close button icon */
-#modal .close-button svg {
+#credential-modal .close-button svg {
   width: 1.5em;
   height: 1.5em;
   transition: transform 0.3s ease;
 }
 
 /* Close button hover effect */
-#modal .close-button:hover svg {
+#credential-modal .close-button:hover svg {
   transform: rotate(90deg);
 }
 
 /* Main content area */
-#modal .modal-content {
+#credential-modal .modal-content {
   padding: 2em;
 }
 
@@ -220,25 +198,26 @@
 }
 
 /* Login link section */
-#modal .login-link {
+#credential-modal .login-link {
   text-align: center;
   margin-top: 1.5em;
   color: #666;
 }
 
 /* Login link styling */
-#modal .login-link a {
+#credential-modal .login-link a {
   color: var(--nav-bg);
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 /* Login link hover state */
-#modal .login-link a:hover {
+#credential-modal .login-link a:hover {
   color: var(--nav-item-bg-active);
 }
 
 /* Modal open/close animations */
+/* The modal left side opening animation */
 @keyframes modalOpenFromLeft {
   from {
     opacity: 0;
@@ -250,6 +229,7 @@
   }
 }
 
+/* The modal left side closing animation */
 @keyframes modalCloseToLeft {
   from {
     opacity: 1;
@@ -261,6 +241,7 @@
   }
 }
 
+/* The modal right side opening animation */
 @keyframes modalOpenFromRight {
   from {
     opacity: 0;
@@ -272,6 +253,7 @@
   }
 }
 
+/* The modal right side closing animation */
 @keyframes modalCloseToRight {
   from {
     opacity: 1;
@@ -283,7 +265,7 @@
   }
 }
 
-/* Animation classes */
+/* Animation classes, thiw will be added and removed via js */
 .modal-open-left {
   animation: modalOpenFromLeft 0.5s ease forwards;
 }
