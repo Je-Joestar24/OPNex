@@ -1,5 +1,4 @@
-/* *******************************************************Navitation******************************************************* */
-
+/* Main navigation bar styles */
 #navigation {
   display: flex;
   align-items: center;
@@ -10,13 +9,14 @@
   color: var(--text-white);
 }
 
-/* Navigation Logo */
+/* Logo text styling within navigation */
 #navigation .logo {
   font-size: 1.5em;
   font-weight: 700;
   margin: auto 0px;
 }
 
+/* Shared width and margin for navigation and hero sections */
 #navigation .nav-container,
 #section-1 .hero-content,
 #section-2 .about-content {
@@ -24,13 +24,13 @@
   margin: 0px auto;
 }
 
-/* Navigation Container */
+/* Navigation content wrapper with flex layout */
 #navigation .nav-container {
   display: flex;
   justify-content: space-between;
 }
 
-/* Navigation List */
+/* Navigation menu list styling */
 .nav-container ul {
   display: flex;
   margin: 0.5em;
@@ -40,7 +40,7 @@
   gap: .5em
 }
 
-/* Navigation Items */
+/* Individual navigation menu item styling */
 #navigation .nav-item {
   color: var(--nav-bg);
   height: fit-content;
@@ -51,23 +51,26 @@
   font-size: 1.0em;
 }
 
-/* Navigation Items Active */
+/* Hover effect for navigation items with glowing outline */
 #navigation .nav-item:hover {
   outline: 1px solid var(--nav-item-bg-active);
   box-shadow: 0 0 10px var(--nav-item-bg-active),
     0 0 20px var(--nav-item-bg-active);
 }
-/* Active state for navigation items */
+
+/* Active state when navigation item is clicked */
 #navigation .nav-item:active {
   background-color: var(--nav-item-bg-active);
   color: var(--nav-bg);
 }
+
+/* Active state for currently selected navigation item */
 #navigation .nav-item:has(.active) {
   background-color: var(--nav-item-bg-active);
   color: var(--nav-bg);
 }
 
-/* Login link styling */
+/* Login button styling in navigation */
 #navigation .button-link {
   margin-left: 1em;
   background-color: var(--nav-col);
@@ -77,15 +80,121 @@
   transition: all 0.3s ease;
 }
 
-/* Login link hover effects */
+/* Hover effect for login button with elevation */
 #navigation .button-link:hover {
   color: var(--nav-bg);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Login link active state */
+/* Active state when login button is clicked */
 #navigation .button-link:active {
   transform: translateY(0);
   box-shadow: none;
+}
+
+
+
+/* Disabled state for arcs navigation item */
+#navigation .nav-item:has(#arcs-link), #navigation #arcs-link{
+    opacity: 0.95;
+    cursor: not-allowed;
+    position: relative;
+}
+
+/* Custom tooltip on hover for disabled arcs link */
+#navigation .nav-item:has(#arcs-link):hover::after {
+    content: "Please login to access Arcs";
+    position: absolute;
+    bottom: -2em;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--nav-item-bg-active);
+    color: var(--text-white);
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    font-size: 0.9em;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+/* Remove glow effect from disabled arcs item */
+#navigation .nav-item:has(#arcs-link):hover {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Prevent background color change on active state for disabled arcs item */
+#navigation .nav-item:has(#arcs-link):active,
+#navigation .nav-item:has(#arcs-link.active) {
+    background-color: transparent;
+    color: var(--nav-col);
+}
+
+/* Responsive Breakpoints */
+
+/* Laptop (1024px - 1399px) */
+@media screen and (min-width: 1024px) and (max-width: 1399px) {
+    #navigation .nav-container {
+        width: 95%;
+    }
+
+    #navigation .logo {
+        font-size: 1.3em;
+    }
+
+    #navigation .nav-item {
+        padding: 0.7em 1.5em;
+        font-size: 0.9em;
+    }
+}
+
+/* Tablet (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #navigation .nav-container {
+        width: 95%;
+    }
+
+    #navigation .logo {
+        font-size: 1.2em;
+    }
+
+    #navigation .nav-item {
+        padding: 0.6em 1.2em;
+        font-size: 0.85em;
+    }
+
+    #navigation .button-link {
+        padding: 0.4em 1.2em;
+    }
+
+    .nav-container ul {
+        gap: 0.3em;
+    }
+}
+
+/* Mobile (below 768px) */
+@media screen and (max-width: 767px) {
+    #navigation .nav-container ul {
+        display: none; /* Hide navigation menu */
+    }
+
+    #navigation .logo {
+        font-size: 1.1em;
+    }
+
+    #navigation .nav-container {
+        width: 100%;
+        padding: 0 1em;
+    }
+}
+
+/* Max-width container adjustment */
+@media screen and (min-width: 1400px) {
+    #navigation .nav-container {
+        width: 100%;
+        max-width: 1600px; /* Add max-width for very large screens */
+        padding: 0 2em;
+    }
 }

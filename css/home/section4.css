@@ -78,3 +78,94 @@
   transform: translateY(0);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+/* Responsive Breakpoints */
+
+/* Laptop (1024px - 1399px) */
+@media screen and (min-width: 1024px) and (max-width: 1399px) {
+  #section-4 .cta-content {
+    width: 90%;
+    padding: 3em 1.5em;
+  }
+
+  #section-4 h2 {
+    font-size: 2.2em;
+  }
+
+  #section-4 p {
+    font-size: 1.1em;
+    max-width: 700px;
+  }
+
+  #section-4 .cta-button {
+    font-size: 1.1em;
+    padding: 0.9em 1.8em;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #section-4 {
+    padding: 4em 0;
+  }
+
+  #section-4 .cta-content {
+    width: 95%;
+    padding: 2.5em 1.2em;
+  }
+
+  #section-4 h2 {
+    font-size: 2em;
+  }
+
+  #section-4 p {
+    font-size: 1em;
+    max-width: 600px;
+    margin-bottom: 1.5em;
+  }
+
+  #section-4 .cta-button {
+    font-size: 1em;
+    padding: 0.8em 1.6em;
+  }
+}
+/* Mobile (below 768px) */
+@media screen and (max-width: 767px) {
+  #section-4 {
+    padding: 3em 0;
+  }
+
+  #section-4 .cta-content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2em 1em;
+  }
+
+  #section-4 h2 {
+    font-size: 2.2em;
+  }
+
+  #section-4 p {
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+    padding: 0 1em;
+  }
+
+  #section-4 .cta-button {
+    font-size: 1.1em;
+    padding: 0.8em 1.5em;
+  }
+
+  #section-4 .cta-button:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* Max-width container adjustment */
+@media screen and (min-width: 1400px) {
+  #section-4 .cta-content {
+    width: 100%;
+    max-width: 1600px;
+    padding: 4em 2em;
+  }
+}

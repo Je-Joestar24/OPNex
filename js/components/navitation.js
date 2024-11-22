@@ -37,6 +37,7 @@ class Navigation {
 
     constructor() {
         this.navigation = document.getElementById('navigation');
+        this.loadingElement = document.getElementById('loading');
         this.navigation.innerHTML = this.buildNavigation();
         
         // Initialize all nav links
@@ -46,6 +47,43 @@ class Navigation {
 
         // Initialize active nav state and show active page
         this.init();
+    }
+    
+    /**
+     * Builds the HTML structure for the navigation
+     * @returns {string} HTML string for the navigation
+     */
+    buildNavigation() {
+        return `
+            <div class="nav-container">
+                <a class="logo" href="index.html">OPNEX</a>
+                <ul>
+                    ${this.navItems.map(item => `
+                        <li class="nav-item ${item.class ? 'button-link' : ''}">
+                            <a id="${item.id}" class="${item.class || ''}" href="${item.href}">
+                                ${(item.id === 'arcs-link') ? `
+                                ` : ''}
+                                ${item.text}
+                            </a>
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+        `;
+    }
+
+    /**
+     * Shows loading animation
+     */
+    showLoading() {
+        this.loadingElement.style.display = 'flex';
+    }
+
+    /**
+     * Hides loading animation
+     */
+    hideLoading() {
+        this.loadingElement.style.display = 'none';
     }
 
     /**
@@ -75,14 +113,20 @@ class Navigation {
 
         // Bind click handlers to each nav link
         Object.values(this.navLinks).forEach(link => {
-            if (link) {
+            if (link && !link.id.includes('arcs')) {
                 link.addEventListener('click', async () => {
+                    this.showLoading();
                     removeActive();
                     link.classList.add('active');
                     hideAll();
                     const pageId = link.id.replace('-link', '');
-                    this.setActivePage(pageId);
+                    
+                    // Add delay before changing page, for aesthetic effect only
+                    await new Promise(resolve => setTimeout(resolve, 300));
+                    
+                    await this.setActivePage(pageId);
                     localStorage.setItem('activePage', pageId);
+                    this.hideLoading();
                 });
             }
         });
@@ -97,29 +141,11 @@ class Navigation {
      * 
      * @param {string} pageId - ID of the page to activate (e.g. 'home', 'characters')
      */
-    setActivePage(pageId) {
-            this.displayArea[pageId].show();
-            this.navLinks[pageId].classList.add('active');
+    async setActivePage(pageId) {
+        await this.displayArea[pageId].show();
+        this.navLinks[pageId].classList.add('active');
     }
-    
-    /**
-     * Builds the HTML structure for the navigation
-     * @returns {string} HTML string for the navigation
-     */
-    buildNavigation() {
-        return `
-            <div class="nav-container">
-                <a class="logo" href="index.html">OPNEX</a>
-                <ul>
-                    ${this.navItems.map(item => `
-                        <li class="nav-item ${item.class ? 'button-link' : ''}">
-                            <a id="${item.id}" class="${item.class || ''}" href="${item.href}">${item.text}</a>
-                        </li>
-                    `).join('')}
-                </ul>
-            </div>
-        `;
-    }
+
     /**
      * Initialize navigation by:
      * - Loading required page components
@@ -129,6 +155,7 @@ class Navigation {
      * - Setting default active page from localStorage
      */
     async init() {
+        this.showLoading();
         // Import all required page modules in parallel
         const [
             { default: Home },
@@ -158,10 +185,9 @@ class Navigation {
 
         // Set default active page from localStorage or default to home
         const activePage = localStorage.getItem('activePage') || 'home';
-        this.setActivePage(activePage);
+        await this.setActivePage(activePage);
+        this.hideLoading();
     }
-
-
 }
 
 export { Navigation as default };

@@ -1,7 +1,9 @@
+/* Hide modal by default */
 #devil-fruit-modal {
     display: none;
 }
 
+/* Modal container styling */
 #devil-fruit-modal .modal-container {
     width: 70%;
     max-width: 900px;
@@ -30,21 +32,25 @@
     position: relative;
 }
 
-.fruit-header.paramecia { background: linear-gradient(135deg, #9333ea, #7928ca); }
-.fruit-header.logia { background: linear-gradient(135deg, #0891b2, #0284c7); }
-.fruit-header.zoan { background: linear-gradient(135deg, #ca8a04, #d97706); }
+/* Header background gradients for different fruit types */
+.fruit-header.paramecia { background: linear-gradient(135deg, var(--paramecia), #7928ca); }
+.fruit-header.logia { background: linear-gradient(135deg, var(--logia), #0284c7); }
+.fruit-header.zoan { background: linear-gradient(135deg, var(--zoan), #d97706); }
 
+/* Fruit title styling */
 .fruit-title h2 {
     font-size: 2em;
     margin-bottom: 0.2em;
 }
 
+/* Fruit alias/subtitle styling */
 .fruit-alias {
     font-size: 1.1em;
     opacity: 0.9;
     font-style: italic;
 }
 
+/* Badge showing fruit type */
 .fruit-type-badge {
     display: flex;
     align-items: center;
@@ -56,21 +62,24 @@
     backdrop-filter: blur(5px);
 }
 
+/* Icon indicating fruit type */
 .type-icon {
     width: 1.5em;
     height: 1.5em;
     border-radius: 50%;
 }
 
-.type-icon.paramecia { background: #9333ea; }
-.type-icon.logia { background: #0891b2; }
-.type-icon.zoan { background: #ca8a04; }
+/* Type-specific icon colors */
+.type-icon.paramecia { background: var(--paramecia); }
+.type-icon.logia { background: var(--logia); }
+.type-icon.zoan { background: var(--zoan); }
 
-/* Main Content */
+/* Main Content Area */
 .fruit-content {
     padding: 1.5em;
 }
 
+/* Grid layout for fruit showcase section */
 .fruit-showcase {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -78,6 +87,7 @@
     margin-bottom: 1.5em;
 }
 
+/* Fruit image container */
 .fruit-image {
     width: 100%;
     height: 300px;
@@ -86,12 +96,14 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Fruit image styling */
 .fruit-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+/* Status section styling */
 .fruit-status {
     display: flex;
     flex-direction: column;
@@ -102,6 +114,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/* Status badge base styling */
 .status-badge {
     display: flex;
     align-items: center;
@@ -111,47 +124,55 @@
     font-weight: 500;
 }
 
+/* Active status badge */
 .status-badge.active {
     background: #dcfce7;
-    color: #15803d;
+    color: var(--active);
 }
 
+/* Inactive status badge */
 .status-badge.inactive {
     background: #fee2e2;
-    color: #7f1d1d;
+    color: var(--inactive);
 }
 
+/* Status indicator dot */
 .status-dot {
     width: 0.8em;
     height: 0.8em;
     border-radius: 50%;
 }
 
-.active .status-dot { background: #15803d; }
-.inactive .status-dot { background: #7f1d1d; }
+/* Status-specific dot colors */
+.active .status-dot { background: var(--active); }
+.inactive .status-dot { background: var(--inactive); }
 
+/* Current user section */
 .current-user {
     text-align: center;
 }
 
+/* Current user heading */
 .current-user h4 {
     color: #666;
     margin-bottom: 0.5em;
 }
 
+/* Current user text */
 .current-user p {
     color: var(--nav-bg);
     font-weight: 600;
     font-size: 1.1em;
 }
 
-/* Info Grid */
+/* Info Grid Layout */
 .fruit-info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5em;
 }
 
+/* Individual info cards */
 .info-card {
     background: white;
     padding: 1.2em;
@@ -159,6 +180,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/* Info card headings */
 .info-card h3 {
     color: var(--nav-bg);
     font-size: 1.2em;
@@ -167,32 +189,37 @@
     border-bottom: 2px solid var(--nav-bg);
 }
 
+/* Info card paragraphs */
 .info-card p {
     line-height: 1.6;
     color: #444;
 }
 
+/* Info card lists */
 .info-card ul {
     list-style: none;
     padding: 0;
 }
 
+/* Info card list items */
 .info-card li {
     padding: 0.5em 0;
     border-bottom: 1px solid #eee;
     color: #444;
 }
 
+/* Remove border from last list item */
 .info-card li:last-child {
     border-bottom: none;
 }
 
+/* Awakening info section */
 .awakening-info h4 {
     color: var(--nav-bg);
     margin-bottom: 0.5em;
 }
 
-/* Close Button */
+/* Close Button Styling */
 .close-modal {
     position: absolute;
     top: 1.5em;
@@ -206,13 +233,14 @@
     backdrop-filter: blur(5px);
 }
 
+/* Close button icon */
 .close-modal svg {
     width: 1.5em;
     height: 1.5em;
     color: white;
 }
 
-/* Scrollbar */
+/* Custom Scrollbar Styling */
 .fruit-modal-content::-webkit-scrollbar {
     width: 8px;
 }
@@ -226,7 +254,7 @@
     border-radius: 4px;
 }
 
-/* Animations */
+/* Modal Animation Keyframes */
 @keyframes modalGrow {
     from {
         transform: scale(0.3);
@@ -249,6 +277,7 @@
     }
 }
 
+/* Modal animation classes */
 .modal-open {
     animation: modalGrow 0.3s ease-out forwards;
 }
@@ -257,7 +286,7 @@
     animation: modalShrink 0.3s ease-in forwards;
 }
 
-/* Fix for backdrop animation */
+/* Modal Overlay Styling */
 #devil-fruit-modal .modal-overlay {
     position: fixed;
     top: 0;
@@ -269,7 +298,7 @@
     transform: none !important;
 }
 
-/* Overlay fade animations */
+/* Overlay Animation Keyframes */
 @keyframes overlayFadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -280,6 +309,7 @@
     to { opacity: 0; }
 }
 
+/* Overlay animation classes */
 #devil-fruit-modal .modal-overlay.modal-open {
     animation: overlayFadeIn 0.3s ease-out forwards;
 }

@@ -1,11 +1,11 @@
-/* Devil Fruits Section Styles */
+/* Main section container for devil fruits content */
 #devil-fruits {
   padding: 2em 0;
   background-color: var(--text-white);
   margin: 0px auto;
 }
 
-/* Container for all devil fruit content */
+/* Centered container with max width for devil fruits content */
 #devil-fruits .fruits-container {
   width: var(--cont-width);
   margin: 0 auto;
@@ -13,7 +13,7 @@
   padding-top: 5em;
 }
 
-/* Search and Filter Section */
+/* Card containing search bar and filter options */
 #devil-fruits .search-filter {
   margin-bottom: 2em;
   padding: 1.5em;
@@ -22,13 +22,14 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Search Bar Layout */
+/* Flexbox container for search input and button */
 #devil-fruits .search-bar {
   display: flex;
   gap: 1em;
   margin-bottom: 1.5em;
 }
 
+/* Search input field styling */
 #devil-fruits .search-bar input {
   flex: 1;
   padding: 0.8em 1em;
@@ -37,11 +38,13 @@
   font-size: 1em;
 }
 
+/* Focus state for search input */
 #devil-fruits .search-bar input:focus {
   outline: none;
   border-color: var(--nav-item-bg-active);
 }
 
+/* Search button styling */
 #devil-fruits .search-btn {
   background-color: var(--nav-bg);
   border: none;
@@ -51,17 +54,19 @@
   transition: background-color 0.3s ease;
 }
 
+/* Hover state for search button */
 #devil-fruits .search-btn:hover {
   background-color: var(--nav-item-bg-active);
 }
 
+/* Search icon styling within button */
 #devil-fruits .search-btn svg {
   width: 1.5em;
   height: 1.5em;
   color: white;
 }
 
-/* Sort Filters Section */
+/* Container for sort and filter options */
 #devil-fruits .sort-filters {
   display: flex;
   justify-content: space-between;
@@ -72,7 +77,7 @@
   margin-bottom: 1em;
 }
 
-/* Sort Group Styling */
+/* Container for sort dropdown and label */
 #devil-fruits .sort-group {
   display: flex;
   align-items: center;
@@ -80,13 +85,14 @@
   min-width: 250px;
 }
 
+/* Label styling for sort dropdown */
 #devil-fruits .sort-group label {
   color: var(--nav-bg);
   font-weight: 600;
   white-space: nowrap;
 }
 
-/* Sort Select Styling */
+/* Custom styled select dropdown */
 #devil-fruits .sort-select {
   flex: 1;
   padding: 0.6em 1em;
@@ -103,16 +109,18 @@
   background-size: 1.2em auto;
 }
 
+/* Focus state for sort select */
 #devil-fruits .sort-select:focus {
   outline: none;
   border-color: var(--nav-item-bg-active);
 }
 
+/* Hover state for sort select */
 #devil-fruits .sort-select:hover {
   border-color: var(--nav-item-bg-active);
 }
 
-/* Filter Section */
+/* Container for filter checkboxes */
 #devil-fruits .filters {
   display: flex;
   gap: 2em;
@@ -120,17 +128,20 @@
   padding-top: 1em;
 }
 
+/* Container for filter label and checkbox */
 #devil-fruits .filter-group {
   display: flex;
   align-items: center;
   gap: 1em;
 }
 
+/* Label styling for filter group */
 #devil-fruits .filter-group > label {
   font-weight: 600;
   color: var(--nav-bg);
 }
 
+/* Custom checkbox container */
 #devil-fruits .checkbox {
   display: flex;
   align-items: center;
@@ -138,20 +149,21 @@
   cursor: pointer;
 }
 
+/* Checkbox input styling */
 #devil-fruits .checkbox input[type="checkbox"] {
   width: 1.2em;
   height: 1.2em;
   cursor: pointer;
 }
 
-/* Devil Fruits Grid */
+/* Grid layout for devil fruit cards */
 #devil-fruits .fruits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5em;
 }
 
-/* Devil Fruit Card */
+/* Individual devil fruit card styling */
 #devil-fruits .fruit-card {
   background: white;
   border-radius: 0.8em;
@@ -163,17 +175,20 @@
   flex-direction: column;
 }
 
+/* Hover effect for fruit cards */
 #devil-fruits .fruit-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Container for fruit image */
 #devil-fruits .fruit-image {
   height: 200px;
   overflow: hidden;
   position: relative;
 }
 
+/* Gradient overlay for fruit image */
 #devil-fruits .fruit-image::after {
   content: '';
   position: absolute;
@@ -184,6 +199,7 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
 }
 
+/* Image styling within fruit card */
 #devil-fruits .fruit-image img {
   width: 100%;
   height: 100%;
@@ -191,10 +207,12 @@
   transition: transform 0.3s ease;
 }
 
+/* Hover effect for fruit card images */
 #devil-fruits .fruit-card:hover .fruit-image img {
   transform: scale(1.05);
 }
 
+/* Container for fruit information */
 #devil-fruits .fruit-info {
   padding: 1.2em;
   flex-grow: 1;
@@ -203,6 +221,7 @@
   justify-content: space-between;
 }
 
+/* Fruit name heading styling */
 #devil-fruits .fruit-info h3 {
   color: var(--nav-bg);
   font-size: 1.1em;
@@ -210,6 +229,7 @@
   line-height: 1.3;
 }
 
+/* Fruit alias/subtitle styling */
 #devil-fruits .fruit-info .fruit-alias {
   color: #666;
   font-style: italic;
@@ -217,13 +237,14 @@
   font-size: 0.9em;
 }
 
+/* Container for fruit category tags */
 #devil-fruits .fruit-tags {
   display: flex;
   gap: 0.4em;
   flex-wrap: wrap;
 }
 
-/* Tag Styles */
+/* Base tag styling */
 #devil-fruits .tag {
   padding: 0.25em 0.6em;
   border-radius: 1em;
@@ -233,55 +254,65 @@
   text-transform: capitalize;
 }
 
+/* Paramecia fruit type tag */
 #devil-fruits .tag.paramecia {
-  background-color: #9333ea;
-}
+    background-color: var(--paramecia);
+  }
+  
+  /* Logia fruit type tag */
+  #devil-fruits .tag.logia {
+    background-color: var(--logia);
+  }
+  
+  /* Zoan fruit type tag */
+  #devil-fruits .tag.zoan {
+    background-color: var(--zoan);
+  }
+  
+  /* Active status tag */
+  #devil-fruits .tag.active {
+    background-color: var(--active);
+  }
+  
+  /* Inactive status tag */
+  #devil-fruits .tag.inactive {
+    background-color: var(--inactive);
+  }
 
-#devil-fruits .tag.logia {
-  background-color: #0891b2;
-}
-
-#devil-fruits .tag.zoan {
-  background-color: #ca8a04;
-}
-
-#devil-fruits .tag.active {
-  background-color: #15803d;
-}
-
-#devil-fruits .tag.inactive {
-  background-color: #7f1d1d;
-}
-
-/* No Results Message */
+/* Message shown when no fruits match filters */
 #devil-fruits .no-results {
   grid-column: 1 / -1;
   text-align: center;
   padding: 3em;
 }
 
+/* No results message text styling */
 #devil-fruits .no-results p {
   color: var(--nav-bg);
   font-size: 1.2em;
   font-weight: 500;
 }
 
-/* Responsive Design */
+/* Mobile responsive adjustments */
 @media (max-width: 768px) {
+  /* Stack sort filters vertically on mobile */
   #devil-fruits .sort-filters {
     flex-direction: column;
     gap: 1.5em;
   }
 
+  /* Full width sort groups on mobile */
   #devil-fruits .sort-group {
     width: 100%;
   }
 
+  /* Stack filters vertically on mobile */
   #devil-fruits .filters {
     flex-direction: column;
     gap: 1em;
   }
 
+  /* Allow filter groups to wrap on mobile */
   #devil-fruits .filter-group {
     flex-wrap: wrap;
   }

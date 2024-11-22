@@ -1,6 +1,19 @@
+
 import Modal from '../modal.js';
 
+/**
+ * Devil Fruit Modal Class
+ * Handles displaying detailed information about devil fruits in a modal
+ * 
+ * Features:
+ * - Loading fruit details from JSON files
+ * - Displaying fruit information with animations
+ * - Handling modal open/close transitions
+ */
 class DevilFruitModal extends Modal {
+    /**
+     * Initialize modal properties and bind event handlers
+     */
     constructor() {
         super();
         this.modalId = '#devil-fruit-modal';
@@ -11,6 +24,10 @@ class DevilFruitModal extends Modal {
         super.init(this.modalId);
     }
 
+    /**
+     * Loads devil fruit details from JSON file and displays them
+     * @param {string} fruitId - ID of the devil fruit to load
+     */
     async loadFruitDetails(fruitId) {
         try {
             const response = await fetch(`json/devil-fruits/information/${fruitId}.json`);
@@ -22,6 +39,10 @@ class DevilFruitModal extends Modal {
         }
     }
 
+    /**
+     * Generates and displays the devil fruit details in the modal
+     * @param {Object} fruit - Devil fruit data object
+     */
     showFruitDetails(fruit) {
         const content = `
             <div class="fruit-modal-content">
@@ -97,11 +118,19 @@ class DevilFruitModal extends Modal {
         }
     }
 
+    /**
+     * Opens the modal with animation
+     * @param {Function} callback - Optional callback after opening
+     */
     open(callback = null) {
         super.open(callback);
         this.toggleModalClasses(true);
     }
 
+    /**
+     * Closes the modal with animation
+     * @param {Function} callback - Optional callback after closing
+     */
     close(callback = null) {
         this.toggleModalClasses(false);
         setTimeout(() => {
@@ -109,6 +138,10 @@ class DevilFruitModal extends Modal {
         }, 300);
     }
 
+    /**
+     * Handles modal animation classes for open/close transitions
+     * @param {boolean} isOpening - Whether modal is opening or closing
+     */
     toggleModalClasses(isOpening) {
         const modalContainer = this.modal.querySelector('.modal-container');
         const modalOverlay = this.modal.querySelector('.modal-overlay');

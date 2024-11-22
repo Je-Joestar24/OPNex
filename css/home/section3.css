@@ -80,3 +80,121 @@
   transform: scale(1.1);
   transition: transform 0.3s ease;
 }
+
+/* Responsive Breakpoints */
+
+/* Laptop (1024px - 1399px) */
+@media screen and (min-width: 1024px) and (max-width: 1399px) {
+  #section-3 .benefits-content {
+    width: 90%;
+  }
+
+  #section-3 h2 {
+    font-size: 2.2em;
+  }
+
+  #section-3 .benefit-image {
+    height: 22em;
+  }
+
+  #section-3 .benefit-card h3 {
+    font-size: 1.3em;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #section-3 .benefits-content {
+    width: 95%;
+  }
+
+  #section-3 h2 {
+    font-size: 2em;
+  }
+
+  #section-3 .benefits-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
+  }
+
+  #section-3 .benefit-card {
+    flex: 0 1 calc(33.33% - 1.5em);
+    margin-bottom: 1.5em;
+  }
+
+  #section-3 .benefit-card:nth-child(3n-1) {
+    margin-top: 2em;
+  }
+
+  #section-3 .benefit-card:nth-child(3n) {
+    margin-top: 4em;
+  }
+
+  #section-3 .benefit-image {
+    height: 15em;
+  }
+
+  #section-3 .benefit-card h3 {
+    font-size: 1.1em;
+    padding: 0.6em 0.4em;
+  }
+
+  #section-3 .benefit-card p {
+    font-size: 0.85em;
+    padding: 0 1em 1.2em;
+  }
+}
+
+/* Mobile (below 768px) */
+@media screen and (max-width: 767px) {
+  #section-3 {
+    padding: 3em 0;
+  }
+
+  #section-3 .benefits-content {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 1em;
+  }
+
+  #section-3 h2 {
+    font-size: 1.8em;
+    margin-bottom: 1.2em;
+  }
+
+  #section-3 .benefits-cards {
+    grid-template-columns: 1fr;
+    gap: 2em;
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  #section-3 .benefit-image {
+    height: 15em;
+  }
+
+  #section-3 .benefit-card h3 {
+    font-size: 1.1em;
+    padding: 0.8em 0.5em;
+  }
+
+  #section-3 .benefit-card p {
+    font-size: 0.9em;
+    padding: 0 1em 1.5em;
+  }
+
+  #section-3 .benefit-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* Max-width container adjustment */
+@media screen and (min-width: 1400px) {
+  #section-3 .benefits-content {
+    width: 100%;
+    max-width: 1600px;
+    padding: 0 2em;
+  }
+}

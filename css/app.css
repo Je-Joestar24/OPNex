@@ -31,6 +31,11 @@ body::-webkit-scrollbar {
   --white-glow: rgba(255, 255, 255, 0.8);
   --cont-width: 1400px;
   --cta-border: 2px solid var(--nav-item-bg-active);
+  --paramecia: #9333ea;
+  --logia: #0891b2;
+  --zoan: #ca8a04;
+  --active: #15803d;
+  --inactive: #7f1d1d;
 }
 
 /* Basic Reset */
@@ -62,7 +67,6 @@ a {
 }
 
 /* container default */
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -74,30 +78,26 @@ a {
 }
 
 /* hide all pages by default */
-#home{
+#home {
   display: none;
 }
 
-#characters{
+#characters {
   display: none;
 }
 
-#devil-fruits{
+#devil-fruits {
   display: none;
 }
 
 
-/* *******************************************************Home page******************************************************* */
-
+/* Home page */
 #home {
   font-size: 1em;
 }
 
-
-
 /* Loading Animation */
-#home .loading {
-  padding: 20em 0;
+.loading {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,21 +105,21 @@ a {
   gap: 2em;
   background-color: var(--text-white);
 }
+
 /* Container for the loading animation squares */
-#home .loading-squares {
+#app .loading-squares {
   display: flex;
   gap: 0.5em;
 }
 
 /* Loading text styling */
-#home .loading p {
+#app .loading p {
   color: #000000;
-  font-size: 1.2em;
   font-weight: 500;
 }
 
 /* Individual square styling for loading animation */
-#home .square {
+#app .square {
   width: 1.5em;
   height: 1.5em;
   background-color: var(--nav-bg);
@@ -128,34 +128,31 @@ a {
 }
 
 /* Animation delay for second square */
-#home .square:nth-child(2) {
+#app .square:nth-child(2) {
   animation-delay: 0.1s;
 }
 
 /* Animation delay for third square */
-#home .square:nth-child(3) {
+#app .square:nth-child(3) {
   animation-delay: 0.2s;
 }
 
 /* Animation delay for fourth square */
-#home .square:nth-child(4) {
+#app .square:nth-child(4) {
   animation-delay: 0.3s;
 }
 
 /* Keyframe animation for jumping squares effect */
 @keyframes jumpingSquare {
-  /* Start and end states */
   0%, 100% {
     transform: translateY(0);
     background-color: var(--nav-bg);
   }
-  /* Middle state - peak of jump */
   50% {
     transform: translateY(-2em);
     background-color: var(--nav-item-bg-active);
   }
 }
-/* Main modal container - fixed position covering entire viewport, initially display none */
 
 /* modal */
 .modal {
@@ -182,13 +179,69 @@ a {
   z-index: 3;
 }
 
-
 /* copyright */
-
 #app > footer {
-  font-size: 1.2em;
-  padding: 1em;
   text-align: center;
   background-color: var(--nav-bg);
   color: var(--nav-col);
+}
+
+/* Responsive Breakpoints */
+
+/* Mobile - for screens smaller than 640px */
+@media screen and (max-width: 639px) {
+  #home {
+    font-size: 0.8em;
+  }
+
+  .loading {
+    padding: 10em 0;
+  }
+
+  #app .loading p {
+    font-size: 1em;
+  }
+
+  #app > footer {
+    font-size: 1em;
+    padding: 0.8em;
+  }
+}
+
+/* Tablet - for screens between 640px and 1023px */
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+  #home {
+    font-size: 0.9em;
+  }
+
+  .loading {
+    padding: 15em 0;
+  }
+
+  #app .loading p {
+    font-size: 1.1em;
+  }
+
+  #app > footer {
+    font-size: 1.1em;
+  }
+}
+
+/* Laptop/Desktop - for screens 1024px and above */
+@media screen and (min-width: 1024px) {
+  #home {
+    font-size: 1em;
+  }
+
+  .loading {
+    padding: 20em 0;
+  }
+
+  #app .loading p {
+    font-size: 1.2em;
+  }
+
+  #app > footer {
+    font-size: 1.2em;
+  }
 }

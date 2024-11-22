@@ -3,7 +3,6 @@
 /* Hero Section base styling */
 #section-1 {
   font-size: 2em;
-  outline: auto;
   width: 100%;
   padding-top: 4.5em;
   background: linear-gradient(
@@ -107,4 +106,107 @@
   box-shadow: 0 4px 20px var(--gray-glow);
   background-color: var(--text-white);
   margin-bottom: 5em;
+}
+
+/* Responsive Breakpoints */
+
+/* Laptop (1024px - 1399px) */
+@media screen and (min-width: 1024px) and (max-width: 1399px) {
+  #section-1 {
+    font-size: 1.8em;
+  }
+
+  #section-1 .hero-content {
+    width: 90%;
+  }
+
+  #home .hero-content img {
+    width: 55%;
+    height: 75%;
+  }
+
+  #home .mini-footer {
+    height: 14.4em;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #section-1 {
+    font-size: 1.5em;
+    padding-top: 4em;
+  }
+
+  #section-1 .hero-content {
+    width: 95%;
+    gap: 2em;
+  }
+
+  #home .hero-content img {
+    width: 50%;
+    height: 70%;
+  }
+
+  #section-1 strong {
+    font-size: 1.6em;
+  }
+
+  #home .mini-footer {
+    height: 11.52em;
+  }
+}
+/* Mobile (below 768px) */
+@media screen and (max-width: 767px) {
+  #section-1 {
+    font-size: 1.5em;
+    padding-top: 3.5em;
+  }
+
+  #section-1 .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2em;
+    width: 100%;
+    padding: 0;
+  }
+
+  #section-1 .hero-content div:first-of-type {
+    margin: auto;
+  }
+
+  #section-1 .hero-logo {
+    width: 70%;
+    margin: 0;
+    padding: 1em;
+    max-width: 100%;
+  }
+
+  #home #section-1 .hero-content img {
+    margin: auto;
+    border-radius: 1em;
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    object-position: bottom;
+  }
+
+  #section-1 button {
+    margin: 0 auto;
+  }
+
+  #section-1 .mini-footer {
+    height: 9.216em;
+  }
+}
+
+/* Max-width container adjustment */
+@media screen and (min-width: 1400px) {
+  #section-1 .hero-content {
+    width: 100%;
+    max-width: 1600px;
+    padding: 0 2em;
+  }
 }
