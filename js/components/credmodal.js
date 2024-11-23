@@ -32,12 +32,12 @@ class CredentialModal extends Modal {
 
         // Initial modal structure setup
         this.modalContents.innerHTML = `
-            <div class="left">
-                 <img src="image/general/wheel.png" alt="modal display">
+            <div class="left" role="complementary" aria-label="Modal decoration">
+                <img src="image/general/wheel.png" alt="Decorative wheel image" role="img">
             </div>
-             <div class="right">
-                 <!-- Sign up form containing username, email, password and confirm password -->
-             </div>
+            <div class="right" role="main" aria-label="Credential form container">
+                <!-- Sign up form containing username, email, password and confirm password -->
+            </div>
             `;
 
         // Modal type storage

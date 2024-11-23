@@ -15,7 +15,7 @@ class AppTemplate {
      * @type {string}
      */
     navigation = `
-        <nav id="navigation">
+        <nav id="navigation" role="navigation">
         </nav>`;
 
     /**
@@ -24,14 +24,14 @@ class AppTemplate {
      * @type {string}
      */
     mainContent = `
-        <main id="main" class="wrapper">
-          <section id="home" class="page">
+        <main id="main" class="wrapper" role="main">
+          <section id="home" class="page" role="region" aria-label="Home page">
           </section>
 
-          <section id="characters" class="page">
+          <section id="characters" class="page" role="region" aria-label="Characters page">
           </section>
 
-          <section id="devil-fruits" class="page">
+          <section id="devil-fruits" class="page" role="region" aria-label="Devil Fruits page">
           </section>
         </main>`;
 
@@ -41,7 +41,7 @@ class AppTemplate {
      * @type {string}
      */
     loading = `
-        <div id="loading" class="loading">
+        <div id="loading" class="loading" role="status" aria-label="Loading content">
           <div class="loading-squares">
             <div class="square"></div>
             <div class="square"></div>
@@ -57,7 +57,7 @@ class AppTemplate {
      * @type {string}
      */
     credentialModal = `
-        <div id="credential-modal" class="modal">
+        <div id="credential-modal" class="modal" role="dialog" aria-modal="true" aria-label="Login and registration">
           <div class="modal-overlay"></div>
           <div class="modal-container"></div>
         </div>`;
@@ -68,7 +68,7 @@ class AppTemplate {
      * @type {string}
      */
     characterModal = `
-        <div id="character-modal" class="modal">
+        <div id="character-modal" class="modal" role="dialog" aria-modal="true" aria-label="Character details">
           <div class="modal-overlay"></div>
           <div class="modal-container"></div>
         </div>`;
@@ -79,7 +79,7 @@ class AppTemplate {
      * @type {string}
      */
     devilFruitModal = `
-        <div id="devil-fruit-modal" class="modal">
+        <div id="devil-fruit-modal" class="modal" role="dialog" aria-modal="true" aria-label="Devil Fruit details">
           <div class="modal-overlay"></div>
           <div class="modal-container"></div>
         </div>`;
@@ -89,7 +89,7 @@ class AppTemplate {
      * @type {string}
      */
     footer = `
-        <footer>
+        <footer role="contentinfo">
           <p>&copy; OPNEX - All One Piece content and materials are property of Eiichiro Oda and Shueisha Inc.</p>
         </footer>`;
 
