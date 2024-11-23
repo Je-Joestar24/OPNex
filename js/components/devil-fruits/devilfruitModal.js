@@ -9,24 +9,31 @@ import Modal from '../modal.js';
  * - Loading fruit details from JSON files
  * - Displaying fruit information with animations
  * - Handling modal open/close transitions
+ * - Managing modal state and content updates
+ * - Handling user interactions and events
  */
 class DevilFruitModal extends Modal {
     /**
      * Initialize modal properties and bind event handlers
+     * Sets up modal elements and initializes parent Modal class
+     * Configures modal ID, container elements and overlay
      */
     constructor() {
         super(); // Initialize parent class
-        this.modalId = '#devil-fruit-modal'; // Modal ID
-        this.modal = document.querySelector(this.modalId); // Modal element
-        this.modalOverlay = this.modal.querySelector('.modal-overlay'); // Modal overlay
-        this.modalContainer = this.modal.querySelector('.modal-container'); // Modal container
+        this.modalId = '#devil-fruit-modal'; // Modal ID for DOM selection
+        this.modal = document.querySelector(this.modalId); // Main modal element reference
+        this.modalOverlay = this.modal.querySelector('.modal-overlay'); // Semi-transparent background overlay
+        this.modalContainer = this.modal.querySelector('.modal-container'); // Container for modal content
         
-        super.init(this.modalId); // Initialize modal
+        super.init(this.modalId); // Initialize base modal functionality
     }
 
     /**
      * Loads devil fruit details from JSON file and displays them
-     * @param {string} fruitId - ID of the devil fruit to load
+     * Fetches fruit-specific data and triggers modal display
+     * 
+     * @param {string} fruitId - Unique identifier for the devil fruit
+     * @throws {Error} If JSON fetch or parsing fails
      */
     async loadFruitDetails(fruitId) {
         try {
@@ -41,7 +48,24 @@ class DevilFruitModal extends Modal {
 
     /**
      * Generates and displays the devil fruit details in the modal
-     * @param {Object} fruit - Devil fruit data object
+     * Creates a structured HTML template with fruit information
+     * Includes:
+     * - Header with name, alias and type
+     * - Fruit image with lazy loading
+     * - Status and current user information
+     * - Description and abilities
+     * - Awakening details if available
+     * 
+     * @param {Object} fruit - Devil fruit data object containing all details
+     * @param {string} fruit.name - Name of the devil fruit
+     * @param {string} fruit.alias - Alternative name/nickname
+     * @param {string} fruit.type - Fruit category (Paramecia/Logia/Zoan)
+     * @param {string} fruit.image - URL to fruit image
+     * @param {string} fruit.status - Current status (Active/Inactive)
+     * @param {string} fruit.user - Current fruit user
+     * @param {string} fruit.description - Detailed description
+     * @param {Array} fruit.abilities - List of known abilities
+     * @param {Object} [fruit.awakening] - Optional awakening information
      */
     showFruitDetails(fruit) {
         const content = `
@@ -123,7 +147,10 @@ class DevilFruitModal extends Modal {
 
     /**
      * Opens the modal with animation
-     * @param {Function} callback - Optional callback after opening
+     * Triggers parent class open method and adds animation classes
+     * Handles smooth transition for modal appearance
+     * 
+     * @param {Function} callback - Optional callback function executed after opening
      */
     open(callback = null) {
         super.open(callback);
@@ -132,7 +159,10 @@ class DevilFruitModal extends Modal {
 
     /**
      * Closes the modal with animation
-     * @param {Function} callback - Optional callback after closing
+     * Triggers animation sequence before actual closure
+     * Ensures smooth exit transition
+     * 
+     * @param {Function} callback - Optional callback function executed after closing
      */
     close(callback = null) {
         this.toggleModalClasses(false);
@@ -143,7 +173,10 @@ class DevilFruitModal extends Modal {
 
     /**
      * Handles modal animation classes for open/close transitions
-     * @param {boolean} isOpening - Whether modal is opening or closing
+     * Manages CSS classes for both container and overlay animations
+     * Controls visibility and cleanup of animation classes
+     * 
+     * @param {boolean} isOpening - Flag indicating if modal is opening (true) or closing (false)
      */
     toggleModalClasses(isOpening) {
         const modalContainer = this.modal.querySelector('.modal-container');

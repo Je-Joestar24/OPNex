@@ -59,8 +59,42 @@ class CharacterModal extends Modal {
 
     /**
      * Renders character details in the modal
-     * Displays character information including image, stats, and background
-     * @param {Object} char - Character data object containing all details
+     * Creates a structured layout with character information and stats
+     * 
+     * Features:
+     * - Character profile section with image and basic info
+     * - Background information display
+     * - Stats visualization with dot indicators
+     * - Devil fruit information if applicable
+     * - Responsive layout with grid system
+     * - Lazy loading of character images
+     * - Close button with icon
+     * 
+     * Layout Structure:
+     * - Modal content wrapper
+     * - Close button with SVG icon
+     * - Character profile section:
+     *   - Character image (lazy loaded)
+     *   - Basic info (name, epithet, tags)
+     * - Details section:
+     *   - Background text
+     *   - Abilities & Powers grid:
+     *     - Strength level
+     *     - Haki mastery level
+     *     - Devil Fruit details (if present)
+     * 
+     * @param {Object} char - Character data object
+     * @param {string} char.name - Character's full name
+     * @param {string} char.image - URL to character's image
+     * @param {string} char.epithet - Character's epithet/title
+     * @param {string} char.affiliation - Character's affiliation (marine/pirate)
+     * @param {string} char.status - Character's status (alive/deceased)
+     * @param {string} char.background - Character's background story
+     * @param {number} char.strength - Strength level (1-5)
+     * @param {number} char.hakiLevel - Haki mastery level (1-5)
+     * @param {Object} [char.devilFruit] - Optional devil fruit information
+     * @param {string} char.devilFruit.name - Name of the devil fruit
+     * @param {number} char.devilFruit.mastery - Devil fruit mastery level (1-5)
      */
     showCharacterDetails(char) {
         const content = `

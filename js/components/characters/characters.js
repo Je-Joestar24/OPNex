@@ -1,44 +1,64 @@
 
+import GridComponent from '../GridComponent.js';
 import CharacterModal from './charModal.js';
-
 /**
  * Characters Component
- * Handles the characters section and its functionalities including:
- * - Loading and displaying character data from JSON
- * - Filtering characters by search, affiliation and status 
- * - Sorting characters by name, status and affiliation
- * - Rendering character cards in a grid layout
- * - Managing character modal interactions
+ * Extends GridComponent to handle character-specific grid functionality
+ * Manages character display, filtering, and modal interactions
  */
-class Characters {
+class Characters extends GridComponent {
   /**
-   * Initialize the Characters component
-   * Sets up required DOM elements and state
+   * Initialize Characters component
+   * Sets up configuration and event handlers
    */
   constructor() {
-    // Arrays to store character data
-    this.characters = [];
-    this.filteredCharacters = []; // Stores filtered results to avoid re-fetching
+    const config = {
+      containerId: 'characters', // ID of container element
+      buildSection: () => Characters.buildCharacterSection(), // Function to build HTML structure
+      gridClass: 'char-grid', // CSS class for grid container
+      searchInputId: 'search-characters', // ID for search input
+      jsonPath: 'json/characters/characters.json', // Path to character data
+      itemTemplate: (char) => Characters.characterTemplate(char), // Template for character cards
+      searchFields: ['name', 'epithet', 'affiliation', 'status', 'id'] // Fields to search
+    };
 
-    // DOM element references 
-    this.container = document.getElementById('characters'); // Characters container
-    this.container.innerHTML = this.buildCharacterSection(); // Build characters section
-    this.charGrid = this.container.querySelector('.char-grid'); // Characters grid
-    this.searchInput = this.container.querySelector('#search-characters'); // Search input
-    this.sortSelect = this.container.querySelector('.sort-select'); // Sort select
-    this.filterCheckboxes = this.container.querySelectorAll('input[type="checkbox"]'); // Filter checkboxes
-
-    // Initialize character modal for character details
+    super(config);
     this.charModal = new CharacterModal();
 
-    this.setupEventListeners(); // Set up event listeners
+    // Add character-specific click handler for modal display
+    if (this.grid) {
+      this.grid.addEventListener('click', async (e) => {
+        const card = e.target.closest('.char-card');
+        if (card) {
+          await this.charModal.loadCharacterDetails(card.id);
+        }
+      });
+    }
   }
 
   /**
-   * Builds the HTML structure for the characters section
-   * @returns {string} HTML string for the characters section
+   * Builds the main character section HTML structure
+   * Creates a responsive layout with search, filtering and grid display
+   * 
+   * Structure:
+   * - Search bar with text input and icon button
+   * - Sort dropdown for name ordering (A-Z, Z-A, Status, Affiliation)
+   * - Filter groups:
+   *   - Affiliation filters (Marine, Pirate)
+   *   - Status filters (Alive, Deceased)
+   * - Grid container for character cards
+   * 
+   * Features:
+   * - Real-time search filtering
+   * - Multiple filter selection
+   * - Responsive grid layout
+   * - Accessible form controls with labels
+   * - SVG search icon for visual clarity
+   * - Lazy loading of character images
+   * 
+   * @returns {string} Complete HTML template string for the characters section
    */
-  buildCharacterSection() {
+  static buildCharacterSection() {
     return `
           <div class="char-container">
             <!-- Search and Filter Section -->
@@ -137,200 +157,38 @@ class Characters {
   }
 
   /**
-   * Loads character data from JSON file
-   * Initializes filtered array and renders characters
+   * Generates HTML template for individual character cards
+   * @param {Object} char Character data object
+   * @param {string} char.id Unique identifier
+   * @param {string} char.image Image URL
+   * @param {string} char.name Character name
+   * @param {string} char.epithet Character epithet/title
+   * @param {string} char.affiliation Character affiliation (marine/pirate)
+   * @param {string} char.status Character status (alive/deceased)
+   * @returns {string} HTML template string for character card
    */
-  async loadCharacters() {
-    try {
-      const response = await fetch('json/characters/characters.json');
-      this.characters = await response.json();
-      this.filteredCharacters = [...this.characters]; // Copy initial data
-      this.renderCharacters();
-    } catch (error) {
-      console.error('Error loading characters:', error);
-    }
-  }
-
-  /**
-   * Applies all active filters and search criteria
-   * Filters by search term, affiliation and status
-   */
-  applyFilters() {
-    const searchTerm = this.searchInput.value.toLowerCase().trim();
-
-    // Get selected filter values
-    const selectedAffiliations = Array.from(this.container.querySelectorAll('input[name="affiliation"]:checked'))
-      .map(checkbox => checkbox.value);
-    const selectedStatuses = Array.from(this.container.querySelectorAll('input[name="status"]:checked'))
-      .map(checkbox => checkbox.value);
-
-    // Apply filters to character array
-    this.filteredCharacters = this.characters.filter(char => {
-      // Search across multiple fields
-      const matchesSearch = !searchTerm ||
-        char.name.toLowerCase().includes(searchTerm) ||
-        char.epithet.toLowerCase().includes(searchTerm) ||
-        char.affiliation.toLowerCase().includes(searchTerm) ||
-        char.status.toLowerCase().includes(searchTerm) ||
-        char.id.toLowerCase().includes(searchTerm);
-
-      // Filter by affiliation if any selected
-      const matchesAffiliation = selectedAffiliations.length === 0 ||
-        selectedAffiliations.includes(char.affiliation);
-
-      // Filter by status if any selected
-      const matchesStatus = selectedStatuses.length === 0 ||
-        selectedStatuses.includes(char.status);
-
-      return matchesSearch && matchesAffiliation && matchesStatus;
-    });
-
-    this.applySorting();
-    this.renderCharacters();
-  }
-
-  /**
-   * Applies sorting to filtered characters
-   * Sorts by name (A-Z/Z-A), status, or affiliation
-   */
-  applySorting() {
-    const sortValue = this.sortSelect.value;
-
-    // Sort using localeCompare for proper string comparison
-    switch (sortValue) {
-      case 'name-asc':
-        this.filteredCharacters.sort((a, b) => a.name.localeCompare(b.name));
-        break;
-      case 'name-desc':
-        this.filteredCharacters.sort((a, b) => b.name.localeCompare(a.name));
-        break;
-      case 'status':
-        this.filteredCharacters.sort((a, b) => b.status.localeCompare(a.status));
-        break;
-      case 'affiliation':
-        this.filteredCharacters.sort((a, b) => a.affiliation.localeCompare(b.affiliation));
-        break;
-    }
-  }
-
-  /**
-   * Renders character cards to the grid container
-   * Shows "no results" message if no characters match filters
-   */
-  renderCharacters() {
-    if (!this.charGrid) return;
-
-    // Clear the grid container before rendering
-    this.charGrid.innerHTML = '';
-
-    // Show message if no characters found
-    if (this.filteredCharacters.length === 0) {
-      this.charGrid.innerHTML = `
-                <div class="no-results">
-                    <p>No characters found matching your search.</p>
-                </div>
-            `;
-      return;
-    }
-
-    // Render character cards to the grid container
-    this.charGrid.innerHTML = this.filteredCharacters
-      .map(char => this.characterTemplate(char))
-      .join('');
-  }
-
-  /**
-   * Generates HTML template for character card with lazy loading image
-   * @param {Object} char - Character data object
-   * @returns {string} HTML template string
-   */
-  characterTemplate(char) {
+  static characterTemplate(char) {
     return `
-            <div class="char-card" id="${char.id}">
-                <div class="char-image lazy-load">
-                    <img 
-                        src="${char.image}" 
-                        alt="${char.name}"
-                        loading="lazy"
-                        onload="this.classList.add('loaded'); this.closest('.lazy-load').classList.remove('lazy-load')"
-                      >
-                </div>
-                <div class="char-info">
-                    <h3>${char.name}</h3>
-                    <p class="epithet">"${char.epithet}"</p>
-                    <div class="char-tags">
-                        <span class="tag ${char.affiliation}">${char.affiliation}</span>
-                        <span class="tag ${char.status}">${char.status}</span>
-                    </div>
-                </div>
-            </div>
-        `;
-  }
-
-  /**
-   * Sets up event listeners for search, sort, filters and card clicks
-   */
-  setupEventListeners() {
-    if (!this.charGrid) return;
-
-    // Handle character card clicks
-    this.charGrid.addEventListener('click', async (e) => {
-      const card = e.target.closest('.char-card');
-      if (card) {
-        await this.charModal.loadCharacterDetails(card.id);
-      }
-    });
-
-    // Debounced search input handler
-    let debounceTimeout;
-    if (this.searchInput) {
-      this.searchInput.addEventListener('input', () => {
-        clearTimeout(debounceTimeout);
-        debounceTimeout = setTimeout(() => {
-          this.applyFilters();
-        }, 300);
-      });
-    }
-
-    // Sort select handler
-    if (this.sortSelect) {
-      this.sortSelect.addEventListener('change', () => {
-        this.applyFilters();
-      });
-    }
-
-    // Filter checkbox handlers
-    this.filterCheckboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', () => {
-        this.applyFilters();
-      });
-    });
-  }
-
-  /**
-   * Loads all sections of the characters component
-   */
-  async loadSections() {
-    await this.loadCharacters();
-  }
-
-  /**
-   * Hides the characters container
-   */
-  hide() {
-    if (this.container) {
-      this.container.style.display = 'none';
-    }
-  }
-
-  /**
-   * Shows the characters container
-   */
-  show() {
-    if (this.container) {
-      this.container.style.display = 'block';
-    }
+      <div class="char-card" id="${char.id}">
+        <div class="char-image lazy-load">
+          <img 
+            src="${char.image}" 
+            alt="${char.name}"
+            loading="lazy"
+            onload="this.classList.add('loaded'); this.closest('.lazy-load').classList.remove('lazy-load')"
+          >
+        </div>
+        <div class="char-info">
+          <h3>${char.name}</h3>
+          <p class="epithet">"${char.epithet}"</p>
+          <div class="char-tags">
+            <span class="tag ${char.affiliation}">${char.affiliation}</span>
+            <span class="tag ${char.status}">${char.status}</span>
+          </div>
+        </div>
+      </div>
+    `;
   }
 }
 
-export { Characters as default };
+export default Characters;

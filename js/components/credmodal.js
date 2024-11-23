@@ -92,14 +92,33 @@ class CredentialModal extends Modal {
 
     /**
      * Generates modal content HTML based on configuration
-     * @param {string} header - Modal header text
-     * @param {string} subHeader - Modal subheader text
-     * @param {Object} content - Form content configuration
-     * @returns {string} Generated HTML content
+     * This method creates the HTML structure for the credential modal forms
+     * 
+     * Structure:
+     * - Header section with title, subtitle and close button
+     * - Content section containing:
+     *   - Form with dynamic input groups based on configuration
+     *   - Submit button with icon
+     *   - Footer with link to alternate form (login/signup)
+     * 
+     * Features:
+     * - Dynamic form fields generation from config
+     * - SVG icons for form fields and buttons
+     * - Vue.js v-model bindings for form inputs
+     * - Accessible form labels and structure
+     * - Responsive layout
+     * 
+     * @param {string} header - Modal header text (e.g. "Sign Up", "Login")
+     * @param {string} subHeader - Modal subheader descriptive text
+     * @param {Object} content - Form content configuration object containing:
+     * @param {Array} content.formGroups - Array of form field configurations
+     * @param {Object} content.submitButton - Submit button config with text and icon
+     * @param {Object} content.footer - Footer config with text and link details
+     * @returns {string} Generated HTML content for the modal
      */
     initCredentialModal(header, subHeader, content) {
         const modalContents = `
-            <!-- the header -->
+            <!-- Header section with title and close button -->
             <header class="modal-header">
                 <div class="header-content">
                     <h2>${header}</h2>
@@ -112,11 +131,12 @@ class CredentialModal extends Modal {
                 </button>
             </header>
             
-            <!-- the content -->
+            <!-- Main content section with form -->
             <div class="modal-content">
-                <!-- Sign up form containing username, email, password and confirm password -->
+                <!-- Dynamic form with configurable fields -->
                 <form class="signup-form" id="signupForm">
                     ${content.formGroups.map(group => `
+                        <!-- Form group with label, icon and input -->
                         <div class="form-group">
                             <label for="${group.id}">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -133,7 +153,7 @@ class CredentialModal extends Modal {
                         </div>
                     `).join('')}
                     
-                    <!-- submit button I set type to button to prevent the form from submitting -->
+                    <!-- Submit button with text and icon -->
                     <button type="button" class="submit-button">
                         ${content.submitButton.text}
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -141,7 +161,7 @@ class CredentialModal extends Modal {
                         </svg>
                     </button>
                 </form>
-                <!-- footer containing Login link -->
+                <!-- Footer with link to alternate form -->
                 <footer class="login-link">
                     ${content.footer.text} <a id="${content.footer.link.id}" href="${content.footer.link.href}">${content.footer.link.text}</a>
                 </footer>

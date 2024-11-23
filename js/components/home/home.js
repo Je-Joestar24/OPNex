@@ -83,7 +83,28 @@ class Home {
 
   /**
    * Generates HTML for the hero section
-   * @returns {string} Hero section HTML
+   * This section serves as the main landing area of the home page
+   * 
+   * Layout Structure:
+   * - Hero section wrapper
+   *   - Content container with flexbox
+   *     - Text content (left side)
+   *       - H1 title
+   *       - Description paragraph
+   *       - CTA button
+   *     - Image content (right side)
+   *       - Onepiece image with lazy loading
+   *   - Decorative mini-footer
+   * 
+   * Features:
+   * - Hero title and description text
+   * - Call-to-action button that triggers signup modal
+   * - Onepiece hero image with lazy loading
+   * - Responsive layout with flexbox
+   * - Decorative footer element
+   * 
+   * 
+   * @returns {string} Hero section HTML with responsive layout
    */
   getHeroSection() {
     const { id, title, description, buttonText, image } = this.sections.hero;
@@ -117,7 +138,27 @@ class Home {
 
   /**
    * Generates HTML for the about section
-   * @returns {string} About section HTML
+   * 
+   * Structure:
+   * - About section wrapper
+   *   - Content container with flexbox
+   *     - Image content (left side)
+   *       - Onepiece image with lazy loading
+   *     - Text content (right side)
+   *       - H2 title
+   *       - Description list with checkmark icons
+   *       - "How it Works" section
+   *         - H2 title
+   *         - Ordered list with checkmark icons
+   * 
+   * Features:
+   * - Responsive two-column layout
+   * - Lazy loaded image
+   * - Checkmark icon bullets for list items
+   * - Semantic HTML structure with sections and lists
+   * - Accessible headings hierarchy
+   * 
+   * @returns {string} About section HTML with responsive layout
    */
   getAboutSection() {
     const { id, title, description, howItWorks, image } = this.sections.about;
@@ -162,7 +203,32 @@ class Home {
 
   /**
    * Generates HTML for the benefits section
-   * @returns {string} Benefits section HTML
+   * 
+   * Features:
+   * - Responsive grid layout for benefit cards
+   * - Lazy loading of card images for performance
+   * - Semantic HTML structure with sections and headings
+   * - Accessible image alt text
+   * - CSS class hooks for styling
+   * 
+   * Layout Structure:
+   * - Section wrapper with unique ID
+   * - Content container for spacing/alignment
+   * - Title heading
+   * - Grid of benefit cards:
+   *   - Card container
+   *   - Lazy loaded image
+   *   - Card title
+   *   - Description text
+   * 
+   * @param {Object} sections.benefits - Benefits section data
+   * @param {string} sections.benefits.id - Section ID
+   * @param {string} sections.benefits.title - Section title
+   * @param {Array} sections.benefits.cards - Array of benefit card objects
+   * @param {string} sections.benefits.cards[].image - Card image URL
+   * @param {string} sections.benefits.cards[].title - Card title
+   * @param {string} sections.benefits.cards[].description - Card description
+   * @returns {string} Benefits section HTML with responsive card grid
    */
   getBenefitsSection() {
     const { id, title, cards } = this.sections.benefits;
@@ -192,8 +258,32 @@ class Home {
   }
 
   /**
-   * Generates HTML for the CTA section
-   * @returns {string} CTA section HTML
+   * Generates HTML for the Call-to-Action (CTA) section
+   * Creates a focused section to drive user engagement and signups
+   * 
+   * Features:
+   * - Clean, centered layout with clear hierarchy
+   * - Engaging heading and descriptive text
+   * - Prominent button with arrow icon
+   * - Semantic HTML structure
+   * - Accessible button with SVG icon
+   * - CSS class hooks for styling
+   * 
+   * Layout Structure:
+   * - Section wrapper with unique ID
+   * - Content container for alignment
+   * - Title heading
+   * - Description paragraph
+   * - CTA button with:
+   *   - Text label
+   *   - Arrow icon SVG
+   * 
+   * @param {Object} sections.cta - CTA section data
+   * @param {string} sections.cta.id - Section ID
+   * @param {string} sections.cta.title - Section heading
+   * @param {string} sections.cta.description - Section description text
+   * @param {string} sections.cta.buttonText - Button label text
+   * @returns {string} CTA section HTML with responsive layout
    */
   getCtaSection() {
     const { id, title, description, buttonText } = this.sections.cta;

@@ -91,8 +91,37 @@ class Navigation {
         this.hideLoading();
     }
     /**
-     * Builds the HTML structure for the navigation
-     * @returns {string} HTML string for the navigation
+     * Builds the HTML structure for the navigation bar
+     * 
+     * Features:
+     * - Responsive navigation with desktop and mobile layouts
+     * - Logo linking to home page
+     * - Navigation menu with configurable items
+     * - Special styling for button-type links
+     * - SVG icon integration for specific menu items
+     * - Hamburger menu button for mobile view
+     * - Mobile menu with overlay
+     * 
+     * Layout Structure:
+     * - Main navigation container:
+     *   - Logo section
+     *   - Desktop navigation menu
+     *   - Hamburger button (mobile only)
+     * 
+     * - Mobile menu section:
+     *   - List of navigation items
+     *   - Footer section
+     *   - Overlay for background dimming
+     * 
+     * Navigation Items:
+     * - Each item can have:
+     *   - Custom ID
+     *   - Optional CSS classes
+     *   - Custom href
+     *   - Text content
+     *   - Optional SVG icon (currently used for arcs-link)
+     * 
+     * @returns {string} Complete HTML string for both desktop and mobile navigation
      */
     buildNavigation() {
         return `
@@ -257,6 +286,7 @@ class Navigation {
                 });
             }
         });
+        
         // Bind click handlers for mobile menu toggle
         ['#nav-burger', '.mobile-menu-overlay', '#mobile-login-modal', '#mobile-signup-modal'].forEach(selector => {
             this.navigation.querySelector(selector).addEventListener('click', () => {
