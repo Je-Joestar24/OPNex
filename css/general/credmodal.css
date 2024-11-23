@@ -1,7 +1,5 @@
 /* ***************************************** SIGNUP MODAL ***************************************** */
 
-
-
 /* Modal box container */
 #credential-modal .modal-container {
   position: relative;
@@ -29,25 +27,6 @@
   object-fit: cover;
   animation: rotateWheel 5s linear infinite;
   box-shadow: none;
-}
-
-/* steering wheel animation */
-@keyframes rotateWheel {
-  0% {
-    transform: rotate(-20deg);
-  }
-  25% {
-    transform: rotate(360deg);
-  }
-  50% {
-    transform: rotate(-10deg);
-  }
-  75% {
-    transform: rotate(20deg);
-  }
-  100% {
-    transform: rotate(-30deg);
-  }
 }
 
 /* Modal content container contains header and form */
@@ -216,68 +195,72 @@
   color: var(--nav-item-bg-active);
 }
 
-/* Modal open/close animations */
-/* The modal left side opening animation */
-@keyframes modalOpenFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* The modal left side closing animation */
-@keyframes modalCloseToLeft {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-}
-
-/* The modal right side opening animation */
-@keyframes modalOpenFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* The modal right side closing animation */
-@keyframes modalCloseToRight {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-}
-
 /* Animation classes, thiw will be added and removed via js */
 .modal-open-left {
   animation: modalOpenFromLeft 0.5s ease forwards;
 }
-
+/* Animation class for modal closing animation from right to left */
 .modal-close-left {
   animation: modalCloseToLeft 0.5s ease forwards;
 }
 
+/* Animation class for modal opening animation from right side */
 .modal-open-right {
   animation: modalOpenFromRight 0.5s ease forwards;
 }
 
+/* Animation class for modal closing animation from left to right */
 .modal-close-right {
   animation: modalCloseToRight 0.5s ease forwards;
+}
+
+/* Laptop (1024px - 1399px) */
+@media screen and (min-width: 1024px) and (max-width: 1399px) {
+  /* Reduce overall modal font size for laptop screens */
+  #credential-modal {
+    font-size: 0.8em;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media screen and (max-width: 1023px) {
+  /* Further reduce modal font size for tablet screens */
+  #credential-modal {
+    font-size: 0.65em;
+  }
+}
+
+/* Mobile (below 768px) */
+@media screen and (max-width: 767px) {
+  /* Adjust modal container layout and size for mobile */
+  #credential-modal .modal-container {
+    font-size: 1.2em;
+    grid-template-columns: 1fr;
+    width: 30em;
+  }
+
+  /* Hide the left image section on mobile */
+  #credential-modal .modal-container .left {
+    display: none;
+  }
+
+  /* Adjust right section border radius when left is hidden */
+  #credential-modal .modal-container .right {
+    border-radius: 1em;
+  }
+
+  /* Modify header border radius for mobile view */
+  #credential-modal .modal-header {
+    border-radius: 0 0 0.5em 0.5em;
+  }
+
+  /* Mobile-specific opening animation */
+  .modal-open-right {
+    animation: modalGrow 0.3s ease-out forwards;
+  }
+
+  /* Mobile-specific closing animation */
+  .modal-close-right {
+    animation: modalShrink 0.3s ease-in forwards;
+  }
 }

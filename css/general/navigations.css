@@ -4,16 +4,17 @@
   align-items: center;
   background-color: var(--nav-bg);
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   color: var(--text-white);
 }
 
-#navigation #nav-burger{
+/* Navigation burger icon styling for mobile */
+#navigation #nav-burger {
   background: none;
   border: none;
   width: 8em;
-  font-size: .4em;
+  font-size: 0.4em;
   color: var(--text-white);
   display: none;
 }
@@ -46,7 +47,7 @@
   align-items: center;
   list-style-type: none;
   font-optical-sizing: auto;
-  gap: .5em
+  gap: 0.5em;
 }
 
 /* Individual navigation menu item styling */
@@ -57,7 +58,7 @@
   border-radius: 0.4em;
   color: var(--nav-col);
   font-weight: 600;
-  font-size: 1.0em;
+  font-size: 1em;
 }
 
 /* Hover effect for navigation items with glowing outline */
@@ -102,118 +103,130 @@
   box-shadow: none;
 }
 
-
-
 /* Disabled state for arcs navigation item */
-#navigation .nav-item:has(#arcs-link), #navigation #arcs-link{
-    opacity: 0.95;
-    cursor: not-allowed;
-    position: relative;
+#navigation .nav-item:has(#arcs-link),
+#navigation #arcs-link {
+  opacity: 0.95;
+  cursor: not-allowed;
+  position: relative;
 }
 
 /* Custom tooltip on hover for disabled arcs link */
 #navigation .nav-item:has(#arcs-link):hover::after {
-    content: "Please login to access Arcs";
-    position: absolute;
-    bottom: -2em;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--nav-item-bg-active);
-    color: var(--text-white);
-    padding: 0.5em 1em;
-    border-radius: 0.3em;
-    font-size: 0.9em;
-    white-space: nowrap;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 100;
+  content: "Please login to access Arcs";
+  position: absolute;
+  bottom: -2em;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--nav-item-bg-active);
+  color: var(--text-white);
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  font-size: 0.9em;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 100;
 }
 
 /* Remove glow effect from disabled arcs item */
 #navigation .nav-item:has(#arcs-link):hover {
-    outline: none;
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
 
 /* Prevent background color change on active state for disabled arcs item */
 #navigation .nav-item:has(#arcs-link):active,
 #navigation .nav-item:has(#arcs-link.active) {
-    background-color: transparent;
-    color: var(--nav-col);
+  background-color: transparent;
+  color: var(--nav-col);
 }
 
 /* Responsive Breakpoints */
 
-/* Laptop (1024px - 1399px) */
+/* Laptop screens (1024px - 1399px) */
 @media screen and (min-width: 1024px) and (max-width: 1399px) {
-    #navigation .nav-container {
-        width: 95%;
-    }
+  /* Adjust container width for laptop screens */
+  #navigation .nav-container {
+    width: 95%;
+  }
 
-    #navigation .logo {
-        font-size: 1.3em;
-    }
+  /* Reduce logo size for laptop screens */
+  #navigation .logo {
+    font-size: 1.3em;
+  }
 
-    #navigation .nav-item {
-        padding: 0.7em 1.5em;
-        font-size: 0.9em;
-    }
+  /* Adjust navigation item padding and font size for laptop screens */
+  #navigation .nav-item {
+    padding: 0.7em 1.5em;
+    font-size: 0.9em;
+  }
 }
 
-/* Tablet (768px - 1023px) */
+/* Tablet screens (768px - 1023px) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-    #navigation .nav-container {
-        width: 95%;
-    }
+  /* Adjust container width for tablet screens */
+  #navigation .nav-container {
+    width: 95%;
+  }
 
-    #app #navigation a.logo {
-        font-size: 2em;
-    }
+  /* Increase logo size for tablet screens */
+  #app #navigation a.logo {
+    font-size: 2em;
+  }
 
-    #navigation .nav-item {
-        padding: 0.6em 1.2em;
-        font-size: 0.85em;
-    }
+  /* Reduce navigation item padding and font size for tablet screens */
+  #navigation .nav-item {
+    padding: 0.6em 1.2em;
+    font-size: 0.85em;
+  }
 
-    #navigation .button-link {
-        padding: 0.4em 1.2em;
-    }
+  /* Adjust button link padding for tablet screens */
+  #navigation .button-link {
+    padding: 0.4em 1.2em;
+  }
 
-    .nav-container ul {
-        gap: 0.3em;
-    }
+  /* Reduce gap between navigation items for tablet screens */
+  .nav-container ul {
+    gap: 0.3em;
+  }
 }
 
-/* Mobile (below 768px) */
+/* Mobile screens (below 768px) */
 @media screen and (max-width: 767px) {
+  /* Reduce overall navigation padding for mobile */
+  #navigation {
+    padding: 0.5em 0;
+  }
 
-    #navigation {
-        padding: .5em 0;
-    }
+  /* Show hamburger menu icon on mobile */
+  #navigation #nav-burger {
+    display: inline-block;
+    font-size: 0.4em;
+  }
 
-    #navigation #nav-burger {
-        display: inline-block;
-        font-size: .4em;
-    }
+  /* Hide navigation menu on mobile */
+  #navigation .nav-container ul {
+    display: none;
+  }
 
-    #navigation .nav-container ul {
-        display: none; /* Hide navigation menu */
-    }
+  /* Increase logo size for mobile screens */
+  #app #navigation .logo {
+    font-size: 2em;
+  }
 
-    #app #navigation .logo {
-        font-size: 2em;
-    }
-
-    #navigation .nav-container {
-        width: 100%;
-        padding: 0 1em;
-    }
+  /* Adjust container width and padding for mobile */
+  #navigation .nav-container {
+    width: 100%;
+    padding: 0 1em;
+  }
 }
 
-/* Max-width container adjustment */
+/* Large screen adjustments (1400px and above) */
 @media screen and (min-width: 1400px) {
-    #navigation .nav-container {
-        width: 100%;
-        max-width: 1600px; /* Add max-width for very large screens */
-        padding: 0 2em;
-    }
+  /* Set maximum width for navigation container on large screens */
+  #navigation .nav-container {
+    width: 100%;
+    max-width: 1600px;
+    padding: 0 2em;
+  }
 }

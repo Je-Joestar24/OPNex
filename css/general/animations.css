@@ -1,0 +1,151 @@
+/* Animation for modal opening */
+@keyframes modalGrow {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Animation for modal closing */
+@keyframes modalShrink {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* Animation for overlay appearing */
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animation for overlay disappearing */
+@keyframes overlayFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Modal open/close animations */
+/* The modal left side opening animation */
+@keyframes modalOpenFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* The modal left side closing animation */
+@keyframes modalCloseToLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+/* The modal right side opening animation */
+@keyframes modalOpenFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* The modal right side closing animation */
+@keyframes modalCloseToRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* steering wheel animation */
+@keyframes rotateWheel {
+  0% {
+    transform: rotate(-20deg);
+  }
+  25% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+
+/* Breathing animation keyframes */
+@keyframes breathe {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+
+/* Keyframe animation for jumping squares effect */
+@keyframes jumpingSquare {
+  0%,
+  100% {
+    transform: translateY(0);
+    background-color: var(--nav-bg);
+  }
+  50% {
+    transform: translateY(-2em);
+    background-color: var(--nav-item-bg-active);
+  }
+}
+
+/* Slide in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

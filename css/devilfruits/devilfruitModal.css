@@ -1,345 +1,336 @@
-/* Hide modal by default */
+/* Main modal container - Hidden by default */
 #devil-fruit-modal {
-    display: none;
+  display: none;
 }
 
-/* Modal container styling */
+/* Inner modal container with size constraints and styling */
 #devil-fruit-modal .modal-container {
-    width: 70%;
-    max-width: 900px;
-    max-height: 85vh;
-    background: var(--text-white);
-    border-radius: 1em;
-    overflow: hidden;
-    position: relative;
-    z-index: 4;
+  width: 70%;
+  max-width: 900px;
+  max-height: 85vh;
+  background: var(--text-white);
+  border-radius: 1em;
+  overflow: hidden;
+  position: relative;
+  z-index: 4;
 }
 
-/* Content Layout */
+/* Scrollable content area with height constraints */
 .fruit-modal-content {
-    height: 100%;
-    max-height: 85vh;
-    overflow-y: auto;
+  height: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
 }
 
-/* Header Styles */
+/* Modal header with flex layout and positioning */
 .fruit-header {
-    padding: 1.5em;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+  padding: 1.5em;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
-/* Header background gradients for different fruit types */
-.fruit-header.paramecia { background: linear-gradient(135deg, var(--paramecia), #7928ca); }
-.fruit-header.logia { background: linear-gradient(135deg, var(--logia), #0284c7); }
-.fruit-header.zoan { background: linear-gradient(135deg, var(--zoan), #d97706); }
+/* Gradient backgrounds for different devil fruit types */
+.fruit-header.paramecia {
+  background: linear-gradient(135deg, var(--paramecia), #7928ca);
+}
+.fruit-header.logia {
+  background: linear-gradient(135deg, var(--logia), #0284c7);
+}
+.fruit-header.zoan {
+  background: linear-gradient(135deg, var(--zoan), #d97706);
+}
 
-/* Fruit title styling */
+/* Main title styling with large font size */
 .fruit-title h2 {
-    font-size: 2em;
-    margin-bottom: 0.2em;
+  font-size: 2em;
+  margin-bottom: 0.2em;
 }
 
-/* Fruit alias/subtitle styling */
+/* Subtitle/alias text with italic styling */
 .fruit-alias {
-    font-size: 1.1em;
-    opacity: 0.9;
-    font-style: italic;
+  font-size: 1.1em;
+  opacity: 0.9;
+  font-style: italic;
 }
 
-/* Badge showing fruit type */
+/* Type indicator badge with glassmorphism effect */
 .fruit-type-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    padding: 0.8em 1.5em;
-    margin-right: 2em;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 2em;
-    backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.8em 1.5em;
+  margin-right: 2em;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2em;
+  backdrop-filter: blur(5px);
 }
 
-/* Icon indicating fruit type */
+/* Circular icon for fruit type indicator */
 .type-icon {
-    width: 1.5em;
-    height: 1.5em;
-    border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
 }
 
-/* Type-specific icon colors */
-.type-icon.paramecia { background: var(--paramecia); }
-.type-icon.logia { background: var(--logia); }
-.type-icon.zoan { background: var(--zoan); }
+/* Background colors for different fruit type icons */
+.type-icon.paramecia {
+  background: var(--paramecia);
+}
+.type-icon.logia {
+  background: var(--logia);
+}
+.type-icon.zoan {
+  background: var(--zoan);
+}
 
-/* Main Content Area */
+/* Main content section with padding */
 .fruit-content {
-    padding: 1.5em;
+  padding: 1.5em;
 }
 
-/* Grid layout for fruit showcase section */
+/* Two-column grid layout for fruit details */
 .fruit-showcase {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 1.5em;
-    margin-bottom: 1.5em;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5em;
+  margin-bottom: 1.5em;
 }
 
-/* Fruit image container */
+/* Container for fruit image with shadow effect */
 .fruit-image {
-    width: 100%;
-    height: 300px;
-    border-radius: 0.8em;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 300px;
+  border-radius: 0.8em;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Fruit image styling */
+/* Image sizing and fit settings */
 .fruit-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Status section styling */
+/* Status section with column layout and shadow */
 .fruit-status {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    padding: 1em;
-    background: white;
-    border-radius: 0.8em;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+  background: white;
+  border-radius: 0.8em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Status badge base styling */
+/* Base styles for status indicator badges */
 .status-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    padding: 0.5em 1em;
-    border-radius: 1em;
-    font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  font-weight: 500;
 }
 
-/* Active status badge */
+/* Green styling for active status */
 .status-badge.active {
-    background: #dcfce7;
-    color: var(--active);
+  background: #dcfce7;
+  color: var(--active);
 }
 
-/* Inactive status badge */
+/* Red styling for inactive status */
 .status-badge.inactive {
-    background: #fee2e2;
-    color: var(--inactive);
+  background: #fee2e2;
+  color: var(--inactive);
 }
 
-/* Status indicator dot */
+/* Circular indicator dot */
 .status-dot {
-    width: 0.8em;
-    height: 0.8em;
-    border-radius: 50%;
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
 }
 
-/* Status-specific dot colors */
-.active .status-dot { background: var(--active); }
-.inactive .status-dot { background: var(--inactive); }
+/* Colors for status indicator dots */
+.active .status-dot {
+  background: var(--active);
+}
+.inactive .status-dot {
+  background: var(--inactive);
+}
 
-/* Current user section */
+/* Center-aligned user information section */
 .current-user {
-    text-align: center;
+  text-align: center;
 }
 
-/* Current user heading */
+/* Heading style for current user section */
 .current-user h4 {
-    color: #666;
-    margin-bottom: 0.5em;
+  color: #666;
+  margin-bottom: 0.5em;
 }
 
-/* Current user text */
+/* User name text styling */
 .current-user p {
-    color: var(--nav-bg);
-    font-weight: 600;
-    font-size: 1.1em;
+  color: var(--nav-bg);
+  font-weight: 600;
+  font-size: 1.1em;
 }
 
-/* Info Grid Layout */
+/* Responsive grid layout for information cards */
 .fruit-info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5em;
 }
 
-/* Individual info cards */
+/* Individual information card styling */
 .info-card {
-    background: white;
-    padding: 1.2em;
-    border-radius: 0.8em;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: white;
+  padding: 1.2em;
+  border-radius: 0.8em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Info card headings */
+/* Card heading with bottom border */
 .info-card h3 {
-    color: var(--nav-bg);
-    font-size: 1.2em;
-    margin-bottom: 0.8em;
-    padding-bottom: 0.5em;
-    border-bottom: 2px solid var(--nav-bg);
+  color: var(--nav-bg);
+  font-size: 1.2em;
+  margin-bottom: 0.8em;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid var(--nav-bg);
 }
 
-/* Info card paragraphs */
+/* Paragraph text styling in cards */
 .info-card p {
-    line-height: 1.6;
-    color: #444;
+  line-height: 1.6;
+  color: #444;
 }
 
-/* Info card lists */
+/* Unstyled list container */
 .info-card ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
-/* Info card list items */
+/* List item styling with bottom border */
 .info-card li {
-    padding: 0.5em 0;
-    border-bottom: 1px solid #eee;
-    color: #444;
+  padding: 0.5em 0;
+  border-bottom: 1px solid #eee;
+  color: #444;
 }
 
 /* Remove border from last list item */
 .info-card li:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
-/* Awakening info section */
+/* Awakening section heading style */
 .awakening-info h4 {
-    color: var(--nav-bg);
-    margin-bottom: 0.5em;
+  color: var(--nav-bg);
+  margin-bottom: 0.5em;
 }
 
-/* Close Button Styling */
+/* Close button with glassmorphism effect */
 .close-modal {
-    position: absolute;
-    top: 1.5em;
-    right: 1.5em;
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    border-radius: 50%;
-    padding: 0.5em;
-    cursor: pointer;
-    z-index: 10;
-    backdrop-filter: blur(5px);
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  padding: 0.5em;
+  cursor: pointer;
+  z-index: 10;
+  backdrop-filter: blur(5px);
 }
 
-/* Close button icon */
+/* Close button icon styling */
 .close-modal svg {
-    width: 1.5em;
-    height: 1.5em;
-    color: white;
+  width: 1.5em;
+  height: 1.5em;
+  color: white;
 }
 
-/* Custom Scrollbar Styling */
+/* Custom scrollbar width */
 .fruit-modal-content::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
+/* Scrollbar track styling */
 .fruit-modal-content::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
 
+/* Scrollbar thumb styling */
 .fruit-modal-content::-webkit-scrollbar-thumb {
-    background: var(--nav-bg);
-    border-radius: 4px;
+  background: var(--nav-bg);
+  border-radius: 4px;
 }
 
-/* Modal Animation Keyframes */
-@keyframes modalGrow {
-    from {
-        transform: scale(0.3);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes modalShrink {
-    from {
-        transform: scale(1);
-        opacity: 1;
-    }
-    to {
-        transform: scale(0.3);
-        opacity: 0;
-    }
-}
-
-/* Modal animation classes */
+/* Animation class for opening modal */
 .modal-open {
-    animation: modalGrow 0.3s ease-out forwards;
+  animation: modalGrow 0.3s ease-out forwards;
 }
 
+/* Animation class for closing modal */
 .modal-close {
-    animation: modalShrink 0.3s ease-in forwards;
+  animation: modalShrink 0.3s ease-in forwards;
 }
 
-/* Modal Overlay Styling */
+/* Semi-transparent overlay behind modal */
 #devil-fruit-modal .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 3;
-    transform: none !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  transform: none !important;
 }
 
-/* Overlay Animation Keyframes */
-@keyframes overlayFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes overlayFadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-/* Overlay animation classes */
+/* Fade in animation for overlay */
 #devil-fruit-modal .modal-overlay.modal-open {
-    animation: overlayFadeIn 0.3s ease-out forwards;
+  animation: overlayFadeIn 0.3s ease-out forwards;
 }
 
+/* Fade out animation for overlay */
 #devil-fruit-modal .modal-overlay.modal-close {
-    animation: overlayFadeOut 0.3s ease-in forwards;
+  animation: overlayFadeOut 0.3s ease-in forwards;
 }
 
-/* Responsive Design */
+/* Mobile responsive adjustments */
 @media (max-width: 768px) {
-    #devil-fruit-modal .modal-container {
-        width: 90%;
-    }
+  /* Increase modal container width for better mobile viewing */
+  #devil-fruit-modal .modal-container {
+    width: 95%;
+  }
 
-    .fruit-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 1em;
-    }
+  /* Stack header elements vertically on mobile */
+  .fruit-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1em;
+  }
 
-    .fruit-showcase {
-        grid-template-columns: 1fr;
-    }
+  /* Change showcase grid to single column on mobile */
+  .fruit-showcase {
+    grid-template-columns: 1fr;
+  }
 
-    .fruit-image {
-        height: 250px;
-    }
+  /* Reduce image height for better mobile display */
+  .fruit-image {
+    height: 250px;
+  }
 
-    .fruit-status {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-} 
+  /* Adjust status items to horizontal layout on mobile */
+  .fruit-status {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}

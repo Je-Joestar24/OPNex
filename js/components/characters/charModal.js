@@ -18,13 +18,13 @@ class CharacterModal extends Modal {
      * @extends Modal
      */
     constructor() {
-        super();
-        this.modalId = '#character-modal';
-        this.modal = document.querySelector(this.modalId);
-        this.modalOverlay = this.modal.querySelector('.modal-overlay');
-        this.modalContainer = this.modal.querySelector('.modal-container');
+        super(); // Initialize parent class
+        this.modalId = '#character-modal'; // Modal ID
+        this.modal = document.querySelector(this.modalId); // Modal element
+        this.modalOverlay = this.modal.querySelector('.modal-overlay'); // Modal overlay
+        this.modalContainer = this.modal.querySelector('.modal-container'); // Modal container
 
-        super.init(this.modalId);
+        super.init(this.modalId); // Initialize modal
     }
 
     /**
@@ -72,8 +72,11 @@ class CharacterModal extends Modal {
         </button>
         
         <div class="char-profile">
-          <div class="char-image">
-            <img src="${char.image}" alt="${char.name}">
+          <div class="char-image lazy-load">
+            <img src="${char.image}" alt="${char.name}"
+              loading="lazy"
+              onload="this.classList.add('loaded'); this.closest('.lazy-load').classList.remove('lazy-load')"
+            >
           </div>
           <div class="char-basic-info">
             <h2>${char.name}</h2>

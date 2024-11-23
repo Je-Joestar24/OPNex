@@ -1,25 +1,33 @@
-/* General styles */
-@import "./general/credmodal.css";
-@import "./general/navigations.css";
+/* General styles - Core UI components */
+@import "./general/credmodal.css"; /* Styles for login/signup modal */
+@import "./general/navigations.css"; /* Main navigation bar styles */
+@import "./general/mobilenav.css"; /* Mobile navigation menu styles */
 
-/* Home page */
-@import "./home/section1.css";
-@import "./home/section2.css";
-@import "./home/section3.css";
-@import "./home/section4.css";
+/* Home page - Landing page sections */
+@import "./home/section1.css"; /* Hero section with main banner */
+@import "./home/section2.css"; /* Featured content section */
+@import "./home/section3.css"; /* Information cards section */
+@import "./home/section4.css"; /* Call-to-action section */
 
-/* Characters page */
-@import "./characters/characters.css";
-@import "./characters/charModal.css";
+/* Characters page - Character browsing and details */
+@import "./characters/characters.css"; /* Character grid and filtering */
+@import "./characters/charModal.css"; /* Character details modal */
 
-/* Devil fruits page */
-@import "./devilfruits/devilfruits.css";
-@import "./devilfruits/devilfruitModal.css";
+/* Devil fruits page - Devil fruit powers catalog */
+@import "./devilfruits/devilfruits.css"; /* Devil fruit grid and categories */
+@import "./devilfruits/devilfruitModal.css"; /* Devil fruit details modal */
+
+/* Animations - Shared animation effects */
+@import "./general/animations.css"; /* Keyframes and transitions */
+
+/* Reusables - Common utility classes */
+@import "./general/reusables.css"; /* Shared styles and components */
 
 body::-webkit-scrollbar {
   display: none;
 }
 
+/* Root variables, for the entire project themes */
 :root {
   --nav-bg: rgb(194, 0, 0);
   --nav-col: rgba(255, 252, 232, 0.925);
@@ -90,7 +98,6 @@ a {
   display: none;
 }
 
-
 /* Home page */
 #home {
   font-size: 1em;
@@ -142,17 +149,6 @@ a {
   animation-delay: 0.3s;
 }
 
-/* Keyframe animation for jumping squares effect */
-@keyframes jumpingSquare {
-  0%, 100% {
-    transform: translateY(0);
-    background-color: var(--nav-bg);
-  }
-  50% {
-    transform: translateY(-2em);
-    background-color: var(--nav-item-bg-active);
-  }
-}
 
 /* modal */
 .modal {

@@ -1,0 +1,144 @@
+/* Mobile menu overlay */
+#navigation .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.1;
+    background-color: var(--gray-glow);
+    display: none;
+    z-index: 1;
+}
+
+#navigation .mobile-menu svg,
+#navigation ul .nav-item svg {
+    width: 1.2em;
+    height: 1.2em;
+    margin: auto;
+}
+
+/* Mobile menu styling */
+/* Mobile menu container - Slides down from navigation bar */
+#navigation .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #8b0000;
+    z-index: 2;
+    border-radius: 0 0 0.2em 0.2em;
+    display: none;
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-10%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Slide up animation for closing */
+@keyframes slideUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+        height: 100%;
+    }
+    to {
+        transform: translateY(-10%);
+        opacity: 0;
+        height: 0;
+    }
+}
+
+/* Close animation class */
+#navigation .mobile-menu.closing {
+    animation: slideUp 0.3s ease-out forwards;
+}
+
+#navigation .mobile-menu.closing * {
+    display: none;
+}
+
+/* Reset list styles for mobile menu items */
+#navigation .mobile-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Add subtle border between mobile menu items */
+#navigation .mobile-menu li {
+    box-shadow: 0 .3px 0 var(--nav-bg);
+    border-radius: 0%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+/* Disable arcs link */
+#navigation .mobile-menu li:has(a[href="#arcs"]){
+    pointer-events: none;
+    opacity: 0;
+    cursor: not-allowed;
+    background-color: transparent;
+}
+
+/* Animate each menu item one by one */
+#navigation .mobile-menu li:nth-child(1) {
+    animation: slideIn 0.3s ease-out 0.1s forwards;
+}
+#navigation .mobile-menu li:nth-child(2) {
+    animation: slideIn 0.3s ease-out 0.2s forwards;
+}
+#navigation .mobile-menu li:nth-child(3) {
+    animation: slideIn 0.3s ease-out 0.3s forwards;
+}
+#navigation .mobile-menu li:nth-child(4) {
+    animation: slideIn 0.3s ease-out 0.4s forwards;
+}
+#navigation .mobile-menu li:nth-child(5) {
+    animation: slideIn 0.3s ease-out 0.5s forwards;
+}
+#navigation .mobile-menu li:nth-child(6) {
+    animation: slideIn 0.3s ease-out 0.6s forwards;
+}
+
+/* Style for regular menu items */
+#navigation .mobile-menu li a {
+    display: block;
+    padding: 1em 2em;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect only for enabled links */
+#navigation .mobile-menu li a:not([href="#arcs"]):hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile menu footer with rounded bottom corners */
+#navigation .mobile-menu-footer {
+    box-shadow: 0 .3px 0 var(--nav-bg);
+    width: 100%;
+    height: 1em;
+    background-color: var(--nav-bg);
+    border-radius: 0 0 0.5em 0.5em;
+    animation: slideIn 0.3s ease-out 0.7s forwards;
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+@media screen and (min-width: 768px) {
+    #app #navigation .mobile-menu,
+    #app #navigation .mobile-menu-overlay {
+        display: none !important;
+    }
+}

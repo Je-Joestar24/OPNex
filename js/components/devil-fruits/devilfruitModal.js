@@ -15,13 +15,13 @@ class DevilFruitModal extends Modal {
      * Initialize modal properties and bind event handlers
      */
     constructor() {
-        super();
-        this.modalId = '#devil-fruit-modal';
-        this.modal = document.querySelector(this.modalId);
-        this.modalOverlay = this.modal.querySelector('.modal-overlay');
-        this.modalContainer = this.modal.querySelector('.modal-container');
+        super(); // Initialize parent class
+        this.modalId = '#devil-fruit-modal'; // Modal ID
+        this.modal = document.querySelector(this.modalId); // Modal element
+        this.modalOverlay = this.modal.querySelector('.modal-overlay'); // Modal overlay
+        this.modalContainer = this.modal.querySelector('.modal-container'); // Modal container
         
-        super.init(this.modalId);
+        super.init(this.modalId); // Initialize modal
     }
 
     /**
@@ -65,8 +65,11 @@ class DevilFruitModal extends Modal {
 
                 <div class="fruit-content">
                     <div class="fruit-showcase">
-                        <div class="fruit-image">
-                            <img src="${fruit.image}" alt="${fruit.name}">
+                        <div class="fruit-image lazy-load">
+                            <img src="${fruit.image}" alt="${fruit.name}"
+                              loading="lazy"
+                              onload="this.classList.add('loaded'); this.closest('.lazy-load').classList.remove('lazy-load')"
+                            >
                         </div>
                         <div class="fruit-status">
                             <div class="status-badge ${fruit.status}">

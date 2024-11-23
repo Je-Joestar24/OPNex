@@ -1,282 +1,187 @@
-/* Characters Section Styles - Main container for the characters page */
+/* Main container for the characters page */
 #characters {
   padding: 2em 0;
   background-color: var(--text-white);
   margin: 0px auto;
 }
 
-/* Container for all character content with max-width and centering */
+/* Container that centers and constrains content width */
 #characters .char-container {
-  width: var(--cont-width);
+  width: var(--cont-width); /* Uses predefined container width */
   margin: 0 auto;
   padding: 0 1em;
-  padding-top: 5em;
+  padding-top: 5em; /* Space for fixed navigation */
 }
 
-/* Search and Filter Section - Contains search bar and filter options */
-#characters .search-filter {
-  margin-bottom: 2em;
-  padding: 1.5em;
-  background-color: white;
-  border-radius: 0.5em;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-/* Search Bar Layout - Flexbox container for input and button */
-#characters .search-bar {
-  display: flex;
-  gap: 1em;
-  margin-bottom: 1.5em;
-}
-
-/* Search Input Styling */
-#characters .search-bar input {
-  flex: 1; /* Takes up remaining space */
-  padding: 0.8em 1em;
-  border: 2px solid var(--nav-bg);
-  border-radius: 0.5em;
-  font-size: 1em;
-}
-
-/* Search Input Focus State */
-#characters .search-bar input:focus {
-  outline: none;
-  border-color: var(--nav-item-bg-active);
-}
-
-/* Search Button Styling */
-#characters .search-btn {
-  background-color: var(--nav-bg);
-  border: none;
-  border-radius: 0.5em;
-  padding: 0.8em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-/* Search Button Hover Effect */
-#characters .search-btn:hover {
-  background-color: var(--nav-item-bg-active);
-}
-
-/* Search Icon (SVG) Styling */
-#characters .search-btn svg {
-  width: 1.5em;
-  height: 1.5em;
-  color: white;
-}
-
-/* Sort Filters Section */
-#characters .sort-filters {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2em;
-  padding-top: 1em;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-/* Sort Group Styling */
-#characters .sort-group {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  min-width: 250px;
-}
-
-#characters .sort-group label {
-  color: var(--nav-bg);
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-/* Sort Select Styling */
-#characters .sort-select {
-  flex: 1;
-  padding: 0.6em 1em;
-  border: 2px solid var(--nav-bg);
-  border-radius: 0.5em;
-  background-color: white;
-  color: #333;
-  font-size: 0.9em;
-  cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C20000'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.7em top 50%;
-  background-size: 1.2em auto;
-}
-
-#characters .sort-select:focus {
-  outline: none;
-  border-color: var(--nav-item-bg-active);
-}
-
-#characters .sort-select:hover {
-  border-color: var(--nav-item-bg-active);
-}
-
-/* Filter Section Layout - Flexbox container for filter groups */
-#characters .filters {
-  display: flex;
-  gap: 2em;
-  flex-wrap: wrap; /* Allows filters to wrap on smaller screens */
-}
-
-/* Individual Filter Group Styling */
-#characters .filter-group {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-}
-
-/* Filter Group Label Styling */
-#characters .filter-group > label {
-  font-weight: 600;
-  color: var(--nav-bg);
-}
-
-/* Checkbox Container Styling */
-#characters .checkbox {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  cursor: pointer;
-}
-
-/* Checkbox Input Styling */
-#characters .checkbox input[type="checkbox"] {
-  width: 1.2em;
-  height: 1.2em;
-  cursor: pointer;
-}
-
-/* Characters Grid Layout, Responsive grid using auto-fill */
+/* Responsive grid layout for character cards */
 #characters .char-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 2em;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates responsive columns */
+  gap: 2em; /* Spacing between cards */
 }
 
-/* Character Card Styling - Individual character display cards */
+/* Individual character card container */
 #characters .char-card {
   background: white;
   border-radius: 1em;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Clips content to rounded corners */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transitions */
   cursor: pointer;
 }
 
-/* Character Card Hover Effects */
+/* Hover animation for character cards */
 #characters .char-card:hover {
-  transform: translateY(-10px); /* Slight lift effect */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  transform: translateY(-10px); /* Card lifts up */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Shadow becomes more pronounced */
 }
 
-/* Character Image Container */
+/* Container for character portrait image */
 #characters .char-image {
   height: 300px;
-  overflow: hidden;
+  overflow: hidden; /* Prevents image from spilling out */
 }
 
-/* Character Image Styling */
+/* Character portrait image styling */
 #characters .char-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  object-fit: cover; /* Ensures image fills container without distortion */
+  transition: transform 0.3s ease; /* Smooth zoom effect */
 }
 
-/* Character Image Hover Effect - Zoom animation */
+/* Zoom effect on character image when card is hovered */
 #characters .char-card:hover .char-image img {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Image zooms in slightly */
 }
 
-/* Character Information Section */
+/* Container for character text information */
 #characters .char-info {
   padding: 1.5em;
 }
 
-/* Character Name Styling */
+/* Character name heading */
 #characters .char-info h3 {
-  color: var(--nav-bg);
+  color: var(--nav-bg); /* Uses theme color */
   font-size: 1.3em;
   margin-bottom: 0.3em;
 }
 
-/* Character Epithet (Nickname) Styling */
+/* Character nickname/epithet text */
 #characters .char-info .epithet {
   color: #666;
   font-style: italic;
   margin-bottom: 1em;
 }
 
-/* Character Tags Container */
+/* Flex container for character attribute tags */
 #characters .char-tags {
   display: flex;
-  gap: 0.5em;
+  gap: 0.5em; /* Space between tags */
 }
 
-/* Base Tag Styling */
+/* Base styling for all attribute tags */
 #characters .tag {
   padding: 0.3em 0.8em;
-  border-radius: 2em;
+  border-radius: 2em; /* Pill-shaped tags */
   font-size: 0.9em;
   font-weight: 500;
 }
 
-/* Specific Tag Styles - Different colors for different character attributes */
+/* Pirate faction tag styling */
 #characters .tag.pirate {
   background-color: var(--nav-bg);
   color: white;
 }
 
+/* Marine faction tag styling */
 #characters .tag.marine {
-  background-color: #1e40af; /* Navy blue for marines */
+  background-color: var(--nav-bg); /* Navy blue for marines */
   color: white;
 }
 
+/* Alive status tag styling */
 #characters .tag.alive {
-  background-color: #15803d; /* Green for alive status */
+  background-color: var(--active); /* Green indicates living */
   color: white;
 }
 
+/* Deceased status tag styling */
 #characters .tag.deceased {
-  background-color: #7f1d1d; /* Dark red for deceased status */
+  background-color: var(--inactive); 
   color: white;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  #characters .sort-filters {
-    flex-direction: column;
-    gap: 1.5em;
+/* Container for "no results found" message */
+#characters .no-results {
+  grid-column: 1 / -1; /* Spans full grid width */
+  text-align: center;
+  padding: 3em;
+}
+
+/* "No results found" message text */
+#characters .no-results p {
+  color: var(--nav-bg);
+  font-size: 1.2em;
+  font-weight: 500;
+}
+/* Large screens (up to 1400px) */
+@media (max-width: 1400px) {
+  /* Adjust container width and font size for large screens */
+  #characters .char-container {
+    width: 90%;
+    font-size: 0.8em;
+  }
+}
+
+/* Medium-large screens (up to 1023px) */
+@media screen and (max-width: 1023px) {
+  /* Change grid to 4 columns for medium-large screens */
+  #characters .char-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* Tablet screens (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Adjust container width and font size for tablets */
+  #characters .char-container {
+    width: 95%;
+    font-size: 0.9em;
   }
 
+  /* Change grid to 3 columns for tablets */
+  #characters .char-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Mobile screens (below 768px) */
+@media screen and (max-width: 767px) {
+  /* Make sort group full width on mobile */
   #characters .sort-group {
     width: 100%;
   }
 
+  /* Stack filters vertically on mobile */
   #characters .filters {
     flex-direction: column;
     gap: 1em;
   }
 
+  /* Allow filter groups to wrap on mobile */
   #characters .filter-group {
     flex-wrap: wrap;
   }
-}
 
-/* No Results Message */
-#characters .no-results {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 3em;
-}
+  /* Change grid to 2 columns for mobile */
+  #characters .char-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 
-#characters .no-results p {
-    color: var(--nav-bg);
-    font-size: 1.2em;
-    font-weight: 500;
+  /* Stack sort filters vertically on mobile */
+  #characters .sort-filters {
+    flex-direction: column;
+    gap: 1.5em;
+  }
 }

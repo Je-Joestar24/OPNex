@@ -99,11 +99,13 @@ class Home {
                 <button class='get-started signup-modal'>${buttonText}</button>
               </div>
               <!-- Hero Logo/Image -->
-              <div class="hero-logo flex justify-center">
+              <div class="hero-logo flex justify-center lazy-load">
                 <img
                   src="${image}"
                   alt="One Piece Hero Image"
                   class="rounded-full w-32 h-32 object-cover"
+                        loading="lazy"
+                        onload="this.classList.add('loaded'); this.closest('.lazy-load').classList.remove('lazy-load')"
                 />
               </div>
             </div>
@@ -122,8 +124,11 @@ class Home {
     return `
           <section id="${id}" class="about-section">
             <div class="about-content">
-              <div class="about-image">
-                <img src="${image}" alt="One Piece World Map" />
+              <div class="about-image lazy-load">
+                <img src="${image}" alt="One Piece World Map"
+                  loading="lazy"
+                  onload="this.classList.add('loaded'); this.closest('.lazy-load').classList.remove('lazy-load')"
+                />
               </div>
               <div>
                 
@@ -169,8 +174,11 @@ class Home {
               <div class="benefits-cards">
                 ${cards.map(card => `
                     <div class="benefit-card">
-                    <div class="benefit-image">
-                        <img src="${card.image}" alt="${card.title}" />
+                    <div class="benefit-image lazy-load">
+                        <img src="${card.image}" alt="${card.title}"
+                          loading="lazy"
+                          onload="this.classList.add('loaded'); this.closest('.lazy-load').classList.remove('lazy-load')"
+                        />
                     </div>
                     <h3>${card.title}</h3>
                     <p>${card.description}</p>

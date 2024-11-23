@@ -1,13 +1,15 @@
+
+import DevilFruitModal from './devilfruitModal.js';
+
 /**
  * DevilFruits Component
  * Handles the devil fruits section and its functionalities including:
  * - Loading and displaying devil fruit data from JSON
  * - Filtering fruits by search, type and status
- * - Sorting fruits by name
- * - Rendering fruit cards in a grid layout
+ * - Sorting fruits by name (A-Z, Z-A)
+ * - Rendering fruit cards in a grid layout with lazy loading
+ * - Showing detailed fruit info in modal on card click
  */
-import DevilFruitModal from './devilfruitModal.js';
-
 class DevilFruits {
     /**
      * Initialize the DevilFruits component
@@ -19,17 +21,16 @@ class DevilFruits {
         this.filteredFruits = []; // Stores filtered results
 
         // DOM element references
-        this.container = document.getElementById('devil-fruits');
-        this.container.innerHTML = this.buildDevilFruitsSection();
-        this.fruitsGrid = this.container.querySelector('.fruits-grid');
-        this.searchInput = this.container.querySelector('#search-fruits');
-        this.sortSelect = this.container.querySelector('.sort-select');
-        this.filterCheckboxes = this.container.querySelectorAll('input[type="checkbox"]');
+        this.container = document.getElementById('devil-fruits'); // Devil fruits container
+        this.container.innerHTML = this.buildDevilFruitsSection(); // Build devil fruits section
+        this.fruitsGrid = this.container.querySelector('.fruits-grid'); // Devil fruits grid
+        this.searchInput = this.container.querySelector('#search-fruits'); // Search input
+        this.sortSelect = this.container.querySelector('.sort-select'); // Sort select
+        this.filterCheckboxes = this.container.querySelectorAll('input[type="checkbox"]'); // Filter checkboxes
 
         // Initialize devil fruit modal
-        this.devilFruitModal = new DevilFruitModal();
-        
-        this.setupEventListeners();
+        this.devilFruitModal = new DevilFruitModal(); 
+        this.setupEventListeners(); // Set up event listeners
     }
 
     /**
@@ -190,15 +191,21 @@ class DevilFruits {
     }
 
     /**
-     * Generates HTML template for fruit card
+     * Generates HTML template for fruit card with lazy loading image
      * @param {Object} fruit - Devil Fruit data object
      * @returns {string} HTML template string
      */
     fruitTemplate(fruit) {
         return `
             <div class="fruit-card" id="${fruit.id}">
-                <div class="fruit-image">
-                    <img src="${fruit.image}" alt="${fruit.name}">
+                <div class="fruit-image lazy-load">
+                    <img 
+                        src="${fruit.image}" 
+                        alt="${fruit.name}" 
+                        loading="lazy"
+                        onload="this.classList.add('loaded'); this.closest('.lazy-load').classList.remove('lazy-load')"
+                        class="fruit-img"
+                    >
                 </div>
                 <div class="fruit-info">
                     <h3>${fruit.name}</h3>

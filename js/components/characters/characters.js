@@ -1,3 +1,6 @@
+
+import CharacterModal from './charModal.js';
+
 /**
  * Characters Component
  * Handles the characters section and its functionalities including:
@@ -7,38 +10,36 @@
  * - Rendering character cards in a grid layout
  * - Managing character modal interactions
  */
-import CharacterModal from './charModal.js';
-
 class Characters {
-    /**
-     * Initialize the Characters component
-     * Sets up required DOM elements and state
-     */
-    constructor() {
-        // Arrays to store character data
-        this.characters = [];
-        this.filteredCharacters = []; // Stores filtered results to avoid re-fetching
+  /**
+   * Initialize the Characters component
+   * Sets up required DOM elements and state
+   */
+  constructor() {
+    // Arrays to store character data
+    this.characters = [];
+    this.filteredCharacters = []; // Stores filtered results to avoid re-fetching
 
-        // DOM element references 
-        this.container = document.getElementById('characters');
-        this.container.innerHTML = this.buildCharacterSection();
-        this.charGrid = this.container.querySelector('.char-grid');
-        this.searchInput = this.container.querySelector('#search-characters');
-        this.sortSelect = this.container.querySelector('.sort-select');
-        this.filterCheckboxes = this.container.querySelectorAll('input[type="checkbox"]');
-        
-        // Initialize character modal for character details
-        this.charModal = new CharacterModal();
-        
-        this.setupEventListeners();
-    }
+    // DOM element references 
+    this.container = document.getElementById('characters'); // Characters container
+    this.container.innerHTML = this.buildCharacterSection(); // Build characters section
+    this.charGrid = this.container.querySelector('.char-grid'); // Characters grid
+    this.searchInput = this.container.querySelector('#search-characters'); // Search input
+    this.sortSelect = this.container.querySelector('.sort-select'); // Sort select
+    this.filterCheckboxes = this.container.querySelectorAll('input[type="checkbox"]'); // Filter checkboxes
 
-    /**
-     * Builds the HTML structure for the characters section
-     * @returns {string} HTML string for the characters section
-     */
-    buildCharacterSection() {
-        return `
+    // Initialize character modal for character details
+    this.charModal = new CharacterModal();
+
+    this.setupEventListeners(); // Set up event listeners
+  }
+
+  /**
+   * Builds the HTML structure for the characters section
+   * @returns {string} HTML string for the characters section
+   */
+  buildCharacterSection() {
+    return `
           <div class="char-container">
             <!-- Search and Filter Section -->
             <div class="search-filter">
@@ -133,121 +134,126 @@ class Characters {
             </div>
           </div>
         `;
+  }
+
+  /**
+   * Loads character data from JSON file
+   * Initializes filtered array and renders characters
+   */
+  async loadCharacters() {
+    try {
+      const response = await fetch('json/characters/characters.json');
+      this.characters = await response.json();
+      this.filteredCharacters = [...this.characters]; // Copy initial data
+      this.renderCharacters();
+    } catch (error) {
+      console.error('Error loading characters:', error);
     }
+  }
 
-    /**
-     * Loads character data from JSON file
-     * Initializes filtered array and renders characters
-     */
-    async loadCharacters() {
-        try {
-            const response = await fetch('json/characters/characters.json');
-            this.characters = await response.json();
-            this.filteredCharacters = [...this.characters]; // Copy initial data
-            this.renderCharacters();
-        } catch (error) {
-            console.error('Error loading characters:', error);
-        }
+  /**
+   * Applies all active filters and search criteria
+   * Filters by search term, affiliation and status
+   */
+  applyFilters() {
+    const searchTerm = this.searchInput.value.toLowerCase().trim();
+
+    // Get selected filter values
+    const selectedAffiliations = Array.from(this.container.querySelectorAll('input[name="affiliation"]:checked'))
+      .map(checkbox => checkbox.value);
+    const selectedStatuses = Array.from(this.container.querySelectorAll('input[name="status"]:checked'))
+      .map(checkbox => checkbox.value);
+
+    // Apply filters to character array
+    this.filteredCharacters = this.characters.filter(char => {
+      // Search across multiple fields
+      const matchesSearch = !searchTerm ||
+        char.name.toLowerCase().includes(searchTerm) ||
+        char.epithet.toLowerCase().includes(searchTerm) ||
+        char.affiliation.toLowerCase().includes(searchTerm) ||
+        char.status.toLowerCase().includes(searchTerm) ||
+        char.id.toLowerCase().includes(searchTerm);
+
+      // Filter by affiliation if any selected
+      const matchesAffiliation = selectedAffiliations.length === 0 ||
+        selectedAffiliations.includes(char.affiliation);
+
+      // Filter by status if any selected
+      const matchesStatus = selectedStatuses.length === 0 ||
+        selectedStatuses.includes(char.status);
+
+      return matchesSearch && matchesAffiliation && matchesStatus;
+    });
+
+    this.applySorting();
+    this.renderCharacters();
+  }
+
+  /**
+   * Applies sorting to filtered characters
+   * Sorts by name (A-Z/Z-A), status, or affiliation
+   */
+  applySorting() {
+    const sortValue = this.sortSelect.value;
+
+    // Sort using localeCompare for proper string comparison
+    switch (sortValue) {
+      case 'name-asc':
+        this.filteredCharacters.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case 'name-desc':
+        this.filteredCharacters.sort((a, b) => b.name.localeCompare(a.name));
+        break;
+      case 'status':
+        this.filteredCharacters.sort((a, b) => b.status.localeCompare(a.status));
+        break;
+      case 'affiliation':
+        this.filteredCharacters.sort((a, b) => a.affiliation.localeCompare(b.affiliation));
+        break;
     }
+  }
 
-    /**
-     * Applies all active filters and search criteria
-     * Filters by search term, affiliation and status
-     */
-    applyFilters() {
-        const searchTerm = this.searchInput.value.toLowerCase().trim();
+  /**
+   * Renders character cards to the grid container
+   * Shows "no results" message if no characters match filters
+   */
+  renderCharacters() {
+    if (!this.charGrid) return;
 
-        // Get selected filter values
-        const selectedAffiliations = Array.from(this.container.querySelectorAll('input[name="affiliation"]:checked'))
-            .map(checkbox => checkbox.value);
-        const selectedStatuses = Array.from(this.container.querySelectorAll('input[name="status"]:checked'))
-            .map(checkbox => checkbox.value);
+    // Clear the grid container before rendering
+    this.charGrid.innerHTML = '';
 
-        // Apply filters to character array
-        this.filteredCharacters = this.characters.filter(char => {
-            // Search across multiple fields
-            const matchesSearch = !searchTerm || 
-                char.name.toLowerCase().includes(searchTerm) ||
-                char.epithet.toLowerCase().includes(searchTerm) ||
-                char.affiliation.toLowerCase().includes(searchTerm) ||
-                char.status.toLowerCase().includes(searchTerm) ||
-                char.id.toLowerCase().includes(searchTerm);
-
-            // Filter by affiliation if any selected
-            const matchesAffiliation = selectedAffiliations.length === 0 || 
-                selectedAffiliations.includes(char.affiliation);
-
-            // Filter by status if any selected
-            const matchesStatus = selectedStatuses.length === 0 || 
-                selectedStatuses.includes(char.status);
-
-            return matchesSearch && matchesAffiliation && matchesStatus;
-        });
-
-        this.applySorting();
-        this.renderCharacters();
-    }
-
-    /**
-     * Applies sorting to filtered characters
-     * Sorts by name (A-Z/Z-A), status, or affiliation
-     */
-    applySorting() {
-        const sortValue = this.sortSelect.value;
-
-        // Sort using localeCompare for proper string comparison
-        switch(sortValue) {
-            case 'name-asc':
-                this.filteredCharacters.sort((a, b) => a.name.localeCompare(b.name));
-                break;
-            case 'name-desc':
-                this.filteredCharacters.sort((a, b) => b.name.localeCompare(a.name));
-                break;
-            case 'status':
-                this.filteredCharacters.sort((a, b) => b.status.localeCompare(a.status));
-                break;
-            case 'affiliation':
-                this.filteredCharacters.sort((a, b) => a.affiliation.localeCompare(b.affiliation));
-                break;
-        }
-    }
-
-    /**
-     * Renders character cards to the grid container
-     * Shows "no results" message if no characters match filters
-     */
-    renderCharacters() {
-        if (!this.charGrid) return;
-        
-        // Clear the grid container before rendering
-        this.charGrid.innerHTML = '';
-
-        // Show message if no characters found
-        if (this.filteredCharacters.length === 0) {
-            this.charGrid.innerHTML = `
+    // Show message if no characters found
+    if (this.filteredCharacters.length === 0) {
+      this.charGrid.innerHTML = `
                 <div class="no-results">
                     <p>No characters found matching your search.</p>
                 </div>
             `;
-            return;
-        }
-
-        // Render character cards to the grid container
-        this.charGrid.innerHTML = this.filteredCharacters
-            .map(char => this.characterTemplate(char))
-            .join('');
+      return;
     }
 
-    /**
-     * Generates HTML template for character card
-     * @param {Object} char - Character data object
-     * @returns {string} HTML template string
-     */
-    characterTemplate(char) {
-        return `
+    // Render character cards to the grid container
+    this.charGrid.innerHTML = this.filteredCharacters
+      .map(char => this.characterTemplate(char))
+      .join('');
+  }
+
+  /**
+   * Generates HTML template for character card with lazy loading image
+   * @param {Object} char - Character data object
+   * @returns {string} HTML template string
+   */
+  characterTemplate(char) {
+    return `
             <div class="char-card" id="${char.id}">
-                <div class="char-image">
-                    <img src="${char.image}" alt="${char.name}">
+                <div class="char-image lazy-load">
+                    <img 
+                        src="${char.image}" 
+                        alt="${char.name}"
+                        loading="lazy"
+                        onload="this.classList.add('loaded'); this.closest('.lazy-load').classList.remove('lazy-load')"
+                      >
                 </div>
                 <div class="char-info">
                     <h3>${char.name}</h3>
@@ -259,72 +265,72 @@ class Characters {
                 </div>
             </div>
         `;
+  }
+
+  /**
+   * Sets up event listeners for search, sort, filters and card clicks
+   */
+  setupEventListeners() {
+    if (!this.charGrid) return;
+
+    // Handle character card clicks
+    this.charGrid.addEventListener('click', async (e) => {
+      const card = e.target.closest('.char-card');
+      if (card) {
+        await this.charModal.loadCharacterDetails(card.id);
+      }
+    });
+
+    // Debounced search input handler
+    let debounceTimeout;
+    if (this.searchInput) {
+      this.searchInput.addEventListener('input', () => {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => {
+          this.applyFilters();
+        }, 300);
+      });
     }
 
-    /**
-     * Sets up event listeners for search, sort, filters and card clicks
-     */
-    setupEventListeners() {
-        if (!this.charGrid) return;
-
-        // Handle character card clicks
-        this.charGrid.addEventListener('click', async (e) => {
-            const card = e.target.closest('.char-card');
-            if (card) {
-                await this.charModal.loadCharacterDetails(card.id);
-            }
-        });
-
-        // Debounced search input handler
-        let debounceTimeout;
-        if (this.searchInput) {
-            this.searchInput.addEventListener('input', () => {
-                clearTimeout(debounceTimeout);
-                debounceTimeout = setTimeout(() => {
-                    this.applyFilters();
-                }, 300);
-            });
-        }
-
-        // Sort select handler
-        if (this.sortSelect) {
-            this.sortSelect.addEventListener('change', () => {
-                this.applyFilters();
-            });
-        }
-
-        // Filter checkbox handlers
-        this.filterCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                this.applyFilters();
-            });
-        });
+    // Sort select handler
+    if (this.sortSelect) {
+      this.sortSelect.addEventListener('change', () => {
+        this.applyFilters();
+      });
     }
 
-    /**
-     * Loads all sections of the characters component
-     */
-    async loadSections() {
-        await this.loadCharacters();
-    }
+    // Filter checkbox handlers
+    this.filterCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        this.applyFilters();
+      });
+    });
+  }
 
-    /**
-     * Hides the characters container
-     */
-    hide() {
-        if (this.container) {
-            this.container.style.display = 'none';
-        }
-    }
+  /**
+   * Loads all sections of the characters component
+   */
+  async loadSections() {
+    await this.loadCharacters();
+  }
 
-    /**
-     * Shows the characters container
-     */
-    show() {
-        if (this.container) {
-            this.container.style.display = 'block';
-        }
+  /**
+   * Hides the characters container
+   */
+  hide() {
+    if (this.container) {
+      this.container.style.display = 'none';
     }
+  }
+
+  /**
+   * Shows the characters container
+   */
+  show() {
+    if (this.container) {
+      this.container.style.display = 'block';
+    }
+  }
 }
 
 export { Characters as default };

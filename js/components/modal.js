@@ -14,13 +14,13 @@ class Modal {
    */
   constructor() {
     // Core modal elements
-    this.modal = null;
-    this.modalOverlay = null;
-    this.closeButton = null;
+    this.modal = null; // Modal element
+    this.modalOverlay = null; // Modal overlay
+    this.closeButton = null; // Modal close button
     
     // Bind event handlers to maintain context
-    this.handleEscapeKey = this.handleEscapeKey.bind(this);
-    this.handleOverlayClick = this.handleOverlayClick.bind(this);
+    this.handleEscapeKey = this.handleEscapeKey.bind(this); // Escape key handler
+    this.handleOverlayClick = this.handleOverlayClick.bind(this); // Overlay click handler
   }
 
   /**

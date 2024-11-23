@@ -13,149 +13,6 @@
   padding-top: 5em;
 }
 
-/* Card containing search bar and filter options */
-#devil-fruits .search-filter {
-  margin-bottom: 2em;
-  padding: 1.5em;
-  background-color: white;
-  border-radius: 0.5em;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Flexbox container for search input and button */
-#devil-fruits .search-bar {
-  display: flex;
-  gap: 1em;
-  margin-bottom: 1.5em;
-}
-
-/* Search input field styling */
-#devil-fruits .search-bar input {
-  flex: 1;
-  padding: 0.8em 1em;
-  border: 2px solid var(--nav-bg);
-  border-radius: 0.5em;
-  font-size: 1em;
-}
-
-/* Focus state for search input */
-#devil-fruits .search-bar input:focus {
-  outline: none;
-  border-color: var(--nav-item-bg-active);
-}
-
-/* Search button styling */
-#devil-fruits .search-btn {
-  background-color: var(--nav-bg);
-  border: none;
-  border-radius: 0.5em;
-  padding: 0.8em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-/* Hover state for search button */
-#devil-fruits .search-btn:hover {
-  background-color: var(--nav-item-bg-active);
-}
-
-/* Search icon styling within button */
-#devil-fruits .search-btn svg {
-  width: 1.5em;
-  height: 1.5em;
-  color: white;
-}
-
-/* Container for sort and filter options */
-#devil-fruits .sort-filters {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2em;
-  padding-top: 1em;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  margin-bottom: 1em;
-}
-
-/* Container for sort dropdown and label */
-#devil-fruits .sort-group {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  min-width: 250px;
-}
-
-/* Label styling for sort dropdown */
-#devil-fruits .sort-group label {
-  color: var(--nav-bg);
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-/* Custom styled select dropdown */
-#devil-fruits .sort-select {
-  flex: 1;
-  padding: 0.6em 1em;
-  border: 2px solid var(--nav-bg);
-  border-radius: 0.5em;
-  background-color: white;
-  color: #333;
-  font-size: 0.9em;
-  cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C20000'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.7em top 50%;
-  background-size: 1.2em auto;
-}
-
-/* Focus state for sort select */
-#devil-fruits .sort-select:focus {
-  outline: none;
-  border-color: var(--nav-item-bg-active);
-}
-
-/* Hover state for sort select */
-#devil-fruits .sort-select:hover {
-  border-color: var(--nav-item-bg-active);
-}
-
-/* Container for filter checkboxes */
-#devil-fruits .filters {
-  display: flex;
-  gap: 2em;
-  flex-wrap: wrap;
-  padding-top: 1em;
-}
-
-/* Container for filter label and checkbox */
-#devil-fruits .filter-group {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-}
-
-/* Label styling for filter group */
-#devil-fruits .filter-group > label {
-  font-weight: 600;
-  color: var(--nav-bg);
-}
-
-/* Custom checkbox container */
-#devil-fruits .checkbox {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  cursor: pointer;
-}
-
-/* Checkbox input styling */
-#devil-fruits .checkbox input[type="checkbox"] {
-  width: 1.2em;
-  height: 1.2em;
-  cursor: pointer;
-}
-
 /* Grid layout for devil fruit cards */
 #devil-fruits .fruits-grid {
   display: grid;
@@ -190,7 +47,7 @@
 
 /* Gradient overlay for fruit image */
 #devil-fruits .fruit-image::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -256,28 +113,28 @@
 
 /* Paramecia fruit type tag */
 #devil-fruits .tag.paramecia {
-    background-color: var(--paramecia);
-  }
-  
-  /* Logia fruit type tag */
-  #devil-fruits .tag.logia {
-    background-color: var(--logia);
-  }
-  
-  /* Zoan fruit type tag */
-  #devil-fruits .tag.zoan {
-    background-color: var(--zoan);
-  }
-  
-  /* Active status tag */
-  #devil-fruits .tag.active {
-    background-color: var(--active);
-  }
-  
-  /* Inactive status tag */
-  #devil-fruits .tag.inactive {
-    background-color: var(--inactive);
-  }
+  background-color: var(--paramecia);
+}
+
+/* Logia fruit type tag */
+#devil-fruits .tag.logia {
+  background-color: var(--logia);
+}
+
+/* Zoan fruit type tag */
+#devil-fruits .tag.zoan {
+  background-color: var(--zoan);
+}
+
+/* Active status tag */
+#devil-fruits .tag.active {
+  background-color: var(--active);
+}
+
+/* Inactive status tag */
+#devil-fruits .tag.inactive {
+  background-color: var(--inactive);
+}
 
 /* Message shown when no fruits match filters */
 #devil-fruits .no-results {
@@ -293,27 +150,56 @@
   font-weight: 500;
 }
 
-/* Mobile responsive adjustments */
-@media (max-width: 768px) {
-  /* Stack sort filters vertically on mobile */
+
+
+/* Responsive adjustments */
+
+/* Large screens (1400px and below) */
+@media (max-width: 1400px) {
+  /* Adjust container width and font size for large screens */
+  #devil-fruits .fruits-container {
+    width: 90%;
+    font-size: 0.8em;
+  }
+
+  /* Display fruits in 4 columns on large screens */
+  #app #devil-fruits .fruits-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* Laptop/Small Desktop (1023px and below) */
+@media screen and (max-width: 1023px) {
+  /* Container for all fruits content with max-width and centering */
+  #devil-fruits .fruits-container {
+    width: 90%;
+    font-size: 0.8em;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Adjust container width and font size for tablet */
+  #app #devil-fruits .fruits-container {
+    width: 95%;
+    font-size: 0.9em;
+  }
+
+  /* Display fruits in 3 columns on tablet */
+  #app #devil-fruits .fruits-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Mobile (below 768px) */
+@media screen and (max-width: 767px) {
+  /* Stack filter options vertically on mobile */
   #devil-fruits .sort-filters {
     flex-direction: column;
-    gap: 1.5em;
   }
 
-  /* Full width sort groups on mobile */
-  #devil-fruits .sort-group {
-    width: 100%;
-  }
-
-  /* Stack filters vertically on mobile */
-  #devil-fruits .filters {
-    flex-direction: column;
-    gap: 1em;
-  }
-
-  /* Allow filter groups to wrap on mobile */
-  #devil-fruits .filter-group {
-    flex-wrap: wrap;
+  /* Display fruits in 2 columns on mobile */
+  #app #devil-fruits .fruits-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }

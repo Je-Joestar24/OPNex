@@ -22,13 +22,13 @@ class CredentialModal extends Modal {
         super();
 
         // Button selectors
-        this.signupButtons = document.querySelectorAll('.signup-modal');
-        this.loginButtons = document.querySelectorAll('.login-modal');
+        this.signupButtons = document.querySelectorAll('.signup-modal'); // Signup buttons
+        this.loginButtons = document.querySelectorAll('.login-modal'); // Login buttons
 
         // Modal element selectors
-        this.modal = document.querySelector('#credential-modal');
-        this.modalOverlay = this.modal.querySelector('.modal-overlay');
-        this.modalContents = this.modal.querySelector('.modal-container');
+        this.modal = document.querySelector('#credential-modal'); // Modal element
+        this.modalOverlay = this.modal.querySelector('.modal-overlay'); // Modal overlay
+        this.modalContents = this.modal.querySelector('.modal-container'); // Modal contents
 
         // Initial modal structure setup
         this.modalContents.innerHTML = `
@@ -44,7 +44,7 @@ class CredentialModal extends Modal {
         this.type = type;
 
         // Data storage for form configurations
-        this.data = { login: {}, signup: {} };
+        this.data = { login: {}, signup: {} }; 
 
         // Initialize data and modal functionality
         this.init();

@@ -1,0 +1,159 @@
+/* Search and Filter Section - Contains search bar and filter options */
+.search-filter {
+  margin-bottom: 2em;
+  padding: 1.5em;
+  background-color: white;
+  border-radius: 0.5em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Search Bar Layout - Flexbox container for input and button */
+.search-bar {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1.5em;
+}
+
+/* Search Input Styling */
+.search-bar input {
+  flex: 1; /* Takes up remaining space */
+  padding: 0.8em 1em;
+  border: 2px solid var(--nav-bg);
+  border-radius: 0.5em;
+  font-size: 1em;
+}
+
+/* Search Input Focus State */
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--nav-item-bg-active);
+}
+
+/* Search Button Styling */
+.search-btn {
+  background-color: var(--nav-bg);
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.8em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Search Button Hover Effect */
+.search-btn:hover {
+  background-color: var(--nav-item-bg-active);
+}
+
+/* Search Icon (SVG) Styling */
+.search-btn svg {
+  width: 1.5em;
+  height: 1.5em;
+  color: white;
+}
+
+/* Sort Filters Section */
+.sort-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2em;
+  padding-top: 1em;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Sort Group Styling */
+.sort-group {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  min-width: 250px;
+}
+
+.sort-group label {
+  color: var(--nav-bg);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Sort Select Styling */
+.sort-select {
+  flex: 1;
+  padding: 0.6em 1em;
+  border: 2px solid var(--nav-bg);
+  border-radius: 0.5em;
+  background-color: white;
+  color: #333;
+  font-size: 0.9em;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C20000'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7em top 50%;
+  background-size: 1.2em auto;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: var(--nav-item-bg-active);
+}
+
+.sort-select:hover {
+  border-color: var(--nav-item-bg-active);
+}
+
+/* Filter Section Layout - Flexbox container for filter groups */
+.filters {
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap; /* Allows filters to wrap on smaller screens */
+}
+
+/* Individual Filter Group Styling */
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+/* Filter Group Label Styling */
+.filter-group > label {
+  font-weight: 600;
+  color: var(--nav-bg);
+}
+
+/* Checkbox Container Styling */
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+/* Checkbox Input Styling */
+.checkbox input[type="checkbox"] {
+  width: 1.2em;
+  height: 1.2em;
+  cursor: pointer;
+}
+
+
+/* Lazy Load Image */
+/* Lazy loading image styles */
+.lazy-load {
+  /* Background color while loading */
+  background-color: var(--nav-bg);
+  /* Breathing animation while loading */
+  animation: breathe 2s ease-in-out infinite;
+}
+
+/* Hide image initially */
+.lazy-load img {
+  opacity: 0;
+  /* Smooth fade in transition */
+  transition: opacity 0.5s ease;
+}
+
+/* Show image once loaded */
+.lazy-load img.loaded {
+  opacity: 1;
+}
