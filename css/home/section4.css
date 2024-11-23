@@ -2,14 +2,14 @@
 #section-4 {
   background-color: var(--text-white);
   padding: 6em 0;
-  margin-bottom: 2em;
 }
 /* Call-to-action content container */
-#section-4 .cta-content {
+#home #section-4 .cta-content {
   width: var(--cont-width);
   margin: 0 auto;
+  margin-bottom: 0;
   text-align: center;
-  padding: 4em 2em;
+  padding: 4em 0;
   background: linear-gradient(
     to bottom right,
     var(--nav-bg),
@@ -82,10 +82,11 @@
 /* Responsive Breakpoints */
 
 /* Laptop (1024px - 1399px) */
-@media screen and (min-width: 1024px) and (max-width: 1399px) {
-  #section-4 .cta-content {
+@media screen and (max-width: 1399px) {
+  #home #section-4 .cta-content {
     width: 90%;
     padding: 3em 1.5em;
+    margin-bottom: 0;
   }
 
   #section-4 h2 {
@@ -109,9 +110,10 @@
     padding: 4em 0;
   }
 
-  #section-4 .cta-content {
-    width: 95%;
+  #home #section-4 .cta-content {
+    width: 90%;
     padding: 2.5em 1.2em;
+    margin-bottom: 0;
   }
 
   #section-4 h2 {
@@ -135,9 +137,8 @@
     padding: 3em 0;
   }
 
-  #section-4 .cta-content {
+  #home #section-4 .cta-content {
     width: 80%;
-    margin: 0 auto;
     padding: 2em 1em;
   }
 
@@ -166,6 +167,6 @@
   #section-4 .cta-content {
     width: 100%;
     max-width: 1600px;
-    padding: 4em 2em;
+    padding: 4em 0;
   }
 }

@@ -1,9 +1,11 @@
 /* *******************************************************page 2 or the about section******************************************************* */
 
-#section-2 .about-content {
+
+#home #section-2 .about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 3em;
+  padding: 3em 0px;
+  width: var(--cont-width);
   gap: 1em;
 }
 
@@ -152,7 +154,7 @@
 
 /* Laptop (1024px - 1399px) */
 @media screen and (min-width: 1024px) and (max-width: 1399px) {
-  #section-2 .about-content {
+  #home #section-2 .about-content {
     width: 90%;
     margin: 0 auto;
     padding: 2em;
@@ -168,7 +170,7 @@
 }
 /* Tablet (768px - 1023px) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  #section-2 .about-content {
+  #home #section-2 .about-content {
     width: 90%;
     margin: 0 auto;
     padding: 1em;
@@ -196,7 +198,7 @@
 
 /* Mobile (below 768px) */
 @media screen and (max-width: 767px) {
-  #section-2 .about-content {
+  #home #section-2 .about-content {
     grid-template-columns: 1fr;
     width: 80%;
     padding: 1em;
