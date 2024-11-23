@@ -9,6 +9,15 @@
   color: var(--text-white);
 }
 
+#navigation #nav-burger{
+  background: none;
+  border: none;
+  width: 8em;
+  font-size: .4em;
+  color: var(--text-white);
+  display: none;
+}
+
 /* Logo text styling within navigation */
 #navigation .logo {
   font-size: 1.5em;
@@ -156,8 +165,8 @@
         width: 95%;
     }
 
-    #navigation .logo {
-        font-size: 1.2em;
+    #app #navigation a.logo {
+        font-size: 2em;
     }
 
     #navigation .nav-item {
@@ -176,12 +185,22 @@
 
 /* Mobile (below 768px) */
 @media screen and (max-width: 767px) {
+
+    #navigation {
+        padding: .5em 0;
+    }
+
+    #navigation #nav-burger {
+        display: inline-block;
+        font-size: .4em;
+    }
+
     #navigation .nav-container ul {
         display: none; /* Hide navigation menu */
     }
 
-    #navigation .logo {
-        font-size: 1.1em;
+    #app #navigation .logo {
+        font-size: 2em;
     }
 
     #navigation .nav-container {
