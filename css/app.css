@@ -49,7 +49,7 @@ body::-webkit-scrollbar {
 /* Basic Reset */
 * {
   margin: 0px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Roboto", "Open Sans", "Helvetica Neue", "Arial", "Segoe UI", sans-serif;
   font-optical-sizing: auto;
 }
 
@@ -65,7 +65,7 @@ img {
 
 body {
   background-color: var(--body-bg);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Roboto", "Open Sans", "Helvetica Neue", "Arial", "Segoe UI", sans-serif;
 }
 
 a {
